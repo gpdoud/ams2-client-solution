@@ -1,0 +1,17 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="user">
+      <tr><th>Name</th><td>{{ user.Firstname + " " + user.Lastname }}</td></tr>
+      <tr><th>User name</th><td>{{ user.Username }}</td></tr>
+      <tr><th>Phone</th><td>{{ user.Phone }}</td></tr>
+      <tr><th>Email</th><td>{{ user.Email }}</td></tr>
+      <tr><th>Active</th><td>{{ user.Active ? "Yes" : "No" }}</td></tr>
+    </table>
+  </div>
+</div>
