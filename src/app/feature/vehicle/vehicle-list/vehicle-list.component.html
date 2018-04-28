@@ -1,3 +1,30 @@
-<p>
-  vehicle-list works!
-</p>
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="vehicles">
+      <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Year/Make/Model</th>
+          <th>Active</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let vehicle of vehicles">
+        <td>{{ vehicle.Code }}</td>
+        <td>{{ vehicle.Asset.Name }}</td>
+        <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
+        <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/vehicles/detail/{{  vehicle.Id }}">Detail</a></span>
+          <span> | <a routerLink="/vehicles/edit/{{ vehicle.Id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

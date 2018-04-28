@@ -16,6 +16,12 @@ const approutes: Routes = [
   { path: 'users/detail/:id', component: feat.UserDetailComponent },
   { path: 'users/edit/:id', component: feat.UserEditComponent },
   { path: 'users/create', component: feat.UserCreateComponent },
+  // User
+  { path: 'vehicles/list', component: feat.VehicleListComponent },
+  { path: 'vehicles/detail/:id', component: feat.VehicleDetailComponent },
+  { path: 'vehicles/edit/:id', component: feat.VehicleEditComponent },
+  { path: 'vehicles/create', component: feat.VehicleCreateComponent },
+  // Catch-all
   { path: '**', component: core.HomeComponent }
 ];
 

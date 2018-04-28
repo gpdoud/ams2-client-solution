@@ -19,7 +19,8 @@ import { AppComponent } from './app.component';
     core.AboutComponent, core.HomeComponent, 
     core.FootingComponent, core.HeadingComponent, 
     core.MenuComponent, core.MenuItemComponent,
-    feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent
+    feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent,
+    feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ import { AppComponent } from './app.component';
   exports: [
   ],
   providers: [
-    feat.UserService
+    feat.UserService, feat.VehicleService
   ],
   bootstrap: [AppComponent]
 })

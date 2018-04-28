@@ -1,6 +1,27 @@
 div {
   background-color: rgba(229,237,225,.90);
+  min-height: 100px;
+  text-align: right;
+}
+address {
+  font-size: 0.9em;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5em;
 }
 img {
   max-height: 100px;
+}
+.bg-heading {
+  background-image: url("/assets/logo.png");
+  background-repeat: no-repeat;
+    padding-top: 0.8em;
+    padding-right: 3em;
+}
+.phone {
+  font-size: 1.4em;
+  font-style: normal;
+  color: rgb(115,133,57);
+  font-weight: bolder;
 }
