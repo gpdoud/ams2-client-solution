@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    core.AboutComponent, core.FootingComponent, core.HeadingComponent, core.HomeComponent, core.MenuComponent,
+    core.AboutComponent, core.FootingComponent, core.HeadingComponent, core.HomeComponent, 
+    core.MenuComponent, core.MenuItemComponent
   ],
   imports: [
     BrowserModule,

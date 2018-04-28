@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadingComponent implements OnInit {
 
+  branding: string = "Deerfield Township Administration";
+
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,12 @@
+li {
+  display: inline-block;
+  text-align: center;
+}
+a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+a:hover {
+  background-color: black;
+}

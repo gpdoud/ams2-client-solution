@@ -6,8 +6,10 @@ import * as core from './core';
 
 const approutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  // core
   { path: 'about', component: core.AboutComponent },
   { path: 'home', component: core.HomeComponent },
+  // main
   { path: '**', component: core.HomeComponent }
 ];
 

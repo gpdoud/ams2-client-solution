@@ -7,13 +7,6 @@ import * as core from './';
   imports: [
     CommonModule,
     RouterModule
-  ],
-  declarations: [
-    // core.HomeComponent,
-    // core.AboutComponent,
-    // core.HeadingComponent,
-    // core.FootingComponent,
-    // core.MenuComponent
-   ]
+  ]
 })
 export class CoreModule { }
