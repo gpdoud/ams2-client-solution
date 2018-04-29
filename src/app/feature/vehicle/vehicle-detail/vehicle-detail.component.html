@@ -1,3 +1,18 @@
-<p>
-  vehicle-detail works!
-</p>
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content" *ngIf="vehicle">
+    <table class="table table-sm">
+      <tr>
+        <th>Code:</th><td>{{ vehicle.Code }}</td>
+        <th>Year/Make/Model:</th><td>{{ vehicle.Year + " " + vehicle.Make + " " + vehicle.Model }}</td>
+        <th>Active:</th><td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+      </tr>
+    </table>
+    <app-asset-detail [asset]="vehicle.Asset"></app-asset-detail>
+  </div>
+</div>

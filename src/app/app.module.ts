@@ -12,7 +12,6 @@ import * as feat from './feature';
 
 import { AppComponent } from './app.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +20,7 @@ import { AppComponent } from './app.component';
     core.MenuComponent, core.MenuItemComponent,
     feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent,
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
+    feat.AssetDetailComponent, feat.AssetEditComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { AppComponent } from './app.component';
   exports: [
   ],
   providers: [
-    feat.UserService, feat.VehicleService
+    feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService
   ],
   bootstrap: [AppComponent]
 })

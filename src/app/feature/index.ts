@@ -1,3 +1,10 @@
+// Addresses
+export * from './address/address.service';
+// Assets
+export * from './asset/asset-detail/asset-detail.component';
+export * from './asset/asset-detail/asset-detail.component';
+export * from './asset/asset-edit/asset-edit.component';
+export * from './asset/asset.service';
 // Users
 export * from './user/user-list/user-list.component';
 export * from './user/user-detail/user-detail.component';

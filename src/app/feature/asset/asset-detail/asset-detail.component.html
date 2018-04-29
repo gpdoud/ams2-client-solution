@@ -1,0 +1,35 @@
+<div class="title">
+  <span class="pagetitle">{{ pagetitle }}</span>
+</div>
+<div>
+  <table class="table table-sm" *ngIf="asset">
+    <tr>
+      <th>Name:</th><td>{{ asset.Name }}</td>
+      <th>Description:</th><td>{{ asset.Description }}</td>
+    </tr>
+    <tr *ngIf="asset.Address">
+      <th>Address:</th>
+        <td>
+          <span>{{ asset.Address.Address1 }}</span>
+          <span *ngIf="asset.Address.Address2">{{ "," + asset.Address.Address2 }}</span>
+          <span *ngIf="asset.Address.Address3">{{ "," + asset.Address.Address3 }}</span>
+          <span>{{ asset.Address.City + ", " + asset.Address.State + " " + asset.Address.Zipcode }}</span>
+        </td>
+      <th>PO Number:</th><td>{{ asset.PONumber }}</td>
+    </tr>
+    <tr>
+      <th>Cost:</th><td>{{ asset.Cost | currency }}</td>
+      <th>Residual Value:</th><td>{{ asset.ResidualValue | currency }}</td>
+    </tr>
+    <tr>
+      <th>Out For Repair:</th><td>{{ asset.OutForRepairDate | date }}</td>
+      <th>Return From Repair:</th><td>{{ asset.ReturnFromRepairDate | date}}</td>
+    </tr>
+    <tr>
+      <th>Acquired:</th><td>{{ asset.AcquiredDate | date }}</td>
+      <th>Disposed:</th>
+        <td *ngIf="asset.DisposedDate">{{ asset.DisposedDate | date }}</td>
+        <td *ngIf="!asset.DisposedDate">N/A</td>
+    </tr>
+  </table>
+</div>

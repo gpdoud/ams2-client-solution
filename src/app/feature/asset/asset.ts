@@ -4,30 +4,30 @@ export class Asset {
   Code: string;
   Name: string;
   Description: string;
-  AcquireDate?: Date;
-  DisposedDate?: Date;
+  AcquireDate: Date;
+  DisposedDate: Date;
   PONumber: string;
-  Cost?: number;
-  OutForRepairDate?: Date;
-  ReturnFromRepairDate?: Date;
-  RetiredDate?: Date;
-  SurplusDate?: Date;
-  ResidualValue?: number;
+  Cost: number;
+  OutForRepairDate: Date;
+  ReturnFromRepairDate: Date;
+  RetiredDate: Date;
+  SurplusDate: Date;
+  ResidualValue: number;
 
   constructor(
     Id: number,
     Code: string,
     Name: string,
     Description: string,
-    AcquireDate?: Date,
-    DisposedDate?: Date,
+    AcquireDate: Date,
+    DisposedDate: Date,
     PONumber: string,
-    Cost?: number,
-    OutForRepairDate?: Date,
-    ReturnFromRepairDate?: Date,
-    RetiredDate?: Date,
-    SurplusDate?: Date,
-    ResidualValue?: number
+    Cost: number,
+    OutForRepairDate: Date,
+    ReturnFromRepairDate: Date,
+    RetiredDate: Date,
+    SurplusDate: Date,
+    ResidualValue: number
   ) {
     this.Id = Id;
     this.Code = Code;
