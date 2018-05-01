@@ -1,0 +1,40 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="addresses">
+      <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zipcode</th>
+          <th>Active</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let address of addresses">
+        <td>{{ address.Code }}</td>
+        <td>{{ address.Name }}</td>
+        <td>
+          {{ address.Address1 }}
+          <span *ngIf="address.Address2">, {{ address.Address2 }}</span>
+          <span *ngIf="address.Address3">, {{ address.Address3 }}</span>
+        </td>
+        <td>{{ address.City }}</td>
+        <td>{{ address.State }}</td>
+        <td>{{ address.Zipcode }}</td>
+        <td>{{ address.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/addresses/detail/{{  address.Id }}">Detail</a></span>
+          <span> | <a routerLink="/addresses/edit/{{ address.Id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

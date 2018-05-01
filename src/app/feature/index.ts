@@ -1,7 +1,10 @@
 // Addresses
+export * from './address/address-list/address-list.component';
+export * from './address/address-detail/address-detail.component';
+export * from './address/address-create/address-create.component';
+export * from './address/address-edit/address-edit.component';
 export * from './address/address.service';
 // Assets
-export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';

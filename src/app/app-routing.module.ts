@@ -11,6 +11,11 @@ const approutes: Routes = [
   // core
   { path: 'about', component: core.AboutComponent },
   { path: 'home', component: core.HomeComponent },
+  // Address
+  { path: 'addresses/list', component: feat.AddressListComponent },
+  { path: 'addresses/detail/:id', component: feat.AddressDetailComponent },
+  { path: 'addresses/edit/:id', component: feat.AddressEditComponent },
+  { path: 'addresses/create', component: feat.AddressCreateComponent },
   // User
   { path: 'users/list', component: feat.UserListComponent },
   { path: 'users/detail/:id', component: feat.UserDetailComponent },
