@@ -4,6 +4,7 @@ export * from './address/address.service';
 export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
+export * from './asset/asset-create/asset-create.component';
 export * from './asset/asset.service';
 // Users
 export * from './user/user-list/user-list.component';

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { AssetService } from '@feat/asset/asset.service';
+import { Asset } from '@feat/asset/asset';
+import { AddressService } from '@feat/address/address.service';
+import { Address } from '@feat/address/address';
 
 @Component({
   selector: 'app-asset-create',
@@ -7,9 +13,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetCreateComponent implements OnInit {
 
-  constructor() { }
+  pagetitle: string = "Asset Create";
+
+  @Input() asset: Asset;
+
+  addresses: Address[];
+
+  // save(): void {
+  //   console.log("AssetCreate preupdate:", this.asset);
+  //   this.assetsvc.create(this.asset)
+  //     .subscribe(rc => {
+  //       console.log("AssetCreate rc:", rc);
+  //       this.router.navigateByUrl("/assets/list");
+  //     });
+  // }
+
+  constructor(
+    private assetsvc: AssetService,
+    private addresssvc: AddressService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.addresssvc.list()
+      .subscribe(addr => {
+        this.addresses = addr;
+        console.log("AddressList:", this.addresses);
+      })
   }
 
 }

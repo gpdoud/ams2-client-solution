@@ -8,7 +8,8 @@ export class Vehicle {
   Asset: Asset;
   Make: string;
   Model: string;
-  Year?: number;
+  Year: number;
+  Active: boolean;
 
   constructor(
     Id: number,
@@ -17,7 +18,8 @@ export class Vehicle {
     Asset: Asset,
     Make: string,
     Model: string,
-    Year?: number
+    Year: number,
+    Active: boolean = true
   ) {
     this.Id = Id;
     this.Code = Code,
@@ -26,5 +28,6 @@ export class Vehicle {
     this.Make = Make;
     this.Model = Model;
     this.Year = Year;
+    this.Active = Active;
   }
 }

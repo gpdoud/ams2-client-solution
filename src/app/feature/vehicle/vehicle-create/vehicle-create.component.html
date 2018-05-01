@@ -1,3 +1,55 @@
-<p>
-  vehicle-create works!
-</p>
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content" *ngIf="vehicle">
+
+    <div class="container">
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Code">Code</label>
+        </div>
+        <input [(ngModel)]="vehicle.Code" name="Code" type="text" class="form-control" id="Code">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Active">Active</label>
+        </div>
+        <select [(ngModel)]="vehicle.Active"  name="Active" type="text" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Year">Year</label>
+        </div>
+        <input [(ngModel)]="vehicle.Year" name="Year" type="number" class="form-control" id="Year">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Make">Make</label>
+        </div>
+        <input [(ngModel)]="vehicle.Make" name="Make" type="text" class="form-control" id="Make">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Model">Model</label>
+        </div>
+        <input [(ngModel)]="vehicle.Model" name="Model" type="text" class="form-control" id="Model">
+      </div>
+    </div>
+
+    <div>
+      <app-asset-create [asset]="vehicle.Asset"></app-asset-create>
+    </div>
+
+  <div class="container">
+    <div class="input-group input-group-sm mb-3">
+      <button (click)="save()" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</div>

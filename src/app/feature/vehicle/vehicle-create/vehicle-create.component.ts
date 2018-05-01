@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { VehicleService } from '@feat/vehicle/vehicle.service';
+import { Vehicle } from '@feat/vehicle/vehicle';
+import { Asset } from '@feat/asset/asset';
 
 @Component({
   selector: 'app-vehicle-create',
@@ -7,7 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehicleCreateComponent implements OnInit {
 
-  constructor() { }
+  pagetitle: string = "Vehicle Create";
+
+  asset: Asset = new Asset(0, "", "", "", "", "", "", 0, "", "", "", "", 0);
+  vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0);
+
+  save(): void {
+    console.log("VehicleCreate preupdate:", this.vehicle);
+    this.vehiclesvc.create(this.vehicle)
+      .subscribe(rc => {
+        console.log("VehicleCreate rc:", rc);
+        this.router.navigateByUrl("/vehicles/list");
+      });
+  }
+
+  constructor(
+    private vehiclesvc: VehicleService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }

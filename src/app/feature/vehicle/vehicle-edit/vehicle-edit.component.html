@@ -14,6 +14,15 @@
           <label class="input-group-text" for="Code">Code</label>
         </div>
         <input [(ngModel)]="vehicle.Code" name="Code" type="text" class="form-control" id="Code">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Active">Active</label>
+        </div>
+        <select [(ngModel)]="vehicle.Active"  name="Active" type="text" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+        
       </div>
 
       <div class="input-group input-group-sm mb-3">
