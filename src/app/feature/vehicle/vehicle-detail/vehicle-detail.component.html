@@ -14,5 +14,14 @@
       </tr>
     </table>
     <app-asset-detail [asset]="vehicle.Asset"></app-asset-detail>
+    <table class="table table-sm">
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>

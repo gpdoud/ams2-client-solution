@@ -9,7 +9,10 @@ export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';
 export * from './asset/asset.service';
+// System
+export * from './system/system.service';
 // Users
+export * from './user/user-login/user-login.component';
 export * from './user/user-list/user-list.component';
 export * from './user/user-detail/user-detail.component';
 export * from './user/user-edit/user-edit.component';

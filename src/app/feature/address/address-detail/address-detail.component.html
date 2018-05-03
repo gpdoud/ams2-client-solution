@@ -1,3 +1,34 @@
-<p>
-  address-detail works!
-</p>
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="address">
+      <tr><th>Code</th><td>{{ address.Code }}</td></tr>
+      <tr><th>Name</th><td>{{ address.Name }}</td></tr>
+      <tr>
+        <th>Address</th>
+        <td>
+          <span>{{ address.Address1 }}</span>
+          <span><br />{{ address.Address2 }}</span>
+          <span><br />{{ address.Address3 }}</span>
+        </td>
+      </tr>
+      <tr>
+        <th>City/State/Zipcode</th>
+        <td>{{ address.City + ", " + address.State + " " + address.Zipcode }}</td>
+      </tr>
+      <!-- <tr><th>Active</th><td>{{ address.Active ? "Yes" : "No" }}</td></tr> -->
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

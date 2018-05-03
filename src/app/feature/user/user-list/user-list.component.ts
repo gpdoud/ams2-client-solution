@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from '@feat/user/user.service';
-import { User } from '@feat/user/user';
+import { UserService } from '@user/user.service';
+import { User } from '@user/user';
+import { SystemService } from '@system/system.service'
 
 @Component({
   selector: 'app-user-list',
@@ -16,9 +17,15 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
-  constructor(private usersvc: UserService) { }
+  constructor(
+    private usersvc: UserService,
+    private syssvc: SystemService
+  ) { }
 
   ngOnInit() {
+    console.log("About to get ext data");
+    this.syssvc.getData()
+      .subscribe(data => console.log("Data:", data))
     this.usersvc.list()
       .subscribe(users => {
         this.users = users;

@@ -5,6 +5,9 @@
     "paths": {
       "@core/*": ["app/core/*"],
       "@feat/*": ["app/feature/*"],
+      "@address/*": ["app/feature/address/*"],
+      "@asset/*": ["app/feature/asset/*"],
+      "@system/*": ["app/feature/system/*"],
       "@user/*": ["app/feature/user/*"],
       "@vehicle/*": ["app/feature/vehicle/*"]
     },

@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     core.FootingComponent, core.HeadingComponent, 
     core.MenuComponent, core.MenuItemComponent,
     feat.AddressListComponent, feat.AddressDetailComponent, feat.AddressCreateComponent, feat.AddressEditComponent,
-    feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent,
+    feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent, feat.UserLoginComponent,
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
     feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent
   ],
@@ -35,7 +35,7 @@ import { AppComponent } from './app.component';
   exports: [
   ],
   providers: [
-    feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService
+    feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, feat.SystemService
   ],
   bootstrap: [AppComponent]
 })

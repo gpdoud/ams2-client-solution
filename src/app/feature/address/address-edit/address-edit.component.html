@@ -1,3 +1,73 @@
-<p>
-  address-edit works!
-</p>
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content">
+    <div class="container" *ngIf="address">
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Code">Code</label>
+        </div>
+        <input [(ngModel)]="address.Code" name="Code" type="text" class="form-control" id="Code">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Name">Name</label>
+        </div>
+        <input [(ngModel)]="address.Name" name="Name" type="text" class="form-control" id="Name">
+<!-- 
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Active">Active</label>
+        </div>
+        <select [(ngModel)]="address.Active" name="Active" type="text" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+
+ -->      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Address1">Address1</label>
+        </div>
+        <input [(ngModel)]="address.Address1" name="Address1" type="text" class="form-control" id="Address1">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Address2">Address2</label>
+        </div>
+        <input [(ngModel)]="address.Address2" name="Address2" type="text" class="form-control" id="Address2">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Address3">Address3</label>
+        </div>
+        <input [(ngModel)]="address.Address3" name="Address3" type="text" class="form-control" id="Address3">
+
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="City">City</label>
+        </div>
+        <input [(ngModel)]="address.City" name="City" type="text" class="form-control" id="City">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="State">State</label>
+        </div>
+        <input [(ngModel)]="address.State" name="State" type="text" class="form-control" id="State">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Zipcode">Zipcode</label>
+        </div>
+        <input [(ngModel)]="address.Zipcode" name="Zipcode" type="text" class="form-control" id="Zipcode">
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <button (click)="save()" class="btn btn-primary">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
