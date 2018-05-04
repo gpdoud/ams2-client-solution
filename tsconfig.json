@@ -9,7 +9,8 @@
       "@asset/*": ["app/feature/asset/*"],
       "@system/*": ["app/feature/system/*"],
       "@user/*": ["app/feature/user/*"],
-      "@vehicle/*": ["app/feature/vehicle/*"]
+      "@vehicle/*": ["app/feature/vehicle/*"],
+      "@equipment/*": ["app/feature/equipment/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

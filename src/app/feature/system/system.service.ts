@@ -1,15 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class SystemService {
+export class SystemService implements OnInit {
 
-  getData(): Observable<any> {
-    return this.http.get("assets/ams2.json") as Observable<any>;
+  getConfig(): void {
   }
 
   constructor(private http: HttpClient) {
+  }
+
+  ngOnInit() {
+
   }
 
 }

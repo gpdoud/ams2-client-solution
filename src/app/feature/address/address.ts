@@ -9,6 +9,7 @@ export class Address {
   State: string;
   ZipCode: string;
   Active: boolean;
+  DateCreated: string;
 
   constructor(
     Id: number,
@@ -20,7 +21,8 @@ export class Address {
     City: string,
     State: string,
     ZipCode: string,
-    Active: boolean = true
+    Active: boolean = true,
+    DateCreated: string = Date()
   ) {
     this.Id = Id;
     this.Code = Code;
@@ -32,5 +34,6 @@ export class Address {
     this.State = State;
     this.ZipCode = ZipCode;
     this.Active = Active;
+    this.DateCreated = DateCreated;
   }
 }

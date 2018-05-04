@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { SystemService } from '@feat/system/system.service';
 import { VehicleService } from '@feat/vehicle/vehicle.service';
 import { Vehicle } from '@feat/vehicle/vehicle';
 import { Asset } from '@feat/asset/asset';
@@ -28,6 +28,7 @@ export class VehicleCreateComponent implements OnInit {
 
   constructor(
     private vehiclesvc: VehicleService,
+    private syssvc: SystemService,
     private router: Router
   ) { }
 

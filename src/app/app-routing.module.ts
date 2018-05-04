@@ -16,6 +16,11 @@ const approutes: Routes = [
   { path: 'addresses/detail/:id', component: feat.AddressDetailComponent },
   { path: 'addresses/edit/:id', component: feat.AddressEditComponent },
   { path: 'addresses/create', component: feat.AddressCreateComponent },
+  // Equiment
+  { path: 'equipment/list', component: feat.EquipmentListComponent },
+  { path: 'equipment/detail/:id', component: feat.EquipmentDetailComponent },
+  { path: 'equipment/edit/:id', component: feat.EquipmentEditComponent },
+  { path: 'equipment/create', component: feat.EquipmentCreateComponent },
   // User
   { path: 'users/list', component: feat.UserListComponent },
   { path: 'users/detail/:id', component: feat.UserDetailComponent },

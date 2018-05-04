@@ -23,9 +23,6 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("About to get ext data");
-    this.syssvc.getData()
-      .subscribe(data => console.log("Data:", data))
     this.usersvc.list()
       .subscribe(users => {
         this.users = users;

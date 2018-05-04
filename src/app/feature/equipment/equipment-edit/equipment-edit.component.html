@@ -1,0 +1,43 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content" *ngIf="equipment">
+
+    <div class="container">
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Description">Description</label>
+        </div>
+        <input [(ngModel)]="equipment.Description" name="Description" type="text" class="form-control" id="Description">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="SerialNumber">Serial Number</label>
+        </div>
+        <input [(ngModel)]="equipment.SerialNumber" name="SerialNumber" type="text" class="form-control" id="SerialNumber">
+
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Active">Active</label>
+        </div>
+        <select [(ngModel)]="equipment.Active"  name="Active" type="text" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+
+      </div>
+
+    <div>
+      <app-asset-create [asset]="equipment.Asset"></app-asset-create>
+    </div>
+
+  <div class="container">
+    <div class="input-group input-group-sm mb-3">
+      <button (click)="save()" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</div>
