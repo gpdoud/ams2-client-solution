@@ -22,7 +22,7 @@ export class Address {
     State: string,
     ZipCode: string,
     Active: boolean = true,
-    DateCreated: string = Date()
+    DateCreated: string = new Date().toISOString();
   ) {
     this.Id = Id;
     this.Code = Code;
