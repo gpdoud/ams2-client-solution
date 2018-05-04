@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import * as core from './core';
@@ -11,6 +11,10 @@ import { FeatureModule } from './feature/feature.module';
 import * as feat from './feature';
 
 import { AppComponent } from './app.component';
+
+export function startupServiceFactory(syssvc: feat.SystemService): Function {
+  return () => syssvc.getSettings();
+}
 
 @NgModule({
   declarations: [
@@ -36,8 +40,16 @@ import { AppComponent } from './app.component';
   exports: [
   ],
   providers: [
-    feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, feat.SystemService,
-    feat.EquipmentService
+    feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, 
+    feat.EquipmentService,
+    feat.SystemService,
+    {
+      // provider for APP_INITIALIZER
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [feat.SystemService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,18 +1,22 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-@Injectable()
-export class SystemService implements OnInit {
+const configFile = "assets/settings.json";
 
-  getConfig(): void {
-  }
+@Injectable()
+export class SystemService {
+
+  public settings: any;
 
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit() {
-
+  getSettings(): Promise<any> {
+    console.log("getSettings()");
+    return this.http.get(configFile)
+      .toPromise()
+      .then((data: any) => this.settings = data);
   }
 
 }
