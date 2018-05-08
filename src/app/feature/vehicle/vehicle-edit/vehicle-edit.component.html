@@ -40,7 +40,11 @@
           <label class="input-group-text" for="Model">Model</label>
         </div>
         <input [(ngModel)]="vehicle.Model" name="Model" type="text" class="form-control" id="Model">
-      </div>
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="LicensePlate">License Plate</label>
+        </div>
+        <input [(ngModel)]="vehicle.LicensePlate" name="LicensePlate" type="text" class="form-control" id="LicensePlate">
     </div>
 
     <div>
