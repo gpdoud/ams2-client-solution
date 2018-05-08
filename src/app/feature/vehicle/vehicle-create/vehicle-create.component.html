@@ -22,7 +22,7 @@
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
         </select>
-
+        
       </div>
 
       <div class="input-group input-group-sm mb-3">
@@ -40,11 +40,15 @@
           <label class="input-group-text" for="Model">Model</label>
         </div>
         <input [(ngModel)]="vehicle.Model" name="Model" type="text" class="form-control" id="Model">
-      </div>
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="LicensePlate">License Plate</label>
+        </div>
+        <input [(ngModel)]="vehicle.LicensePlate" name="LicensePlate" type="text" class="form-control" id="LicensePlate">
     </div>
 
     <div>
-      <app-asset-create [asset]="vehicle.Asset"></app-asset-create>
+      <app-asset-edit [asset]="vehicle.Asset"></app-asset-edit>
     </div>
 
   <div class="container">
