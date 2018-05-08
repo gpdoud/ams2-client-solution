@@ -1,7 +1,8 @@
 div {
   background-color: rgba(229,237,225,.90);
   min-height: 100px;
-  text-align: right;
+  vertical-align: top;
+  /*text-align: right;*/
 }
 address {
   font-size: 0.9em;
@@ -13,12 +14,20 @@ address {
 img {
   max-height: 100px;
 }
+.right {
+  text-align: right;
+}
+.sbs {
+  width: 49%;
+  display: inline-block;
+}
 .bg-heading {
-  background-image: url("/assets/logo.png");
+/*  background-image: url("assets/logo.png");
   background-repeat: no-repeat;
-    padding-top: 0.8em;
+*/    padding-top: 0.8em;
     padding-right: 3em;
 }
+
 .phone {
   font-size: 1.4em;
   font-style: normal;
