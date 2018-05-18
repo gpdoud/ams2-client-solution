@@ -4,7 +4,7 @@ export class Asset {
   Code: string;
   Name: string;
   Description: string;
-  AcquireDate: Date;
+  AcquiredDate: Date;
   DisposedDate: Date;
   PONumber: string;
   Cost: number;
@@ -19,7 +19,7 @@ export class Asset {
     Code: string,
     Name: string,
     Description: string,
-    AcquireDate: Date,
+    AcquiredDate: Date,
     DisposedDate: Date,
     PONumber: string,
     Cost: number,
@@ -33,7 +33,7 @@ export class Asset {
     this.Code = Code;
     this.Name = Name;
     this.Description = Description;
-    this.AcquireDate = AcquireDate;
+    this.AcquiredDate = AcquiredDate;
     this.DisposedDate = DisposedDate;
     this.PONumber = PONumber;
     this.Cost = Cost;

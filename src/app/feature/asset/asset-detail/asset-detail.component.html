@@ -19,17 +19,35 @@
     </tr>
     <tr>
       <th>Cost:</th><td>{{ asset.Cost | currency }}</td>
-      <th>Residual Value:</th><td>{{ asset.ResidualValue | currency }}</td>
+      <th>Residual Value:</th>
+        <td *ngIf="asset.ResidualValue">{{ asset.ResidualValue | currency }}</td>
+        <td *ngIf="!asset.ResidualValue">N/A</td>      
     </tr>
     <tr>
-      <th>Out For Repair:</th><td>{{ asset.OutForRepairDate | date }}</td>
-      <th>Return From Repair:</th><td>{{ asset.ReturnFromRepairDate | date}}</td>
-    </tr>
-    <tr>
-      <th>Acquired:</th><td>{{ asset.AcquiredDate | date }}</td>
-      <th>Disposed:</th>
+      <th>Acquired Date:</th>
+        <td *ngIf="asset.AcquiredDate">{{ asset.AcquiredDate | date }}</td>
+        <td *ngIf="!asset.AcquiredDate">N/A</td>      
+
+      <th>Disposed Date:</th>
         <td *ngIf="asset.DisposedDate">{{ asset.DisposedDate | date }}</td>
-        <td *ngIf="!asset.DisposedDate">N/A</td>
+        <td *ngIf="!asset.DisposedDate">N/A</td>      
+    </tr>
+    <tr>
+      <th>Out For Repair Date:</th>
+        <td *ngIf="asset.OutForRepairDate">{{ asset.OutForRepairDate | date }}</td>
+        <td *ngIf="!asset.OutForRepairDate">N/A</td>      
+
+      <th>Return From Repair Date:</th>
+        <td *ngIf="asset.ReturnFromRepairDate">{{ asset.ReturnFromRepairDate | date }}</td>
+        <td *ngIf="!asset.ReturnFromRepairDate">N/A</td>
+    </tr>
+    <tr>
+      <th>Surplus Date:</th>
+        <td *ngIf="asset.SurplusDate">{{ asset.SurplusDate | date }}</td>
+        <td *ngIf="!asset.SurplusDate">N/A</td>
+      <th>Retired Date:</th>
+        <td *ngIf="asset.RetiredDate">{{ asset.RetiredDate | date }}</td>
+        <td *ngIf="!asset.RetiredDate">N/A</td>
     </tr>
   </table>
 </div>
