@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { VehicleService } from '@feat/vehicle/vehicle.service';
 import { Vehicle } from '@feat/vehicle/vehicle';
 import { Asset } from '@feat/asset/asset';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-vehicle-create',
@@ -20,8 +21,8 @@ export class VehicleCreateComponent implements OnInit {
   save(): void {
     console.log("VehicleCreate preupdate:", this.vehicle);
     this.vehiclesvc.create(this.vehicle)
-      .subscribe(rc => {
-        console.log("VehicleCreate rc:", rc);
+      .subscribe(resp => {
+        console.log("VehicleCreate resp:", resp);
         this.router.navigateByUrl("/vehicles/list");
       });
   }

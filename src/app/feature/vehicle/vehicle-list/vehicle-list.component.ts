@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { VehicleService } from '@feat/vehicle/vehicle.service';
 import { Vehicle } from '@feat/vehicle/vehicle';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -20,8 +21,8 @@ export class VehicleListComponent implements OnInit {
 
   ngOnInit() {
     this.vehiclesvc.list()
-      .subscribe(vehicles => {
-        this.vehicles = vehicles;
+      .subscribe(resp => {
+        this.vehicles = resp.Data;
         console.log("VehicleList:", this.vehicles);
       });
   }
