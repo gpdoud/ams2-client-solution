@@ -20,8 +20,8 @@ export class AddressListComponent implements OnInit {
 
   ngOnInit() {
     this.addresssvc.list()
-      .subscribe(addresses => {
-        this.addresses = addresses;
+      .subscribe(resp => {
+        this.addresses = resp.Data;
         console.log("AddressList:", this.addresses);
       });
   }

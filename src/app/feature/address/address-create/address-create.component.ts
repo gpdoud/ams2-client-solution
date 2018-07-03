@@ -18,8 +18,8 @@ export class AddressCreateComponent implements OnInit {
   save(): void {
     console.log("AddressCreate preupdate:", this.address);
     this.addresssvc.create(this.address)
-      .subscribe(rc => {
-        console.log("AddressCreate rc:", rc);
+      .subscribe(resp => {
+        console.log("AddressCreate resp:", resp);
         this.router.navigateByUrl("/addresses/list");
       });
   }

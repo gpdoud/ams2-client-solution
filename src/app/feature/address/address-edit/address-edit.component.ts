@@ -34,8 +34,8 @@ export class AddressEditComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     console.log("AddressGet id:", id);
     this.addresssvc.get(+id)
-      .subscribe(address => {
-        this.address = address;
+      .subscribe(resp => {
+        this.address = resp.Data;
         console.log("AddressGet:", this.address);
       });
   }

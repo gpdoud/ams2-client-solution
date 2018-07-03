@@ -21,7 +21,7 @@
         <th>City/State/Zipcode</th>
         <td>{{ address.City + ", " + address.State + " " + address.Zipcode }}</td>
       </tr>
-      <!-- <tr><th>Active</th><td>{{ address.Active ? "Yes" : "No" }}</td></tr> -->
+      <tr><th>Active</th><td>{{ address.Active ? "Yes" : "No" }}</td></tr>
       <tr>
         <td colspan="2">
           <button (click)="edit()" class="btn btn-warning">Edit</button>

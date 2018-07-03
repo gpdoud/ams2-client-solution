@@ -40,8 +40,8 @@ export class AddressDetailComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.params.id;
     this.addresssvc.get(+id)
-      .subscribe(address => {
-        this.address = address;
+      .subscribe(resp => {
+        this.address = resp.Data;
         console.log("AddressGet:", this.address);
       });
   }
