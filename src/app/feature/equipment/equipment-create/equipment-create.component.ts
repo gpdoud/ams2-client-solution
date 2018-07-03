@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
 import { Asset } from '@feat/asset/asset';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-equipment-create',
@@ -20,8 +21,8 @@ export class EquipmentCreateComponent implements OnInit {
   save(): void {
     console.log("EquipmentCreate preupdate:", this.equipment);
     this.equipmentsvc.create(this.equipment)
-      .subscribe(rc => {
-        console.log("EquipmentCreate rc:", rc);
+      .subscribe(resp => {
+        console.log("EquipmentCreate resp:", resp);
         this.router.navigateByUrl("/equipment/list");
       });
   }

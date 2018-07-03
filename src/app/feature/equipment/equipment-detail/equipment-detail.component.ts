@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SystemService } from '@feat/system/system.service';
 import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
+import { JsonResponse } from '@feat/utility/json-respponse';
 
 @Component({
   selector: 'app-equipment-detail',
@@ -25,8 +26,8 @@ export class EquipmentDetailComponent implements OnInit {
   }
   verify(): void {
     this.equipmentsvc.remove(this.equipment)
-      .subscribe(res => {
-        console.log("UserRemove:", res);
+      .subscribe(resp => {
+        console.log("UserRemove:", resp);
         this.router.navigateByUrl("/equipment/list");
       });
   }
@@ -42,8 +43,8 @@ export class EquipmentDetailComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.params.id;
     this.equipmentsvc.get(+id)
-      .subscribe(equipment => {
-        this.equipment = equipment;
+      .subscribe(resp => {
+        this.equipment = resp.Data;
         console.log("EquipmentGet:", this.equipment);
       });
   }

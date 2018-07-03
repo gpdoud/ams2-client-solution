@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SystemService } from '@feat/system/system.service';
 import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-equipment-edit',
@@ -35,8 +36,8 @@ export class EquipmentEditComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     console.log("EquipmentGet id:", id);
     this.Equipmentsvc.get(+id)
-      .subscribe(equipment => {
-        this.equipment = equipment;
+      .subscribe(resp => {
+        this.equipment = resp.Data;
         console.log("EquipmentGet:", this.equipment);
       });
   }

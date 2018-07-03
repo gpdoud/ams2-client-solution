@@ -3,28 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { SystemService } from '@feat/system/system.service';
-
 import { Equipment } from '@feat/equipment/equipment';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Injectable()
 export class EquipmentService {
 
   url = this.syssvc.settings.baseurl + "api/Equipments/";
 
-  list(): Observable<Equipment[]> {
-    return this.http.get(this.url+"List") as Observable<Equipment[]>;
+  list(): Observable<JsonResponse> {
+    return this.http.get(this.url+"List") as Observable<JsonResponse>;
   }
-  get(id: number): Observable<Equipment> {
-    return this.http.get(this.url+"Get/"+id) as Observable<Equipment>;
+  get(id: number): Observable<JsonResponse> {
+    return this.http.get(this.url+"Get/"+id) as Observable<JsonResponse>;
   }
-  create(equipment: Equipment): Observable<boolean> {
-    return this.http.post(this.url+"Create", equipment) as Observable<boolean>;
+  create(equipment: Equipment): Observable<JsonResponse> {
+    return this.http.post(this.url+"Create", equipment) as Observable<JsonResponse>;
   }
-  change(equipment: Equipment): Observable<boolean> {
-    return this.http.post(this.url+"Change", equipment) as Observable<boolean>;
+  change(equipment: Equipment): Observable<JsonResponse> {
+    return this.http.post(this.url+"Change", equipment) as Observable<JsonResponse>;
   }
-  remove(equipment: Equipment): Observable<boolean> {
-    return this.http.post(this.url+"Remove", equipment) as Observable<boolean>;
+  remove(equipment: Equipment): Observable<JsonResponse> {
+    return this.http.post(this.url+"Remove", equipment) as Observable<JsonResponse>;
   }
 
   constructor(

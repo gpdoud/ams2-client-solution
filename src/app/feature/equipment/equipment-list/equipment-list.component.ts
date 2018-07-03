@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { EquipmentService } from '@equipment/equipment.service';
 import { Equipment } from '@equipment/equipment';
-import { SystemService } from '@system/system.service'
+import { SystemService } from '@system/system.service';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-equipment-list',
@@ -24,8 +25,8 @@ export class EquipmentListComponent implements OnInit {
 
   ngOnInit() {
     this.equipmentsvc.list()
-      .subscribe(equipments => {
-        this.equipments = equipments;
+      .subscribe(resp => {
+        this.equipments = resp.Data;
         console.log("EquipmentList:", this.equipments);
       });
   }
