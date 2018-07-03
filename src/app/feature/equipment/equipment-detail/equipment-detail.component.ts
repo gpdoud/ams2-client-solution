@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SystemService } from '@feat/system/system.service';
 import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
-import { JsonResponse } from '@feat/utility/json-respponse';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-equipment-detail',
