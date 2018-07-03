@@ -10,6 +10,7 @@ export class VehicleService {
   url = this.syssvc.settings.baseurl + "api/Vehicles/";
 
   list(): Observable<Vehicle[]> {
+    console.log("URL:", this.url);
     return this.http.get(this.url+"List") as Observable<Vehicle[]>;
   }
   get(id: number): Observable<Vehicle> {

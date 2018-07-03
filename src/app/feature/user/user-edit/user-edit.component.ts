@@ -34,8 +34,8 @@ export class UserEditComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     console.log("UserGet id:", id);
     this.usersvc.get(+id)
-      .subscribe(user => {
-        this.user = user;
+      .subscribe(resp => {
+        this.user = resp.Data;
         console.log("UserGet:", this.user);
       });
   }

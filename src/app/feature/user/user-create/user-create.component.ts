@@ -18,8 +18,8 @@ export class UserCreateComponent implements OnInit {
   save(): void {
     console.log("UserCreate preupdate:", this.user);
     this.usersvc.create(this.user)
-      .subscribe(rc => {
-        console.log("UserCreate rc:", rc);
+      .subscribe(resp => {
+        console.log("UserCreate resp:", resp);
         this.router.navigateByUrl("/users/list");
       });
   }
