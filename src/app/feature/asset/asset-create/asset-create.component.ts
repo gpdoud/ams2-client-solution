@@ -5,6 +5,7 @@ import { AssetService } from '@feat/asset/asset.service';
 import { Asset } from '@feat/asset/asset';
 import { AddressService } from '@feat/address/address.service';
 import { Address } from '@feat/address/address';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-asset-create',
@@ -36,8 +37,8 @@ export class AssetCreateComponent implements OnInit {
 
   ngOnInit() {
     this.addresssvc.list()
-      .subscribe(addr => {
-        this.addresses = addr;
+      .subscribe(resp => {
+        this.addresses = resp.Data;
         console.log("AddressList:", this.addresses);
       })
   }

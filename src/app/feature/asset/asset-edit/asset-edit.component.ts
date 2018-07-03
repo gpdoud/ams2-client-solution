@@ -5,6 +5,7 @@ import { AssetService } from '@feat/asset/asset.service';
 import { Asset } from '@feat/asset/asset';
 import { AddressService } from '@feat/address/address.service';
 import { Address } from '@feat/address/address';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-asset-edit',
@@ -41,8 +42,8 @@ export class AssetEditComponent implements OnInit {
 
   ngOnInit() {
     this.Addresssvc.list()
-      .subscribe(addrs => {
-        this.addresses = addrs;
+      .subscribe(resp => {
+        this.addresses = resp.Data;
         console.log("AssetEdit Addrs:", this.addresses);
       });
   }
