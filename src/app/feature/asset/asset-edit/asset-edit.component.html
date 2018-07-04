@@ -25,6 +25,7 @@
         </div>
         <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">
           <option *ngFor="let addr of addresses" [ngValue]="addr.Id">{{ addr.Name }}</option>
+          <option value="">***Clear Address***</option>
         </select>
 
         <div class="input-group-prepend">
