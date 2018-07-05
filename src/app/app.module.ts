@@ -26,7 +26,8 @@ export function startupServiceFactory(syssvc: feat.SystemService): Function {
     feat.EquipmentListComponent, feat.EquipmentDetailComponent, feat.EquipmentCreateComponent, feat.EquipmentEditComponent,
     feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent, feat.UserLoginComponent,
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
-    feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent
+    feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent,
+    feat.ErrorDetailComponent
   ],
   imports: [
     BrowserModule,

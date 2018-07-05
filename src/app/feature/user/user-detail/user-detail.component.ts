@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user';
+import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
   selector: 'app-user-detail',
@@ -10,6 +11,8 @@ import { User } from '@feat/user/user';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
+
+  resp: JsonResponse; // = new JsonResponse(-200, "MessageValue", "DataValue", "ErrorValue");
 
   pagetitle: string = "User Detail";
 
