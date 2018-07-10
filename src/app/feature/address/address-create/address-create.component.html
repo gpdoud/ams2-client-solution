@@ -21,7 +21,10 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
-        <input [(ngModel)]="address.Active" name="Active" type="checkbox" class="form-control" id="Active">
+        <select [(ngModel)]="address.Active" name="Active" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
       </div>
 
       <div class="input-group input-group-sm mb-3">
