@@ -16,6 +16,8 @@ const approutes: Routes = [
   { path: 'addresses/detail/:id', component: feat.AddressDetailComponent },
   { path: 'addresses/edit/:id', component: feat.AddressEditComponent },
   { path: 'addresses/create', component: feat.AddressCreateComponent },
+  // Asset
+  { path: 'assets/print', component: feat.AssetPrintComponent },
   // Equiment
   { path: 'equipment/list', component: feat.EquipmentListComponent },
   { path: 'equipment/detail/:id', component: feat.EquipmentDetailComponent },

@@ -8,6 +8,7 @@ export * from './address/address.service';
 export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';
+export * from './asset/asset-print/asset-print.component';
 export * from './asset/asset.service';
 // Equipment
 export * from './equipment/equipment-list/equipment-list.component';
