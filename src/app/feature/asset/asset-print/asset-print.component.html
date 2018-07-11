@@ -40,7 +40,9 @@
     <h3>Equipment</h3>
     <table class="table table-sm" *ngIf="equipment">
       <tr>
+          <th>Code</th>
           <th>Description</th>
+          <th>Year/Make/Model</th>
           <th>Serial Number</th>
           <th>Active</th>
           <th>Name</th>
@@ -51,7 +53,9 @@
           <th>Disposed</th>
       </tr>
       <tr *ngFor="let equip of equipment">
+        <td>{{ equip.Code }}</td>
         <td>{{ equip.Description }}</td>
+        <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
         <td>{{ equip.SerialNumber }}</td>
         <td>{{ equip.Active ? "Yes" : "No" }}</td>
         <td>{{ equip.Asset.Name }}</td>

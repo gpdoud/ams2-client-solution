@@ -9,18 +9,22 @@
   <div class="content">
     <table class="table table-sm" *ngIf="equipments">
       <tr>
+          <th>Code</th>
           <th>Description</th>
+          <th>Year/Make Mfg/Model</th>
           <th>Serial Number</th>
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let user of equipments">
-        <td>{{ user.Description }}</td>
-        <td>{{ user.SerialNumber }}</td>
-        <td>{{ user.Active ? "Yes" : "No" }}</td>
+      <tr *ngFor="let equip of equipments">
+        <td>{{ equip.Code }}</td>
+        <td>{{ equip.Description }}</td>
+        <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
+        <td>{{ equip.SerialNumber }}</td>
+        <td>{{ equip.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/equipment/detail/{{  user.Id }}">Detail</a></span>
-          <span> | <a routerLink="/equipment/edit/{{ user.Id }}">Edit</a></span>
+          <span><a routerLink="/equipment/detail/{{  equip.Id }}">Detail</a></span>
+          <span> | <a routerLink="/equipment/edit/{{ equip.Id }}">Edit</a></span>
         </td>
       </tr>
     </table>
