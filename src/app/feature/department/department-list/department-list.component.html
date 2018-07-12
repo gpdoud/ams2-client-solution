@@ -1,0 +1,28 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="departments">
+      <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Active</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let dept of departments">
+        <td>{{ dept.Code }}</td>
+        <td>{{ dept.Name }}</td>
+        <td>{{ dept.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/departments/detail/{{  dept.Id }}">Detail</a></span>
+          <span> | <a routerLink="/departments/edit/{{ dept.Id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

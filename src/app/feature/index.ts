@@ -10,6 +10,12 @@ export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';
 export * from './asset/asset-print/asset-print.component';
 export * from './asset/asset.service';
+// Department
+export * from './department/department-list/department-list.component';
+export * from './department/department-detail/department-detail.component';
+export * from './department/department-edit/department-edit.component';
+export * from './department/department-create/department-create.component';
+export * from './department/department.service';
 // Equipment
 export * from './equipment/equipment-list/equipment-list.component';
 export * from './equipment/equipment-detail/equipment-detail.component';

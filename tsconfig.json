@@ -7,6 +7,7 @@
       "@feat/*": ["app/feature/*"],
       "@address/*": ["app/feature/address/*"],
       "@asset/*": ["app/feature/asset/*"],
+      "@department/*": ["app/feature/department/*"],
       "@system/*": ["app/feature/system/*"],
       "@user/*": ["app/feature/user/*"],
       "@vehicle/*": ["app/feature/vehicle/*"],

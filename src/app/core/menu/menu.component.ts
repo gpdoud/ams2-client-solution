@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
     new Menu("Users", "/users/list", "List of users"),
     new Menu("Vehicles", "/vehicles/list", "List of vehicles"),
     new Menu("Equipment", "/equipment/list", "List of equipment"),
+    new Menu("Departments", "/departments/list", "List of departments"),
     new Menu("Addresses", "/addresses/list", "List of addresses"),
     new Menu("Print Assets", '/assets/print', "Print asset list"),
     new Menu("About", "/about", "About AMS2")

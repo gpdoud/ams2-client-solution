@@ -1,0 +1,43 @@
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { DepartmentService } from '@feat/department/department.service';
+import { Department } from '@feat/department/department';
+
+@Component({
+  selector: 'app-department-edit',
+  templateUrl: './department-edit.component.html',
+  styleUrls: ['./department-edit.component.css']
+})
+export class DepartmentEditComponent implements OnInit {
+
+  pagetitle: string = "Department Edit";
+
+  department: Department;
+
+  save(): void {
+    console.log("DepartmentEdit preupdate:", this.department);
+    this.departmentsvc.change(this.department)
+      .subscribe(rc => {
+        console.log("DepartmentEdit rc:", rc);
+        this.router.navigateByUrl("/departments/list");
+      });
+  }
+
+  constructor(
+    private departmentsvc: DepartmentService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    let id = this.route.snapshot.params.id;
+    console.log("DepartmentGet id:", id);
+    this.departmentsvc.get(+id)
+      .subscribe(resp => {
+        this.department = resp.Data;
+        console.log("DepartmentGet:", this.department);
+      });
+  }
+
+}

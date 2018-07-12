@@ -1,0 +1,23 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <!-- <app-error-detail [resp]="resp"></app-error-detail> -->
+  <div class="content">
+    <table class="table table-sm" *ngIf="department">
+      <tr><th>Code</th><td>{{ department.Code }}</td></tr>
+      <tr><th>Name</th><td>{{ department.Name }}</td></tr>
+      <tr><th>Active</th><td>{{ department.Active ? "Yes" : "No" }}</td></tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
