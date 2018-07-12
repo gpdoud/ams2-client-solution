@@ -1,3 +1,5 @@
+import { Department } from '@department/department';
+
 export class User {
   Id: number;
   Username: string;
@@ -6,6 +8,8 @@ export class User {
   Lastname: string;
   Phone: string;
   Email: string;
+  DepartmentId: number;
+  Department: Department;
   Active: boolean;
 
   constructor(
@@ -16,6 +20,7 @@ export class User {
     Lastname: string,
     Phone: string,
     Email: string,
+    DepartmentId: number,
     Active: boolean
   ) {
     this.Id = Id;
@@ -25,6 +30,7 @@ export class User {
     this.Lastname = Lastname;
     this.Phone = Phone;
     this.Email = Email;
+    this.DepartmentId = DepartmentId;
     this.Active = Active;
   }
 }

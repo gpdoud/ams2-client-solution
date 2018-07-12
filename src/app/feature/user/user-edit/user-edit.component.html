@@ -52,12 +52,20 @@
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
+          <label class="input-group-text" for="Department">Department</label>
+        </div>
+        <select [(ngModel)]="user.DepartmentId" name="Department" class="form-control" id="Department">
+          <option *ngFor="let dept of departments" [ngValue]="dept.Id">{{ dept.Name }}</option>
+        </select>      
+
+        <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
         <select [(ngModel)]="user.Active" name="Active" class="form-control" id="Active">
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
-        </select>      </div>
+        </select>      
+      </div>
 
       <div class="input-group input-group-sm mb-3">
         <button (click)="save()" class="btn btn-primary">Save</button>

@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user';
+import { DepartmentService } from '@department/department.service';
+import { Department } from '@department/department'
 
 @Component({
   selector: 'app-user-create',
@@ -13,7 +15,8 @@ export class UserCreateComponent implements OnInit {
 
   pagetitle: string = "User Create";
 
-  user: User = new User(0, '', '', '', '', '', '', true);
+  user: User = new User(0, '', '', '', '', '', '', 0, true);
+  departments: Department[];
 
   save(): void {
     console.log("UserCreate preupdate:", this.user);
@@ -26,10 +29,16 @@ export class UserCreateComponent implements OnInit {
 
   constructor(
     private usersvc: UserService,
+    private deptsvc: DepartmentService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.deptsvc.list()
+      .subscribe(resp => {
+        console.log("Dept resp:", resp);
+        this.departments = resp.Data;
+      });
   }
 
 }

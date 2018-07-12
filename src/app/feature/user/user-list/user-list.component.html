@@ -13,6 +13,7 @@
           <th>User name</th>
           <th>Phone</th>
           <th>Email</th>
+          <th>Department</th>
           <th>Active</th>
           <th>Action</th>
       </tr>
@@ -21,6 +22,7 @@
         <td>{{ user.Username }}</td>
         <td>{{ user.Phone }}</td>
         <td>{{ user.Email }}</td>
+        <td>{{ user.Department == null ? "Unassigned" : user.Department.Name }}
         <td>{{ user.Active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/users/detail/{{  user.Id }}">Detail</a></span>

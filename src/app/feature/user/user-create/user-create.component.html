@@ -2,8 +2,14 @@
   <div class="menu">
     <app-menu></app-menu>
   </div>
-  <div class="title">
-    <span class="pagetitle">{{ pagetitle }}</span>
+  <div>
+    <div class="title sbs">
+      <span class="pagetitle">{{ pagetitle }}</span>
+    </div>
+<!--     <div class="sbs right">
+      <label id="message" class="text-danger"></label>
+    </div>
+ -->  
   </div>
   <div class="content">
     <div class="container" *ngIf="user">
@@ -46,12 +52,19 @@
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
+          <label class="input-group-text" for="Department">Department</label>
+        </div>
+        <select [(ngModel)]="user.DepartmentId" name="Department" class="form-control" id="Department">
+          <option *ngFor="let dept of departments" [ngValue]="dept.Id">{{ dept.Name }}</option>
+        </select>      
+
+        <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
         <select [(ngModel)]="user.Active" name="Active" class="form-control" id="Active">
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
-        </select>
+        </select>      
       </div>
 
       <div class="input-group input-group-sm mb-3">
