@@ -18,7 +18,7 @@ export function startupServiceFactory(syssvc: feat.SystemService): Function {
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, core.SortPipe,
     core.AboutComponent, core.HomeComponent, 
     core.FootingComponent, core.HeadingComponent, 
     core.MenuComponent, core.MenuItemComponent,

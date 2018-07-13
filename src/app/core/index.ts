@@ -4,3 +4,4 @@ export * from './heading/heading.component';
 export * from './footing/footing.component';
 export * from './menu/menu.component';
 export * from './menu/menu-item.component';
+export * from './sort/sort.pipe';
