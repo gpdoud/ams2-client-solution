@@ -16,7 +16,7 @@
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let equip of equipments">
+      <tr *ngFor="let equip of equipments | sort:'SerialNumber'">
         <td>{{ equip.Code }}</td>
         <td>{{ equip.Description }}</td>
         <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>

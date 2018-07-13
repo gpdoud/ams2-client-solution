@@ -17,7 +17,7 @@
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | sort:'Lastname'">
         <td>{{ user.Firstname + " " + user.Lastname }}</td>
         <td>{{ user.Username }}</td>
         <td>{{ user.Phone }}</td>

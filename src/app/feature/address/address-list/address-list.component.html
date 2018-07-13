@@ -19,7 +19,7 @@
           <!-- <th>Active</th> -->
           <th>Action</th>
       </tr>
-      <tr *ngFor="let address of addresses">
+      <tr *ngFor="let address of addresses | sort:'Name'">
         <td>{{ address.Code }}</td>
         <td>{{ address.Name }}</td>
         <td>

@@ -16,7 +16,7 @@
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let vehicle of vehicles">
+      <tr *ngFor="let vehicle of vehicles | sort:'LicensePlate'">
         <td>{{ vehicle.Code }}</td>
         <td>{{ vehicle.Asset.Name }}</td>
         <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>

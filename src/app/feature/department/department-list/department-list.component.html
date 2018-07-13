@@ -14,7 +14,7 @@
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let dept of departments">
+      <tr *ngFor="let dept of departments | sort:'Name':'asc'">
         <td>{{ dept.Code }}</td>
         <td>{{ dept.Name }}</td>
         <td>{{ dept.Active ? "Yes" : "No" }}</td>
