@@ -1,0 +1,29 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <!-- <app-error-detail [resp]="resp"></app-error-detail> -->
+  <div class="content">
+    <table class="table table-sm" *ngIf="category">
+      <tr><th>Name</th><td>{{ category.Name }}</td></tr>
+      <tr><th>Asset Type</th>
+      	<td [ngSwitch]="category.AssetType">
+      		<span *ngSwitchCase=1>All Assets</span>
+      		<span *ngSwitchCase=2>Vehicles</span>
+      		<span *ngSwitchCase=3>Equipment</span>
+      		<span *ngSwitchCase=4>Property</span>
+      	</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

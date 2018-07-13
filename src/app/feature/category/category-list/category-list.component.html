@@ -1,0 +1,36 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="categories">
+      <tr>
+          <th>Name</th>
+          <th>Asset Type</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let category of categories | sort:'Name'">
+        <td>{{ category.Name }}</td>
+        <!--  
+        	This ngSwitch must match the enum declared in 
+        	the Category.ts class file. As new asset types
+        	are added, this needs to change.
+        -->
+        <td [ngSwitch]="category.AssetType">
+        	<span *ngSwitchCase=1>All Assets</span>
+        	<span *ngSwitchCase=2>Vehicles</span>
+        	<span *ngSwitchCase=3>Equipment</span>
+        	<span *ngSwitchCase=4>Property</span>
+        </td>
+        <td>
+          <span><a routerLink="/categories/detail/{{  category.Id }}">Detail</a></span>
+          <span> | <a routerLink="/categories/edit/{{ category.Id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

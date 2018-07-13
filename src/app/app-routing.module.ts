@@ -18,6 +18,11 @@ const approutes: Routes = [
   { path: 'addresses/create', component: feat.AddressCreateComponent },
   // Asset
   { path: 'assets/print', component: feat.AssetPrintComponent },
+  // Categories
+  { path: 'categories/list', component: feat.CategoryListComponent },
+  { path: 'categories/detail/:id', component: feat.CategoryDetailComponent },
+  { path: 'categories/edit/:id', component: feat.CategoryEditComponent },
+  { path: 'categories/create', component: feat.CategoryCreateComponent },
   // Department
   { path: 'departments/list', component: feat.DepartmentListComponent },
   { path: 'departments/detail/:id', component: feat.DepartmentDetailComponent },

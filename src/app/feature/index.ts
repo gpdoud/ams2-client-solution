@@ -10,6 +10,12 @@ export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';
 export * from './asset/asset-print/asset-print.component';
 export * from './asset/asset.service';
+// Category
+export * from './category/category-list/category-list.component';
+export * from './category/category-detail/category-detail.component';
+export * from './category/category-create/category-create.component';
+export * from './category/category-edit/category-edit.component';
+export * from './category/category.service';
 // Department
 export * from './department/department-list/department-list.component';
 export * from './department/department-detail/department-detail.component';

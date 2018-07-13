@@ -1,0 +1,39 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div>
+    <div class="title sbs">
+      <span class="pagetitle">{{ pagetitle }}</span>
+    </div>
+<!--     <div class="sbs right">
+      <label id="message" class="text-danger"></label>
+    </div>
+ -->  
+  </div>
+  <div class="content">
+    <div class="container" *ngIf="category">
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Name">Name</label>
+        </div>
+        <input [(ngModel)]="category.Name" name="Name" type="text" class="form-control" id="Name">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="AssetType">AssetType</label>
+        </div>
+        <select [(ngModel)]="category.AssetType" name="AssetType" class="form-control" id="AssetType">
+          <option [ngValue]=1 selected>All Assets</option>
+          <option [ngValue]=2>Vehicle</option>
+          <option [ngValue]=3>Equipment</option>
+          <option [ngValue]=4>Property</option>
+        </select> 
+
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <button (click)="save()" class="btn btn-primary">Save</button>
+    </div>
+   
+  </div>
+</div>
