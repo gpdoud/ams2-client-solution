@@ -9,6 +9,7 @@
       "@asset/*": ["app/feature/asset/*"],
       "@category/*": ["app/feature/category/*"],
       "@department/*": ["app/feature/department/*"],
+      "@property/*": ["app/feature/property/*"],
       "@system/*": ["app/feature/system/*"],
       "@user/*": ["app/feature/user/*"],
       "@vehicle/*": ["app/feature/vehicle/*"],

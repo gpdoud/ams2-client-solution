@@ -28,6 +28,12 @@ export * from './equipment/equipment-detail/equipment-detail.component';
 export * from './equipment/equipment-create/equipment-create.component';
 export * from './equipment/equipment-edit/equipment-edit.component';
 export * from './equipment/equipment.service';
+// Property
+export * from './property/property-list/property-list.component';
+export * from './property/property-detail/property-detail.component';
+export * from './property/property-create/property-create.component';
+export * from './property/property-edit/property-edit.component';
+export * from './property/property.service';
 // System
 export * from './system/system.service';
 // Users

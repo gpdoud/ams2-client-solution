@@ -1,0 +1,33 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <div class="content" *ngIf="property">
+    <table class="table table-sm">
+      <tr>
+        <th>Code:</th><td>{{ property.Code }}</td>
+        <th>Description:</th><td>{{ property.Description }}</td>
+        <th>Address</th>
+        <td>
+          <span>{{ property.Address1 }}</span>
+          <span>{{ property.Address2 }}</span>
+          <span>{{ property.Address3 }}</span>
+        </td>
+        <th>Active:</th><td>{{ property.Active ? "Yes" : "No" }}</td>
+      </tr>
+    </table>
+    <app-asset-detail [asset]="property.Asset"></app-asset-detail>
+    <table class="table table-sm">
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

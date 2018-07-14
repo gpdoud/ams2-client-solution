@@ -33,6 +33,11 @@ const approutes: Routes = [
   { path: 'equipment/detail/:id', component: feat.EquipmentDetailComponent },
   { path: 'equipment/edit/:id', component: feat.EquipmentEditComponent },
   { path: 'equipment/create', component: feat.EquipmentCreateComponent },
+  // Property
+  { path: 'properties/list', component: feat.PropertyListComponent },
+  { path: 'properties/detail/:id', component: feat.PropertyDetailComponent },
+  { path: 'properties/edit/:id', component: feat.PropertyEditComponent },
+  { path: 'properties/create', component: feat.PropertyCreateComponent },
   // User
   { path: 'users/list', component: feat.UserListComponent },
   { path: 'users/detail/:id', component: feat.UserDetailComponent },

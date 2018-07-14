@@ -27,6 +27,7 @@ export function startupServiceFactory(syssvc: feat.SystemService): Function {
     feat.CategoryListComponent, feat.CategoryDetailComponent, feat.CategoryCreateComponent, feat.CategoryEditComponent,
     feat.DepartmentListComponent, feat.DepartmentDetailComponent, feat.DepartmentCreateComponent, feat.DepartmentEditComponent,
     feat.EquipmentListComponent, feat.EquipmentDetailComponent, feat.EquipmentCreateComponent, feat.EquipmentEditComponent,
+    feat.PropertyListComponent, feat.PropertyDetailComponent, feat.PropertyCreateComponent, feat.PropertyEditComponent,
     feat.UserListComponent, feat.UserDetailComponent, feat.UserCreateComponent, feat.UserEditComponent, feat.UserLoginComponent,
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
     feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent,
@@ -45,7 +46,7 @@ export function startupServiceFactory(syssvc: feat.SystemService): Function {
   ],
   providers: [
     feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, 
-    feat.EquipmentService, feat.CategoryService, feat.DepartmentService,
+    feat.EquipmentService, feat.CategoryService, feat.DepartmentService, feat.PropertyService,
     feat.SystemService,
     {
       // provider for APP_INITIALIZER

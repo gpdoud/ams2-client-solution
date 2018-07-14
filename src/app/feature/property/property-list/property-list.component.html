@@ -1,0 +1,34 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+  </div>
+  <div class="content">
+    <table class="table table-sm" *ngIf="properties">
+      <tr>
+          <th>Code</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Active</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let property of properties | sort:'Name'">
+        <td>{{ property.Code }}</td>
+        <td>{{ property.Description }}</td>
+        <td>
+          {{ property.Address1 }}
+          <span *ngIf="property.Address2">, {{ property.Address2 }}</span>
+          <span *ngIf="property.Address3">, {{ property.Address3 }}</span>
+        </td>
+        <td>{{ property.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/properties/detail/{{  property.Id }}">Detail</a></span>
+          <span> | <a routerLink="/properties/edit/{{ property.Id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
