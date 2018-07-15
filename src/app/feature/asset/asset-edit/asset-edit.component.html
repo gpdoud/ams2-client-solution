@@ -21,6 +21,34 @@
       <div class="input-group input-group-sm mb-3">
         
         <div class="input-group-prepend">
+          <label class="input-group-text" for="Department">Department</label>
+        </div>
+        <select [(ngModel)]="asset.DepartmentId" name="Department" type="text" class="form-control" id="Department">
+          <option *ngFor="let department of departments" [ngValue]="department.Id">{{ department.Name }}</option>
+          <option value="">***Clear Department***</option>
+        </select>
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Category">Category</label>
+        </div>
+        <select [(ngModel)]="asset.CategoryId" name="Category" type="text" class="form-control" id="Category">
+          <option *ngFor="let category of categories" [ngValue]="category.Id">{{ category.Name }}</option>
+          <option value="">***Clear Category***</option>
+        </select>
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="User">User</label>
+        </div>
+        <select [(ngModel)]="asset.UserId" name="User" type="text" class="form-control" id="User">
+          <option *ngFor="let user of users" [ngValue]="user.Id">{{ user.Firstname }} {{ user.Lastname }}</option>
+          <option value="">***Clear User***</option>
+        </select>
+
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        
+        <div class="input-group-prepend">
           <label class="input-group-text" for="Address">Address</label>
         </div>
         <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">

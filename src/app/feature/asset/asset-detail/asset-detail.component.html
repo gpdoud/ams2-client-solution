@@ -7,6 +7,14 @@
       <th>Name:</th><td>{{ asset.Name }}</td>
       <th>Description:</th><td>{{ asset.Description }}</td>
     </tr>
+    <tr>
+      <th>Department:</th><td>{{ asset.Department?.Name }}</td>
+      <th>Category:</th><td>{{ asset.Category?.Name }}</td>
+    </tr>
+    <tr>
+      <th>User:</th><td>{{ asset.User?.Firstname }} {{asset.User?.Lastname}}</td>
+      <th>&nbsp;</th><td>&nbsp;</td>
+    </tr>
     <tr *ngIf="asset.Address">
       <th>Address:</th>
         <td>

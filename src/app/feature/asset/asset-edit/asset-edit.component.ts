@@ -5,6 +5,12 @@ import { AssetService } from '@feat/asset/asset.service';
 import { Asset } from '@feat/asset/asset';
 import { AddressService } from '@feat/address/address.service';
 import { Address } from '@feat/address/address';
+import { DepartmentService } from '@feat/department/department.service';
+import { Department } from '@feat/department/department';
+import { CategoryService } from '@feat/category/category.service';
+import { Category } from '@feat/category/category';
+import { UserService } from '@feat/user/user.service';
+import { User } from '@feat/user/user'
 import { JsonResponse } from '@feat/utility/json-response';
 
 @Component({
@@ -19,6 +25,9 @@ export class AssetEditComponent implements OnInit {
   @Input() asset: Asset;
 
   addresses: Address[] = [];
+  departments: Department[] = [];
+  categories: Category[] = [];
+  users: User[] = [];
 
   compareFn(id1: number, id2:number) {
     return id1 == id2 ? 0 : (id1 < id2 ? -1 : 1);
@@ -36,6 +45,9 @@ export class AssetEditComponent implements OnInit {
   constructor(
     private Assetsvc: AssetService,
     private Addresssvc: AddressService,
+    private Departmentsvc: DepartmentService,
+    private Categorysvc: CategoryService,
+    private Usersvc: UserService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -45,6 +57,21 @@ export class AssetEditComponent implements OnInit {
       .subscribe(resp => {
         this.addresses = resp.Data;
         console.log("AssetEdit Addrs:", this.addresses);
+      });
+    this.Departmentsvc.list()
+      .subscribe(resp => {
+        this.departments = resp.Data;
+        console.log("AssetEdit Departments:", this.departments);
+      });
+    this.Categorysvc.list()
+      .subscribe(resp => {
+        this.categories = resp.Data;
+        console.log("AssetEdit Categories:", this.categories);
+      });
+    this.Usersvc.list()
+      .subscribe(resp => {
+        this.users = resp.Data;
+        console.log("AssetEdit Addrs:", this.users);
       });
   }
 
