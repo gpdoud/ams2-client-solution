@@ -16,7 +16,7 @@ export class VehicleCreateComponent implements OnInit {
   pagetitle: string = "Vehicle Create";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
-  vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0, "");
+  vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0, "", "");
 
   save(): void {
     console.log("VehicleCreate preupdate:", this.vehicle);

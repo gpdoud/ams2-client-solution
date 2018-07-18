@@ -10,6 +10,7 @@ export class Vehicle {
   Model: string;
   Year: number;
   LicensePlate: string;
+  VIN: string;
   Active: boolean;
 
   constructor(
@@ -21,6 +22,7 @@ export class Vehicle {
     Model: string,
     Year: number,
     LicensePlate: string,
+    VIN: string,
     Active: boolean = true
   ) {
     this.Id = Id;
@@ -31,6 +33,7 @@ export class Vehicle {
     this.Model = Model;
     this.Year = Year;
     this.LicensePlate = LicensePlate;
+    this.VIN = VIN;
     this.Active = Active;
   }
 }

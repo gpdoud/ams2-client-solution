@@ -13,6 +13,7 @@
           <th>Name</th>
           <th>Year/Make/Model</th>
           <th>License Plate</th>
+          <th>VIN</th>
           <th>Active</th>
           <th>Action</th>
       </tr>
@@ -21,6 +22,7 @@
         <td>{{ vehicle.Asset.Name }}</td>
         <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
         <td>{{ vehicle.LicensePlate }}</td>
+        <td>{{ vehicle.VIN }}</td>
         <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/vehicles/detail/{{  vehicle.Id }}">Detail</a></span>
