@@ -17,6 +17,8 @@ export class DepartmentListComponent implements OnInit {
 
   departments: Department[];
 
+  searchfor: string = "";
+
   constructor(
     private departmentsvc: DepartmentService,
     private syssvc: SystemService

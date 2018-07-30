@@ -5,6 +5,16 @@
   <div class="title">
     <span class="pagetitle">{{ pagetitle }}</span>
     <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+    <div id="searchbar">
+      <div class="input-group">
+        <input [(ngModel)]="searchfor" class="form-control" type="text" placeholder="Search">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="content">
     <table class="table table-sm" *ngIf="properties">
@@ -15,7 +25,7 @@
           <th>Active</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let property of properties | sort:'Name'">
+      <tr *ngFor="let property of properties | search: searchfor | sort:'Name'">
         <td>{{ property.Code }}</td>
         <td>{{ property.Description }}</td>
         <td>

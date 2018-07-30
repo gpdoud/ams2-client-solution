@@ -18,6 +18,8 @@ export class EquipmentListComponent implements OnInit {
 
   equipments: Equipment[];
 
+  searchfor: string = "";
+
   constructor(
     private equipmentsvc: EquipmentService,
     private syssvc: SystemService

@@ -17,6 +17,8 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[];
 
+  searchfor: string = "";
+
   constructor(
     private categorysvc: CategoryService,
     private syssvc: SystemService

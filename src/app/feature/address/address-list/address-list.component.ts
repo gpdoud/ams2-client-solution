@@ -16,6 +16,8 @@ export class AddressListComponent implements OnInit {
 
   addresses: Address[];
 
+  searchfor: string = "";
+
   constructor(private addresssvc: AddressService) { }
 
   ngOnInit() {

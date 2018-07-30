@@ -17,6 +17,8 @@ export class VehicleListComponent implements OnInit {
 
   vehicles: Vehicle[];
 
+  searchfor: string = "";
+
   constructor(private vehiclesvc: VehicleService) { }
 
   ngOnInit() {

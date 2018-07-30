@@ -18,6 +18,8 @@ export class PropertyListComponent implements OnInit {
 
   properties: Property[];
 
+  searchfor: string = "";
+
   constructor(
     private propertysvc: PropertyService,
     private syssvc: SystemService

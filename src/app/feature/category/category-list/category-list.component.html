@@ -5,6 +5,16 @@
   <div class="title">
     <span class="pagetitle">{{ pagetitle }}</span>
     <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+    <div id="searchbar">
+      <div class="input-group">
+        <input [(ngModel)]="searchfor" class="form-control" type="text" placeholder="Search">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="content">
     <table class="table table-sm" *ngIf="categories">
@@ -13,7 +23,7 @@
           <th>Asset Type</th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let category of categories | sort:'Name'">
+      <tr *ngFor="let category of categories | search: searchfor | sort:'Name'">
         <td>{{ category.Name }}</td>
         <!--  
         	This ngSwitch must match the enum declared in 

@@ -17,6 +17,8 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
+  searchfor: string = "";
+
   constructor(
     private usersvc: UserService,
     private syssvc: SystemService
