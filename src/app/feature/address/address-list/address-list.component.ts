@@ -16,6 +16,17 @@ export class AddressListComponent implements OnInit {
 
   addresses: Address[];
 
+  sortProperty: string = "Name";
+  sortOrder: string = "asc";
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
+
   constructor(private addresssvc: AddressService) { }
 
   ngOnInit() {

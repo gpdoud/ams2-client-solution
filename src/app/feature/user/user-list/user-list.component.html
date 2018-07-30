@@ -9,15 +9,15 @@
   <div class="content">
     <table class="table table-sm" *ngIf="users">
       <tr>
-          <th>Name</th>
-          <th>User name</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Department</th>
-          <th>Active</th>
+          <th><a (click)="sort('Firstname')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Username')">Username <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Phone')">Phone <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Email')">Email <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('DepartmentName')">Department <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let user of users | sort:'Lastname'">
+      <tr *ngFor="let user of users | sort:sortProperty:sortOrder">
         <td>{{ user.Firstname + " " + user.Lastname }}</td>
         <td>{{ user.Username }}</td>
         <td>{{ user.Phone }}</td>

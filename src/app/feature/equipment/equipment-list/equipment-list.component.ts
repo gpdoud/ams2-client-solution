@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { EquipmentService } from '@equipment/equipment.service';
 import { Equipment } from '@equipment/equipment';
 import { SystemService } from '@system/system.service';
@@ -17,6 +16,18 @@ export class EquipmentListComponent implements OnInit {
   createlinkname: string = "Create New";
 
   equipments: Equipment[];
+
+  sortProperty: string = "SerialNumber";
+  sortOrder: string = "asc";
+
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
 
   constructor(
     private equipmentsvc: EquipmentService,

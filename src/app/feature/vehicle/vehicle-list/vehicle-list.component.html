@@ -9,18 +9,22 @@
   <div class="content">
     <table class="table table-sm" *ngIf="vehicles">
       <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Year/Make/Model</th>
-          <th>License Plate</th>
-          <th>VIN</th>
-          <th>Active</th>
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('AssetName')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Year')">Year <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Make')">Make <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Model')">Model <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('LicensePlate')">License Plate <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('VIN')">VIN <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let vehicle of vehicles | sort:'LicensePlate'">
+      <tr *ngFor="let vehicle of vehicles | sort:sortProperty:sortOrder">
         <td>{{ vehicle.Code }}</td>
         <td>{{ vehicle.Asset.Name }}</td>
-        <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
+        <td>{{ vehicle.Year }}</td>
+        <td>{{ vehicle.Make }}</td>
+        <td>{{ vehicle.Model }}</td>
         <td>{{ vehicle.LicensePlate }}</td>
         <td>{{ vehicle.VIN }}</td>
         <td>{{ vehicle.Active ? "Yes" : "No" }}</td>

@@ -9,13 +9,13 @@
   <div class="content">
     <table class="table table-sm" *ngIf="properties">
       <tr>
-          <th>Code</th>
-          <th>Description</th>
-          <th>Address</th>
-          <th>Active</th>
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Description')">Description <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let property of properties | sort:'Name'">
+      <tr *ngFor="let property of properties | sort:sortProperty:sortOrder">
         <td>{{ property.Code }}</td>
         <td>{{ property.Description }}</td>
         <td>
