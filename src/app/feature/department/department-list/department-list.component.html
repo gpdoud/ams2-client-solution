@@ -19,12 +19,12 @@
   <div class="content">
     <table class="table table-sm" *ngIf="departments">
       <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Active</th>
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let dept of departments | search: searchfor | sort:'Name':'asc'">
+      <tr *ngFor="let dept of departments | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ dept.Code }}</td>
         <td>{{ dept.Name }}</td>
         <td>{{ dept.Active ? "Yes" : "No" }}</td>

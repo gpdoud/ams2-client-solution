@@ -11,6 +11,7 @@ export class User {
   DepartmentId: number;
   Department: Department;
   Active: boolean;
+  DepartmentName:string;
 
   constructor(
     Id: number,

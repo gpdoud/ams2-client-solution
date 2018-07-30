@@ -19,17 +19,16 @@
   <div class="content">
     <table class="table table-sm" *ngIf="addresses">
       <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Zipcode</th>
-          <th>Active</th>
-          <!-- <th>Active</th> -->
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('City')">City <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('State')">State <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Zipcode')">Zipcode <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Name')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let address of addresses | search: searchfor | sort:'Name'">
+      <tr *ngFor="let address of addresses | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ address.Code }}</td>
         <td>{{ address.Name }}</td>
         <td>

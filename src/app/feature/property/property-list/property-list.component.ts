@@ -10,6 +10,7 @@ import { JsonResponse } from '@feat/utility/json-response';
   templateUrl: './property-list.component.html',
   styleUrls: ['./property-list.component.css']
 })
+
 export class PropertyListComponent implements OnInit {
 
   pagetitle: string = "Property List";
@@ -19,6 +20,17 @@ export class PropertyListComponent implements OnInit {
   properties: Property[];
 
   searchfor: string = "";
+
+  sortProperty: string = "Code";
+  sortOrder: string = "asc";
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
 
   constructor(
     private propertysvc: PropertyService,

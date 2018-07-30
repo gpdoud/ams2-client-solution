@@ -19,11 +19,11 @@
   <div class="content">
     <table class="table table-sm" *ngIf="categories">
       <tr>
-          <th>Name</th>
-          <th>Asset Type</th>
+          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('AssetType')">Asset Type <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
-      <tr *ngFor="let category of categories | search: searchfor | sort:'Name'">
+      <tr *ngFor="let category of categories | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ category.Name }}</td>
         <!--  
         	This ngSwitch must match the enum declared in 
