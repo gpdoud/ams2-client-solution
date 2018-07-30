@@ -17,6 +17,17 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
+  sortProperty: string = "Lastname";
+  sortOrder: string = "asc";
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
+
   constructor(
     private usersvc: UserService,
     private syssvc: SystemService
@@ -27,6 +38,9 @@ export class UserListComponent implements OnInit {
       .subscribe(resp => {
         this.users = resp.Data;
         console.log("UserList:", this.users);
+        for(let u of this.users) {
+          u.DepartmentName = u.Department.Name;
+        }
       });
   }
 

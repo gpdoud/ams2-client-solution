@@ -17,6 +17,17 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[];
 
+  sortProperty: string = "Name";
+  sortOrder: string = "asc";
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
+
   constructor(
     private categorysvc: CategoryService,
     private syssvc: SystemService

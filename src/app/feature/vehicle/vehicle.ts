@@ -12,6 +12,7 @@ export class Vehicle {
   LicensePlate: string;
   VIN: string;
   Active: boolean;
+  AssetName:string;
 
   constructor(
     Id: number,

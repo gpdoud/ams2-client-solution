@@ -15,6 +15,18 @@ export class VehicleListComponent implements OnInit {
   createlink: string = "/vehicles/create";
   createlinkname: string = "Create New";
 
+  sortProperty: string = "LicensePlate";
+  sortOrder: string = "asc";
+
+  sort(sortBy: string): void {
+    if(sortBy === this.sortProperty)
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    else {
+      this.sortProperty = sortBy;
+      this.sortOrder = 'asc';
+    }
+  }
+
   vehicles: Vehicle[];
 
   constructor(private vehiclesvc: VehicleService) { }
@@ -24,7 +36,9 @@ export class VehicleListComponent implements OnInit {
       .subscribe(resp => {
         this.vehicles = resp.Data;
         console.log("VehicleList:", this.vehicles);
+        for(let v of this.vehicles) {
+          v.AssetName=v.Asset.Name;
+        }
       });
   }
-
 }
