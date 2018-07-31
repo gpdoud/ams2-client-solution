@@ -17,6 +17,9 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[];
 
+
+  searchfor: string = "";
+
   sortProperty: string = "Name";
   sortOrder: string = "asc";
   sort(sortBy: string): void {

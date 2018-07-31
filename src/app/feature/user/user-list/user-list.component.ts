@@ -17,6 +17,8 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
+  searchfor: string = "";
+
   sortProperty: string = "Lastname";
   sortOrder: string = "asc";
   sort(sortBy: string): void {

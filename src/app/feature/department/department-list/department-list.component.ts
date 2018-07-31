@@ -17,6 +17,8 @@ export class DepartmentListComponent implements OnInit {
 
   departments: Department[];
 
+  searchfor: string = "";
+
   sortProperty: string = "Name";
   sortOrder: string = "asc";
   sort(sortBy: string): void {

@@ -16,6 +16,9 @@ export class AddressListComponent implements OnInit {
 
   addresses: Address[];
 
+
+  searchfor: string = "";
+
   sortProperty: string = "Name";
   sortOrder: string = "asc";
   sort(sortBy: string): void {

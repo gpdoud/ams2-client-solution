@@ -19,6 +19,8 @@ export class PropertyListComponent implements OnInit {
 
   properties: Property[];
 
+  searchfor: string = "";
+
   sortProperty: string = "Code";
   sortOrder: string = "asc";
   sort(sortBy: string): void {

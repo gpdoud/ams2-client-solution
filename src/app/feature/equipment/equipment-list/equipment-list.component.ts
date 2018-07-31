@@ -17,6 +17,9 @@ export class EquipmentListComponent implements OnInit {
 
   equipments: Equipment[];
 
+
+  searchfor: string = "";
+
   sortProperty: string = "SerialNumber";
   sortOrder: string = "asc";
 
