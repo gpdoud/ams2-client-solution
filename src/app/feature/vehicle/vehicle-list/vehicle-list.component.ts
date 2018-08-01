@@ -39,6 +39,9 @@ export class VehicleListComponent implements OnInit {
         this.vehicles = resp.Data;
         console.log("VehicleList:", this.vehicles);
         for(let v of this.vehicles) {
+          if (v.Asset.Name == null) {
+            v.AssetName = "";
+          }
           v.AssetName=v.Asset.Name;
         }
       });
