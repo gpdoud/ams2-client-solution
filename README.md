@@ -8,8 +8,8 @@ The second .Net Boot Camp decided they wanted a real-world application to work o
 
 Ams2 is contained in two GitHub repositories. They are:
 
-    [Angular/TypeScript front-end](https://github.com/gpdoud/ams2-client-solution)
-    [CSharp/EF/MVC/WebAPI back-end](https://github.com/gpdoud/ams2-server-solution)
+* [Angular/TypeScript front-end](https://github.com/gpdoud/ams2-client-solution)
+* [CSharp/EF/MVC/WebAPI back-end](https://github.com/gpdoud/ams2-server-solution)
 
 After cloning both of these project, start with the back-end server.
 
