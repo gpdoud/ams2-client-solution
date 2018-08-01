@@ -17,6 +17,9 @@ export class SortPipe implements PipeTransform {
 
       //changing strings to uppercase and leaving numbers alone so that numbers will sort correctly (i.e., 2 doesn't sort as greater than 10)
       if(typeof a[property] == "number") { } 
+        else if (a[property] == null) { //changing null values to empty string for sorting purposes
+          a[property]="";
+        }
         else if (a[property] != "string") {
         a[property]=a[property].toString().toUpperCase();
       }
@@ -25,6 +28,9 @@ export class SortPipe implements PipeTransform {
       }
 
       if(typeof b[property] == "number") {}
+         else if (b[property] == null) { //changing null values to empty string for sorting purposes
+          b[property]="";
+        }
         else if (typeof b[property] != "string") {
         b[property]=b[property].toString().toUpperCase();
       }

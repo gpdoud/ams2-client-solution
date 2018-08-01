@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '@user/user.service';
@@ -41,9 +42,11 @@ export class UserListComponent implements OnInit {
         this.users = resp.Data;
         console.log("UserList:", this.users);
         for(let u of this.users) {
+          if(u.DepartmentId == null) {
+            u.DepartmentName = "Unassigned";
+          } else {
           u.DepartmentName = u.Department.Name;
-        }
+        }}
       });
   }
-
 }
