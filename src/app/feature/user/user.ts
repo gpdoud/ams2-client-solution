@@ -16,6 +16,6 @@ export class User {
   constructor() {
     this.Id = 0;
     this.DepartmentId = null;
-    this.Active = false;
+    this.Active = true;
   }
 }

@@ -15,7 +15,7 @@ export class UserCreateComponent implements OnInit {
 
   pagetitle: string = "User Create";
 
-  user: User = new User(0, '', '', '', '', '', '', null, true);
+  user: User = new User();
   departments: Department[];
 
   save(): void {
