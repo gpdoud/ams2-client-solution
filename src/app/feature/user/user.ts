@@ -13,25 +13,9 @@ export class User {
   Active: boolean;
   DepartmentName:string;
 
-  constructor(
-    Id: number,
-    Username: string,
-    Password: string,
-    Firstname: string,
-    Lastname: string,
-    Phone: string,
-    Email: string,
-    DepartmentId: number,
-    Active: boolean
-  ) {
-    this.Id = Id;
-    this.Username = Username;
-    this.Password = Password;
-    this.Firstname = Firstname;
-    this.Lastname = Lastname;
-    this.Phone = Phone;
-    this.Email = Email;
-    this.DepartmentId = DepartmentId;
-    this.Active = Active;
+  constructor() {
+    this.Id = 0;
+    this.DepartmentId = null;
+    this.Active = false;
   }
 }
