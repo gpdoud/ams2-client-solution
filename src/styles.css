@@ -3,10 +3,21 @@ body {
 input[type='checkbox'] {
   height: 2.5em;
 }
-.sbs {
+.sbs, .side-by-side {
   width: 49%;
   display: inline-block;
 }
-.right {
+.right, .align-right {
   text-align: right;
+}
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+.no-border {
+  border: 0;
+}
+a:hover {
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@ export class PropertyListComponent implements OnInit {
   pagetitle: string = "Property List";
   createlink: string = "/properties/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   properties: Property[];
 
@@ -42,6 +43,7 @@ export class PropertyListComponent implements OnInit {
       .subscribe(resp => {
         this.properties = resp.Data;
         console.log("PropertyList:", this.properties);
+        this.errormessage = `${this.properties.length} properties`;
       });
   }
 
