@@ -14,6 +14,7 @@ export class VehicleListComponent implements OnInit {
   pagetitle: string = "Vehicle List";
   createlink: string = "/vehicles/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   sortProperty: string = "LicensePlate";
   sortOrder: string = "asc";
@@ -38,6 +39,7 @@ export class VehicleListComponent implements OnInit {
       .subscribe(resp => {
         this.vehicles = resp.Data;
         console.log("VehicleList:", this.vehicles);
+        this.errormessage = `${this.vehicles.length} vehicles`;
         for(let v of this.vehicles) {
           if (v.Asset.Name == null) {
             v.AssetName = "";

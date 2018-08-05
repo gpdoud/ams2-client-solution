@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  students: string[] = [
+    "Michael Buchanan - .Net Bootcamp #4 'Fried Parrots'",
+    "Marcus Fields - .Net Bootcamp #4 'Fried Parrots'"
+  ];
+
   constructor() { }
 
   ngOnInit() {

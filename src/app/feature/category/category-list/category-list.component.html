@@ -2,18 +2,14 @@
   <div class="menu">
     <app-menu></app-menu>
   </div>
-  <div class="title">
-    <span class="pagetitle">{{ pagetitle }}</span>
-    <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
-    <div id="searchbar">
-      <div class="input-group">
-        <input [(ngModel)]="searchfor" class="form-control" type="text" placeholder="Search">
-        <div class="input-group-append">
-          <span class="input-group-text">
-            <i class="fas fa-search"></i>
-          </span>
-        </div>
-      </div>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+      <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+      <span class="searchBox"> | <input [(ngModel)]="searchfor" class="no-border" type="text" placeholder="Search"></span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
     </div>
   </div>
   <div class="content">

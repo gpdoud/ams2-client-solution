@@ -14,6 +14,7 @@ export class CategoryListComponent implements OnInit {
   pagetitle: string = "Category List";
   createlink: string = "/categories/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   categories: Category[];
 
@@ -41,6 +42,7 @@ export class CategoryListComponent implements OnInit {
       .subscribe(resp => {
         this.categories = resp.Data;
         console.log("CategoryList:", this.categories);
+        this.errormessage = `${this.categories.length} categories`;
       });
   }
 

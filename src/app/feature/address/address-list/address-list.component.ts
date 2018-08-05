@@ -13,6 +13,7 @@ export class AddressListComponent implements OnInit {
   pagetitle: string = "Address List";
   createlink: string = "/addresses/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   addresses: Address[];
 
@@ -37,6 +38,7 @@ export class AddressListComponent implements OnInit {
       .subscribe(resp => {
         this.addresses = resp.Data;
         console.log("AddressList:", this.addresses);
+        this.errormessage = `${this.addresses.length} addresses`;
       });
   }
 

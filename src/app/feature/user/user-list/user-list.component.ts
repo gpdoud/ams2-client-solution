@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
   pagetitle: string = "User List";
   createlink: string = "/users/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   users: User[];
 
@@ -41,6 +42,7 @@ export class UserListComponent implements OnInit {
       .subscribe(resp => {
         this.users = resp.Data;
         console.log("UserList:", this.users);
+        this.errormessage = `${this.users.length} users`;
         for(let u of this.users) {
           if(u.DepartmentId == null) {
             u.DepartmentName = "Unassigned";

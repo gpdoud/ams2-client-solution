@@ -14,6 +14,7 @@ export class EquipmentListComponent implements OnInit {
   pagetitle: string = "Equipment List";
   createlink: string = "/equipment/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   equipments: Equipment[];
 
@@ -42,6 +43,7 @@ export class EquipmentListComponent implements OnInit {
       .subscribe(resp => {
         this.equipments = resp.Data;
         console.log("EquipmentList:", this.equipments);
+        this.errormessage = `${this.equipments.length} equipments`;
       });
   }
 

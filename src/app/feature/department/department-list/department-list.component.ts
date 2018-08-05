@@ -14,6 +14,7 @@ export class DepartmentListComponent implements OnInit {
   pagetitle: string = "Department List";
   createlink: string = "/departments/create";
   createlinkname: string = "Create New";
+  errormessage: string = "";
 
   departments: Department[];
 
@@ -40,6 +41,7 @@ export class DepartmentListComponent implements OnInit {
       .subscribe(resp => {
         this.departments = resp.Data;
         console.log("DepartmentList:", this.departments);
+        this.errormessage = `${this.departments.length} departments`;
       });
   }
 
