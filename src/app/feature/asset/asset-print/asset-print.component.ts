@@ -12,6 +12,8 @@ import { Equipment } from '@feat/equipment/equipment';
 })
 export class AssetPrintComponent implements OnInit {
 
+  pagetitle: string = "Asset Print";
+
   vehicles: Vehicle[];
   equipment: Equipment[];
 
