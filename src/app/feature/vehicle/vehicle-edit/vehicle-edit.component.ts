@@ -21,8 +21,8 @@ export class VehicleEditComponent implements OnInit {
     console.log("VehicleEdit preupdate:", this.vehicle);
     this.Vehiclesvc.change(this.vehicle)
       .subscribe(resp => {
-        console.log("VehicleEdit resp:", resp);
         if(resp.Code != 0) {
+          console.error("VehicleEdit resp:", resp);
           this.errormessage = resp.Message;
         } else {
           this.router.navigateByUrl("/vehicles/list");

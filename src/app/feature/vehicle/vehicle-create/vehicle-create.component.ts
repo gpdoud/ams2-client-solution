@@ -14,6 +14,7 @@ import { JsonResponse } from '@feat/utility/json-response';
 export class VehicleCreateComponent implements OnInit {
 
   pagetitle: string = "Vehicle Create";
+  errormessage = "Ready";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
   vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0, "", "");
