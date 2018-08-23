@@ -13,6 +13,7 @@ import { JsonResponse } from '@feat/utility/json-response';
 export class VehicleDetailComponent implements OnInit {
 
   pagetitle: string = "Vehicle Detail";
+  errormessage = "Ready";
 
   vehicle: Vehicle;
 
