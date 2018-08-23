@@ -13,6 +13,7 @@ import { JsonResponse } from '@feat/utility/json-response';
 export class VehicleEditComponent implements OnInit {
 
   pagetitle: string = "Vehicle Edit";
+  errormessage = "Ready";
 
   vehicle: Vehicle;
 
@@ -21,7 +22,11 @@ export class VehicleEditComponent implements OnInit {
     this.Vehiclesvc.change(this.vehicle)
       .subscribe(resp => {
         console.log("VehicleEdit resp:", resp);
-        this.router.navigateByUrl("/vehicles/list");
+        if(resp.Code != 0) {
+          this.errormessage = resp.Message;
+        } else {
+          this.router.navigateByUrl("/vehicles/list");
+        }
       });
   }
 

@@ -18,6 +18,11 @@ input[type='checkbox'] {
 .no-border {
   border: 0;
 }
+.component-heading {
+    padding-bottom: 2px;
+    border-bottom: 1px solid silver;
+    margin-bottom: 5px;
+}
 a:hover {
   cursor: pointer;
 }
