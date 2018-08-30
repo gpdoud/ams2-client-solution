@@ -8,13 +8,11 @@ export class SortPipe implements PipeTransform {
 
   normalize(s: any): any {
     let nullValue = '';
-    if(typeof s === 'string') {
-      if(s === null) {
+    if(s === null) {
         return nullValue;
-      }
-      else {
+    }
+    else if(typeof s === "string") {
         return s.toUpperCase();
-      }
     }
     return s;
   }
