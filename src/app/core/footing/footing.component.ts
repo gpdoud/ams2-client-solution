@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FootingComponent implements OnInit {
 
   appname: string = "AMS2";
-  version: string = "2.0.1";
+  version: string = "2.0.1 - Next";
   copyright: string = "Copyright (c) 2018 MAX Technical Training All rights reserved";
 
   constructor() { }
