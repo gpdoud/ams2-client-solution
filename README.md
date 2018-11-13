@@ -22,6 +22,36 @@ The project requires Visual Studio (community edition is ok) and SQL Server (Exp
     * Type `update-database` and press enter
     * Click the IIS Express (Chrome) button to start the back-end. (you should see a browser page with a URL of localhost:44444)
 
+### SQL Server
+
+#### Change SQL Server to use SQL Authentication
+
+SQL Server defaults to using Windows Authentication only. This must be changed to allow SQL Authentication also. Follow these steps
+
+1. Start SQL Server Management Studio
+2. Connect to the server
+3. Right-click on the top level server node in the Object Explorer
+4. Click Properties
+5. Under Select a page, Click Security
+6. Click Sql Server and Windows Authentication mode
+7. Click Ok.
+
+#### Add a SQL user and password
+
+Ams2 is configured to use a SQL user ams with a password of ams. Follow these steps.
+
+1. Still in SQL Server Management Studio
+2. Expand the Security node
+3. Right-click on Logins
+4. Click New Login ...
+5. In the Login name: type 'ams' (no quotes)
+6. Click on SQL Server Authentication
+7. In the Password and Confirm password boxes, type 'ams' (no quotes)
+8. Uncheck Enforce password policy
+9. Click Server Roles
+10. Check sysadmin
+11. Click OK.
+
 ### Running the front-end
 
 This project requires [NodeJs](https://nodejs.org/en/). Install the LTS version if you don't currently have node installed.
