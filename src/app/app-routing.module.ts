@@ -43,6 +43,7 @@ const approutes: Routes = [
   { path: 'users/detail/:id', component: feat.UserDetailComponent },
   { path: 'users/edit/:id', component: feat.UserEditComponent },
   { path: 'users/create', component: feat.UserCreateComponent },
+  { path: 'users/login', component: feat.UserLoginComponent },
   // User
   { path: 'vehicles/list', component: feat.VehicleListComponent },
   { path: 'vehicles/detail/:id', component: feat.VehicleDetailComponent },

@@ -1,3 +1,19 @@
-<p>
-  user-login works!
-</p>
+<div>
+  <div>
+    <form>
+      <div class="title">Asset Management System Login</div>
+      <div class="row">
+        <label class="col-sm-4">User name:</label>
+        <input [(ngModel)]="user.Username" type="text" name="username"  class="form-control col-sm-8" placeholder="User name">
+      </div>
+      <div class="row">
+        <label class="col-sm-4">Password:</label>
+        <input [(ngModel)]="user.Password" type="password" name="password" class="form-control col-sm-8" placeholder="Password">
+      </div>
+      <div class="row">
+        <button (click)="login()" type="submit" class="btn btn-primary">Login</button>&ngsp;
+        <label class="message">{{ message }}</label>
+      </div>
+    </form>
+  </div>
+</div>
