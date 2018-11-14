@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { SystemService } from '@system/system.service'
 import { UserService } from '../user.service';
 import { User } from '../user';
+import { JsonResponse } from '../../utility/json-response';
 
 @Component({
   selector: 'app-user-login',
@@ -14,13 +17,29 @@ export class UserLoginComponent implements OnInit {
   message: string = '';
 
   login(): void {
-    console.log(`${this.user.Username} : ${this.user.Password}`);
-    this.message = "Login successful!";
+    this.message = '';
+    this.usersvc.login(this.user.Username, this.user.Password)
+      .subscribe(resp => {
+        console.log("Login resp:", resp);
+        if(resp.Code == 0) {
+          this.router.navigateByUrl('/home');
+        }
+        this.message = resp.Message;
+      })
   }
 
-  constructor() { }
+  constructor(
+    private usersvc: UserService,
+    private syssvc: SystemService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    let loginrequired = this.syssvc.settings.loginrequired;
+    console.log("loginrequired:", loginrequired);
+    if(!loginrequired) {
+      this.router.navigateByUrl('/home');
+    }
   }
 
 }

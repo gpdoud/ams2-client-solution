@@ -12,7 +12,7 @@ export class UserService {
   url = this.syssvc.settings.baseurl + "api/Users/";
   
   login(username: string, password: string): Observable<JsonResponse> {
-    return this.http.get(this.url+`Login?username=${username}&password=${password}`) as Observable<JsonResponse>;
+    return this.http.get(this.url+`Login/${username}/${password}`) as Observable<JsonResponse>;
   }
   list(): Observable<JsonResponse> {
     return this.http.get(this.url+"List") as Observable<JsonResponse>;

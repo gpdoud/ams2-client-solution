@@ -12,6 +12,8 @@ form {
 .message {
     color: red;
     font-weight: bold;
+    margin-top: 0.4em;
+    margin-left: 1em;
 }
 .row {
     margin: 1em 0;
