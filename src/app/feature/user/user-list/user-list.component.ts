@@ -38,6 +38,7 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.usersvc.list()
       .subscribe(resp => {
         this.users = resp.Data;

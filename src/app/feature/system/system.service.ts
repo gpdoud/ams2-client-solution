@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+
+import { AppInitService } from '../app-init/app-init.service';
+
+import { User } from '../user/user';
 
 const configFile = "assets/settings.json";
 
 @Injectable()
 export class SystemService {
 
-  public settings: any;
+  // get the settings from the app-init.service
+  public settings: any = this.appinitsvc.settings;
 
-  constructor(private http: HttpClient) {
+  loggedInUser: User = null;
+  setUser(user: User): void {
+    this.loggedInUser = user;
+  }
+  clearUser(): void {
+    this.setUser(null);
+  }
+  get isUserLoggedIn() { return this.loggedInUser != null; }
+  checkLogin(): void {
+    if(!this.isUserLoggedIn && this.settings.loginrequired) {
+      this.router.navigateByUrl('/users/login');
+    }
   }
 
-  getSettings(): Promise<any> {
-    console.log("getSettings()");
-    return this.http.get(configFile)
-      .toPromise()
-      .then((data: any) => this.settings = data);
+  constructor(
+    private appinitsvc: AppInitService,
+    private router: Router
+  ) {
   }
 
 }

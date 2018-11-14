@@ -12,8 +12,8 @@ import * as feat from './feature';
 
 import { AppComponent } from './app.component';
 
-export function startupServiceFactory(syssvc: feat.SystemService): Function {
-  return () => syssvc.getSettings();
+export function startupServiceFactory(appinitsvc: feat.AppInitService): Function {
+  return () => appinitsvc.getSettings();
 }
 
 @NgModule({
@@ -47,12 +47,12 @@ export function startupServiceFactory(syssvc: feat.SystemService): Function {
   providers: [
     feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, 
     feat.EquipmentService, feat.CategoryService, feat.DepartmentService, feat.PropertyService,
-    feat.SystemService,
+    feat.SystemService, feat.AppInitService
     {
       // provider for APP_INITIALIZER
       provide: APP_INITIALIZER,
       useFactory: startupServiceFactory,
-      deps: [feat.SystemService],
+      deps: [feat.AppInitService],
       multi: true
     }
   ],

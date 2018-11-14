@@ -4,6 +4,8 @@ export * from './address/address-detail/address-detail.component';
 export * from './address/address-create/address-create.component';
 export * from './address/address-edit/address-edit.component';
 export * from './address/address.service';
+// app-init
+export * from './app-init/app-init.service';
 // Assets
 export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
