@@ -38,6 +38,7 @@ export class CategoryListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.categorysvc.list()
       .subscribe(resp => {
         this.categories = resp.Data;

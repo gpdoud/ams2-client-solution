@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { DepartmentService } from '@feat/department/department.service';
 import { Department } from '@feat/department/department';
 
@@ -26,10 +27,12 @@ export class DepartmentCreateComponent implements OnInit {
 
   constructor(
     private departmentsvc: DepartmentService,
+    private syssvc: SystemService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
   }
 
 }

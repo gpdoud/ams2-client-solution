@@ -5,6 +5,7 @@ import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user';
 import { DepartmentService } from '@department/department.service';
 import { Department } from '@department/department';
+import { SystemService } from '@system/system.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -33,11 +34,13 @@ export class UserEditComponent implements OnInit {
   constructor(
     private usersvc: UserService,
     private deptsvc: DepartmentService,
+    private syssvc: SystemService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.deptsvc.list()
       .subscribe(resp => {
         console.log("Dept resp:", resp);

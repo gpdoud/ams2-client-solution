@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { CategoryService } from '@feat/category/category.service';
 import { Category } from '@feat/category/category';
 
@@ -25,11 +26,13 @@ export class CategoryCreateComponent implements OnInit {
   }
 
   constructor(
+    private syssvc: SystemService,
     private categorysvc: CategoryService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
   }
 
 }

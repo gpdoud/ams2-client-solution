@@ -37,6 +37,7 @@ export class DepartmentListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.departmentsvc.list()
       .subscribe(resp => {
         this.departments = resp.Data;

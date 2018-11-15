@@ -34,6 +34,7 @@ export class EquipmentCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
   }
 
 }

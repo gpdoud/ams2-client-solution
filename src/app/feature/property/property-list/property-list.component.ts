@@ -39,6 +39,7 @@ export class PropertyListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.propertysvc.list()
       .subscribe(resp => {
         this.properties = resp.Data;

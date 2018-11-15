@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { DepartmentService } from '@feat/department/department.service';
 import { Department } from '@feat/department/department';
 import { JsonResponse } from '@feat/utility/json-response';
@@ -36,11 +37,13 @@ export class DepartmentDetailComponent implements OnInit {
 
   constructor(
     private departmentsvc: DepartmentService,
+    private syssvc: SystemService, 
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     this.departmentsvc.get(+id)
       .subscribe(resp => {

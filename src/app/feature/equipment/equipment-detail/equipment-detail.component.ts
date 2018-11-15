@@ -41,6 +41,7 @@ export class EquipmentDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     this.equipmentsvc.get(+id)
       .subscribe(resp => {

@@ -18,10 +18,12 @@ export class UserLoginComponent implements OnInit {
 
   login(): void {
     this.message = '';
+    this.syssvc.clearUser();
     this.usersvc.login(this.user.Username, this.user.Password)
       .subscribe(resp => {
         console.log("Login resp:", resp);
         if(resp.Code == 0) {
+          this.syssvc.setUser(resp.Data);
           this.router.navigateByUrl('/home');
         }
         this.message = resp.Message;

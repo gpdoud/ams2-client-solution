@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../../feature/system/system.service';
 
 @Component({
   selector: 'app-footing',
@@ -11,9 +12,15 @@ export class FootingComponent implements OnInit {
   version: string = "2.0.1 - Next";
   copyright: string = "Copyright (c) 2018 MAX Technical Training All rights reserved";
 
-  constructor() { }
+  constructor(
+    private syssvc: SystemService
+  ) { }
 
   ngOnInit() {
+    let settings = this.syssvc.settings;
+    this.appname = settings.appname;
+    this.version = settings.version;
+    this.copyright = settings.copyright;
   }
 
 }

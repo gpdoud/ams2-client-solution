@@ -47,7 +47,7 @@ export function startupServiceFactory(appinitsvc: feat.AppInitService): Function
   providers: [
     feat.AddressService, feat.AssetService, feat.UserService, feat.VehicleService, 
     feat.EquipmentService, feat.CategoryService, feat.DepartmentService, feat.PropertyService,
-    feat.SystemService, feat.AppInitService
+    feat.SystemService, feat.AppInitService,
     {
       // provider for APP_INITIALIZER
       provide: APP_INITIALIZER,

@@ -39,6 +39,7 @@ export class EquipmentListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.equipmentsvc.list()
       .subscribe(resp => {
         this.equipments = resp.Data;

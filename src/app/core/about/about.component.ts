@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '@system/system.service';
 
 @Component({
   selector: 'app-about',
@@ -12,9 +13,12 @@ export class AboutComponent implements OnInit {
     "Marcus Fields - .Net Bootcamp #4 'Fried Parrots'"
   ];
 
-  constructor() { }
+  constructor(
+    private syssvc: SystemService
+  ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
   }
 
 }

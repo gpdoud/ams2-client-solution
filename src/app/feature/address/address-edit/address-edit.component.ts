@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { AddressService } from '@feat/address/address.service';
 import { Address } from '@feat/address/address';
 
@@ -26,11 +27,13 @@ export class AddressEditComponent implements OnInit {
 
   constructor(
     private addresssvc: AddressService,
+    private syssvc: SystemService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     console.log("AddressGet id:", id);
     this.addresssvc.get(+id)

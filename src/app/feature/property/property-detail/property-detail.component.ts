@@ -41,6 +41,7 @@ export class PropertyDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     this.propertysvc.get(+id)
       .subscribe(resp => {

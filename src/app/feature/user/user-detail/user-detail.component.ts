@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user';
 import { JsonResponse } from '@feat/utility/json-response';
@@ -36,11 +37,13 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private usersvc: UserService,
+    private syssvc: SystemService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     this.usersvc.get(+id)
       .subscribe(resp => {

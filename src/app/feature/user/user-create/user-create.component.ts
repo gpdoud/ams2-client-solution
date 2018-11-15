@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '@system/system.service';
 import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user';
 import { DepartmentService } from '@department/department.service';
@@ -29,11 +30,13 @@ export class UserCreateComponent implements OnInit {
 
   constructor(
     private usersvc: UserService,
+    private syssvc: SystemService,
     private deptsvc: DepartmentService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.deptsvc.list()
       .subscribe(resp => {
         console.log("Dept resp:", resp);

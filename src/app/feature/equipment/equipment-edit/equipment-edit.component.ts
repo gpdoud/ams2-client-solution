@@ -33,6 +33,7 @@ export class EquipmentEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     let id = this.route.snapshot.params.id;
     console.log("EquipmentGet id:", id);
     this.Equipmentsvc.get(+id)

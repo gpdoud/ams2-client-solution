@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SystemService } from '@system/system.service';
 import { AddressService } from '@feat/address/address.service';
 import { Address } from '@feat/address/address';
 
@@ -31,9 +32,13 @@ export class AddressListComponent implements OnInit {
     }
   }
 
-  constructor(private addresssvc: AddressService) { }
+  constructor(
+    private syssvc: SystemService,
+    private addresssvc: AddressService
+  ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
     this.addresssvc.list()
       .subscribe(resp => {
         this.addresses = resp.Data;

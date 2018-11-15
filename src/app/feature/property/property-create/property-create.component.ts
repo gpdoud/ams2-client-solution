@@ -34,6 +34,7 @@ export class PropertyCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.syssvc.checkLogin();
   }
 
 }
