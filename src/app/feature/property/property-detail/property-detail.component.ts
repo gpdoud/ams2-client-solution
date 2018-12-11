@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { PropertyService } from '@feat/property/property.service';
 import { Property } from '@feat/property/property';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-property-detail',
@@ -17,6 +18,8 @@ export class PropertyDetailComponent implements OnInit {
   property: Property;
 
   showVerifyDelete: boolean = false;
+
+  assetType: AssetTypes = AssetTypes.Property;
 
   edit(): void {
     this.router.navigateByUrl("/properties/edit/"+this.property.Id);

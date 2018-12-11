@@ -40,7 +40,12 @@
         <td *ngIf="asset.DisposedDate">{{ asset.DisposedDate | date }}</td>
         <td *ngIf="!asset.DisposedDate">N/A</td>      
     </tr>
-    <tr>
+    <!-- 
+      [GD] ams2-client-solution #39
+      Do not display OutForRepairDate nor ReturnFromRepairDate
+      if the asset is Property
+     -->
+    <tr *ngIf="assetType != assetTypes.Property">
       <th>Out For Repair Date:</th>
         <td *ngIf="asset.OutForRepairDate">{{ asset.OutForRepairDate | date }}</td>
         <td *ngIf="!asset.OutForRepairDate">N/A</td>      

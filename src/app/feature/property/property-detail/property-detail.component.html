@@ -19,7 +19,7 @@
         <th>Active:</th><td>{{ property.Active ? "Yes" : "No" }}</td>
       </tr>
     </table>
-    <app-asset-detail [asset]="property.Asset"></app-asset-detail>
+    <app-asset-detail [asset]="property.Asset" [assetType]="assetType"></app-asset-detail>
     <table class="table table-sm">
       <tr>
         <td colspan="2">
