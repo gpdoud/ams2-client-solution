@@ -5,6 +5,7 @@ import { PropertyService } from '@feat/property/property.service';
 import { Property } from '@feat/property/property';
 import { Asset } from '@feat/asset/asset';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-property-create',
@@ -17,6 +18,7 @@ export class PropertyCreateComponent implements OnInit {
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
   property: Property = new Property(0, '', '', '', '', '', '', '', '', 0, this.asset, true);
+  assetType: AssetTypes = AssetTypes.Property;
 
   save(): void {
     console.log("PropertyCreate preupdate:", this.property);

@@ -89,7 +89,12 @@
         <input [ngModel]="asset.DisposedDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.DisposedDate = $event" name="DisposedDate" type="date"  class="form-control">
       </div>
 
-      <div class="input-group input-group-sm mb-3">
+      <!-- 
+        [GD] ams2-client-solution #39
+        Do not display OutForRepairDate nor ReturnFromRepairDate
+        if the asset is Property
+      -->
+     <div *ngIf="assetType != assetTypes.Property" class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="OutForRepairDate">OutForRepairDate</label>
         </div>

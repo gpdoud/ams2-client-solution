@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { PropertyService } from '@feat/property/property.service';
 import { Property } from '@feat/property/property';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-property-edit',
@@ -15,6 +16,7 @@ export class PropertyEditComponent implements OnInit {
   pagetitle: string = "Property Edit";
 
   property: Property;
+  assetType: AssetTypes = AssetTypes.Property;
 
   save(): void {
     console.log("Property Edit:", this.property);

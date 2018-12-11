@@ -12,6 +12,7 @@ import { Category } from '@feat/category/category';
 import { UserService } from '@feat/user/user.service';
 import { User } from '@feat/user/user'
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-asset-edit',
@@ -23,6 +24,8 @@ export class AssetEditComponent implements OnInit {
   pagetitle: string = "Asset Edit";
 
   @Input() asset: Asset;
+  @Input() assetType: AssetTypes;
+  assetTypes: AssetTypes = AssetTypes;
 
   addresses: Address[] = [];
   departments: Department[] = [];
