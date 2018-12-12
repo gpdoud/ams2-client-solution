@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-equipment-edit',
@@ -15,6 +16,7 @@ export class EquipmentEditComponent implements OnInit {
   pagetitle: string = "Equipment Edit";
 
   equipment: Equipment;
+  assetType: AssetTypes = AssetTypes.Equipment;
 
   save(): void {
     console.log("EquipmentEdit preupdate:", this.equipment);

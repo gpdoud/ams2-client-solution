@@ -5,6 +5,7 @@ import { EquipmentService } from '@feat/equipment/equipment.service';
 import { Equipment } from '@feat/equipment/equipment';
 import { Asset } from '@feat/asset/asset';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-equipment-create',
@@ -17,6 +18,7 @@ export class EquipmentCreateComponent implements OnInit {
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
   equipment: Equipment = new Equipment(0, 0, this.asset, "", "", true);
+  assetType: AssetTypes = AssetTypes.Equipment;
 
   save(): void {
     console.log("EquipmentCreate preupdate:", this.equipment);

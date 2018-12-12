@@ -15,7 +15,7 @@
         <th>Active:</th><td>{{ equipment.Active ? "Yes" : "No" }}</td>
       </tr>
     </table>
-    <app-asset-detail [asset]="equipment.Asset"></app-asset-detail>
+    <app-asset-detail [asset]="equipment.Asset" [assetType]="assetType"></app-asset-detail>
     <table class="table table-sm">
       <tr>
         <td colspan="2">

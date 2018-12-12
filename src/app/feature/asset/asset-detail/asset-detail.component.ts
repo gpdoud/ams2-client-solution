@@ -14,7 +14,7 @@ export class AssetDetailComponent implements OnInit {
   
   @Input() asset: Asset;
   @Input() assetType: AssetTypes;
-  assetTypes: AssetTypes = AssetTypes;
+  assetTypes = AssetTypes;
 
   constructor(
   ) { }

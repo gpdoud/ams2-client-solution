@@ -25,7 +25,7 @@ export class AssetEditComponent implements OnInit {
 
   @Input() asset: Asset;
   @Input() assetType: AssetTypes;
-  assetTypes: AssetTypes = AssetTypes;
+  assetTypes = AssetTypes;
 
   addresses: Address[] = [];
   departments: Department[] = [];

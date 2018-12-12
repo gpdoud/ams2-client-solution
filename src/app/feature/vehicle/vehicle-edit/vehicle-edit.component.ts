@@ -4,6 +4,7 @@ import { SystemService } from '@feat/system/system.service';
 import { VehicleService } from '@feat/vehicle/vehicle.service';
 import { Vehicle } from '@feat/vehicle/vehicle';
 import { JsonResponse } from '@feat/utility/json-response';
+import { AssetTypes } from '@feat/asset/asset-types.enum';
 
 @Component({
   selector: 'app-vehicle-edit',
@@ -16,6 +17,7 @@ export class VehicleEditComponent implements OnInit {
   errormessage = "Ready";
 
   vehicle: Vehicle;
+  assetType: AssetTypes = AssetTypes.Vehicle;
 
   save(): void {
     console.log("VehicleEdit preupdate:", this.vehicle);
