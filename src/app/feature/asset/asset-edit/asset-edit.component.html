@@ -125,12 +125,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="BuildingCost">Building Cost</label>
         </div>
-        <input [ngModel]="asset.BuildingCost | currency:'USD'" (ngModelChange)="asset.BuildingCost = $event" name="BuildingCost" type="text"  class="form-control">
+        <input [ngModel]="asset.BuildingCost" (ngModelChange)="asset.BuildingCost = $event" name="BuildingCost" type="text"  class="form-control">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="PersonalPropertyCost">Personal Property cost</label>
         </div>
-        <input [ngModel]="asset.PersonalPropertyCost | currency:'USD'" (ngModelChange)="asset.PersonalPropertyCost = $event" name="PersonalPropertyCost" type="text"  class="form-control">
+        <input [ngModel]="asset.PersonalPropertyCost" (ngModelChange)="asset.PersonalPropertyCost = $event" name="PersonalPropertyCost" type="text"  class="form-control">
       </div>
 
     </div>
