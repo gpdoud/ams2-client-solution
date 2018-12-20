@@ -54,6 +54,15 @@
         <td *ngIf="asset.ReturnFromRepairDate">{{ asset.ReturnFromRepairDate | date }}</td>
         <td *ngIf="!asset.ReturnFromRepairDate">N/A</td>
     </tr>
+    <tr *ngIf="assetType == assetTypes.Property">
+      <th>Building Cost:</th>
+        <td *ngIf="asset.BuildingCost">{{ asset.BuildingCost | currency:'USD' }}</td>
+        <td *ngIf="!asset.BuildingCost">N/A</td>      
+
+      <th>Personal Property cost:</th>
+        <td *ngIf="asset.PersonalPropertyCost">{{ asset.PersonalPropertyCost | currency:'USD' }}</td>
+        <td *ngIf="!asset.PersonalPropertyCost">N/A</td>
+    </tr>
     <tr>
       <th>Surplus Date:</th>
         <td *ngIf="asset.SurplusDate">{{ asset.SurplusDate | date }}</td>

@@ -118,6 +118,20 @@
         <!-- <input [(ngModel)]="asset.RetiredDate" name="RetiredDate" type="text" class="form-control" id="RetiredDate"> -->
         <input [ngModel]="asset.RetiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
       </div>
+      <!--
+        Show Building cost and personal property cost for properties. The total of these two fields will be displayed as location TIV
+      -->
+      <div *ngIf="assetType == assetTypes.Property" class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="BuildingCost">Building Cost</label>
+        </div>
+        <input [ngModel]="asset.BuildingCost | currency:'USD'" (ngModelChange)="asset.BuildingCost = $event" name="BuildingCost" type="text"  class="form-control">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="PersonalPropertyCost">Personal Property cost</label>
+        </div>
+        <input [ngModel]="asset.PersonalPropertyCost | currency:'USD'" (ngModelChange)="asset.PersonalPropertyCost = $event" name="PersonalPropertyCost" type="text"  class="form-control">
+      </div>
 
     </div>
   </div>

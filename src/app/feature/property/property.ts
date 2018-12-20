@@ -16,6 +16,8 @@ export class Property {
   Active: boolean;
   DateCreated: string;
   DateUpdated: string;
+  BuildingCost: number;
+  PersonalPropertyCost: number;
 
   constructor(
     Id: number,
@@ -29,7 +31,9 @@ export class Property {
     ZipCode: string,
     AssetId: number,
     Asset: Asset,
-    Active: boolean
+    Active: boolean,
+    BuildingCost?: number,
+    PersonalPropertyCost?: number
   ) {
     this.Id = Id;
     this.Code = Code;
@@ -43,5 +47,7 @@ export class Property {
     this.AssetId = AssetId;
     this.Asset = Asset;
     this.Active = Active;
+    this.BuildingCost = BuildingCost;
+    this.PersonalPropertyCost = PersonalPropertyCost;
   }
 }
