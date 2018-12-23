@@ -14,7 +14,7 @@ export class DepartmentCreateComponent implements OnInit {
 
   pagetitle: string = "Department Create";
 
-  department: Department = new Department('', '', true);
+  department: Department = new Department('', '', true, 0, 0);
 
   save(): void {
     console.log("DepartmentCreate preupdate:", this.department);
