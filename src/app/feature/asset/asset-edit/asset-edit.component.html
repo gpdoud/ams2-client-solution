@@ -1,123 +1,123 @@
-  <div class="title">
-    <span class="pagetitle">{{ pagetitle }}</span>
-  </div>
-  <div class="content">
-    <div class="container" *ngIf="asset">
+<div class="title">
+  <span class="pagetitle">{{ pagetitle }}</span>
+</div>
+<div class="content">
+  <div class="container" *ngIf="asset">
 
-      <div class="input-group input-group-sm mb-3">
+    <div class="input-group input-group-sm mb-3">
 
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Name">Name</label>
-        </div>
-        <input [(ngModel)]="asset.Name" name="Name" type="text" class="form-control" id="Name">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Description">Description</label>
-        </div>
-        <input [(ngModel)]="asset.Description" name="Description" type="text" class="form-control" id="Description">
-
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Name">Name</label>
       </div>
+      <input [(ngModel)]="asset.Name" name="Name" type="text" class="form-control" id="Name">
 
-      <div class="input-group input-group-sm mb-3">
-        
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Department">Department</label>
-        </div>
-        <select [(ngModel)]="asset.DepartmentId" name="Department" type="text" class="form-control" id="Department">
-          <option *ngFor="let department of departments" [ngValue]="department.Id">{{ department.Name }}</option>
-          <option value="">***Clear Department***</option>
-        </select>
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Category">Category</label>
-        </div>
-        <select [(ngModel)]="asset.CategoryId" name="Category" type="text" class="form-control" id="Category">
-          <option *ngFor="let category of categories" [ngValue]="category.Id">{{ category.Name }}</option>
-          <option value="">***Clear Category***</option>
-        </select>
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="User">User</label>
-        </div>
-        <select [(ngModel)]="asset.UserId" name="User" type="text" class="form-control" id="User">
-          <option *ngFor="let user of users" [ngValue]="user.Id">{{ user.Firstname }} {{ user.Lastname }}</option>
-          <option value="">***Clear User***</option>
-        </select>
-
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Description">Description</label>
       </div>
+      <input [(ngModel)]="asset.Description" name="Description" type="text" class="form-control" id="Description">
 
-      <div class="input-group input-group-sm mb-3">
-        
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Address">Address</label>
-        </div>
-        <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">
-          <option *ngFor="let addr of addresses" [ngValue]="addr.Id">{{ addr.Name }}</option>
-          <option value="">***Clear Address***</option>
-        </select>
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="PONumber">PONumber</label>
-        </div>
-        <input [(ngModel)]="asset.PONumber" name="PONumber" type="text" class="form-control" id="PONumber">
-
-      </div>
-
-      <div class="input-group input-group-sm mb-3">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Cost">Cost</label>
-        </div>
-        <input [(ngModel)]="asset.Cost" name="Cost" type="number" class="form-control" id="Cost">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="ResidualValue">ResidualValue</label>
-        </div>
-        <input [(ngModel)]="asset.ResidualValue" name="ResidualValue" type="number" class="form-control" id="ResidualValue">
-
-      </div>
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="AcquireDate">AcquireDate</label>
-        </div>
-        <input [ngModel]="asset.AcquiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.AcquiredDate = $event" name="AcquiredDate" type="date"  class="form-control">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="Dispose">DisposeDate</label>
-        </div>
-        <input [ngModel]="asset.DisposedDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.DisposedDate = $event" name="DisposedDate" type="date"  class="form-control">
-      </div>
-
-      <!-- 
-        [GD] ams2-client-solution #39
-        Do not display OutForRepairDate nor ReturnFromRepairDate
-        if the asset is Property
-      -->
-     <div *ngIf="assetType != assetTypes.Property" class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="OutForRepairDate">OutForRepairDate</label>
-        </div>
-        <input [ngModel]="asset.OutForRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.OutForRepairDate = $event" name="OutForRepairDate" type="date"  class="form-control">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="ReturnFromRepair">ReturnFromRepairDate</label>
-        </div>
-        <input [ngModel]="asset.ReturnFromRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.ReturnFromRepairDate = $event" name="ReturnFromRepairDate" type="date"  class="form-control">
-      </div>
-
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="SurplusDate">SurplusDate</label>
-        </div>
-        <input [ngModel]="asset.SurplusDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.SurplusDate = $event" name="SurplusDate" type="date"  class="form-control">
-
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="RetiredDate">RetiredDate</label>
-        </div>
-        <!-- <input [(ngModel)]="asset.RetiredDate" name="RetiredDate" type="text" class="form-control" id="RetiredDate"> -->
-        <input [ngModel]="asset.RetiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
-      </div>
-      
     </div>
+
+    <div class="input-group input-group-sm mb-3">
+      
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Department">Department</label>
+      </div>
+      <select [(ngModel)]="asset.DepartmentId" name="Department" type="text" class="form-control" id="Department">
+        <option *ngFor="let department of departments" [ngValue]="department.Id">{{ department.Name }}</option>
+        <option value="">***Clear Department***</option>
+      </select>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Category">Category</label>
+      </div>
+      <select [(ngModel)]="asset.CategoryId" name="Category" type="text" class="form-control" id="Category">
+        <option *ngFor="let category of categories" [ngValue]="category.Id">{{ category.Name }}</option>
+        <option value="">***Clear Category***</option>
+      </select>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="User">User</label>
+      </div>
+      <select [(ngModel)]="asset.UserId" name="User" type="text" class="form-control" id="User">
+        <option *ngFor="let user of users" [ngValue]="user.Id">{{ user.Firstname }} {{ user.Lastname }}</option>
+        <option value="">***Clear User***</option>
+      </select>
+
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Address">Address</label>
+      </div>
+      <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">
+        <option *ngFor="let addr of addresses" [ngValue]="addr.Id">{{ addr.Name }}</option>
+        <option value="">***Clear Address***</option>
+      </select>
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="PONumber">PONumber</label>
+      </div>
+      <input [(ngModel)]="asset.PONumber" name="PONumber" type="text" class="form-control" id="PONumber">
+
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Cost">Cost</label>
+      </div>
+      <input [(ngModel)]="asset.Cost" name="Cost" type="number" class="form-control" id="Cost">
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="ResidualValue">ResidualValue</label>
+      </div>
+      <input [(ngModel)]="asset.ResidualValue" name="ResidualValue" type="number" class="form-control" id="ResidualValue">
+
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="AcquireDate">AcquireDate</label>
+      </div>
+      <input [ngModel]="asset.AcquiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.AcquiredDate = $event" name="AcquiredDate" type="date"  class="form-control">
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="Dispose">DisposeDate</label>
+      </div>
+      <input [ngModel]="asset.DisposedDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.DisposedDate = $event" name="DisposedDate" type="date"  class="form-control">
+    </div>
+
+    <!-- 
+      [GD] ams2-client-solution #39
+      Do not display OutForRepairDate nor ReturnFromRepairDate
+      if the asset is Property
+    -->
+   <div *ngIf="assetType != assetTypes.Property" class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="OutForRepairDate">OutForRepairDate</label>
+      </div>
+      <input [ngModel]="asset.OutForRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.OutForRepairDate = $event" name="OutForRepairDate" type="date"  class="form-control">
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="ReturnFromRepair">ReturnFromRepairDate</label>
+      </div>
+      <input [ngModel]="asset.ReturnFromRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.ReturnFromRepairDate = $event" name="ReturnFromRepairDate" type="date"  class="form-control">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="SurplusDate">SurplusDate</label>
+      </div>
+      <input [ngModel]="asset.SurplusDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.SurplusDate = $event" name="SurplusDate" type="date"  class="form-control">
+
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="RetiredDate">RetiredDate</label>
+      </div>
+      <!-- <input [(ngModel)]="asset.RetiredDate" name="RetiredDate" type="text" class="form-control" id="RetiredDate"> -->
+      <input [ngModel]="asset.RetiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
+    </div>
+
   </div>
+</div>
