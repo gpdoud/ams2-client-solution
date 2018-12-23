@@ -25,9 +25,9 @@
       <tr *ngFor="let dept of departments | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ dept.Code }}</td>
         <td>{{ dept.Name }}</td>
-        <td *ngIf="dept.BuildingCost">{{ dept?.BuildingCost }}</td>
+        <td *ngIf="dept.BuildingCost">{{ dept?.BuildingCost | currency}}</td>
         <td *ngIf="!dept.BuildingCost">N/A</td>
-        <td *ngIf="dept.PersonalPropertyCost">{{ dept?.PersonalPropertyCost }} </td>
+        <td *ngIf="dept.PersonalPropertyCost">{{ dept?.PersonalPropertyCost | currency}} </td>
         <td *ngIf="!dept.PersonalPropertyCost">N/A </td>
         <td>{{ dept.Active ? "Yes" : "No" }}</td>
         <td>
