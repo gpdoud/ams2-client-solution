@@ -118,6 +118,6 @@
         <!-- <input [(ngModel)]="asset.RetiredDate" name="RetiredDate" type="text" class="form-control" id="RetiredDate"> -->
         <input [ngModel]="asset.RetiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
       </div>
-    
+  
     </div>
   </div>
