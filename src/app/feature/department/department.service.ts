@@ -12,7 +12,6 @@ export class DepartmentService {
   url = this.syssvc.settings.baseurl + "api/Departments/";
   propertyUrl = this.syssvc.settings.baseurl + "api/Properties/";
 
-
   list(): Observable<JsonResponse> {
     return this.http.get(this.url+"List") as Observable<JsonResponse>;
   }
