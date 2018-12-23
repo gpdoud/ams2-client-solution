@@ -47,12 +47,18 @@ export class DepartmentListComponent implements OnInit {
           for( var i in departInfo) {
             for (var j in propertyInfo) {
               if(departInfo[i].Code == propertyInfo[j].Code) {
+                departInfo[i].BuildingCost = 0;
+                departInfo[i].PersonalPropertyCost = 0;
                 departInfo[i].BuildingCost += propertyInfo[j].BuildingCost;
                 departInfo[i].PersonalPropertyCost += propertyInfo[j].PersonalPropertyCost;
               }
             }
+            this.departmentsvc.change(departInfo[i])
+              .subscribe(resp =>{ console.log("Updated Department Building cost & Personal Property cost", resp)})
           }
           this.departments = departInfo;
+          console.log("DepartmentList + Build Cost + Personal Property Cost:", this.departments);
+          this.errormessage = `${this.departments.length} departments`;
       });
     });
   }

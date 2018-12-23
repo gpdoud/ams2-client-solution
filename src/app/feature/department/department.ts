@@ -3,11 +3,11 @@ export class Department {
   Id: number;
   Code: string;
   Name: string;
-  BuildingCost?: number;
-  PersonalPropertyCost?: number;
+  BuildingCost: number;
+  PersonalPropertyCost: number;
   Active: boolean;
 
-  constructor(Code: string, Name: string, Active: boolean, BuildingCost?: number, PersonalPropertyCost?: number) {
+  constructor(Code: string, Name: string, Active: boolean, BuildingCost: number, PersonalPropertyCost: number) {
     this.Code = Code;
     this.Name = Name;
     this.BuildingCost = BuildingCost;

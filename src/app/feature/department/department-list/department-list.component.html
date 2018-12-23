@@ -17,17 +17,17 @@
       <tr>
           <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Total Building Cost <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Total Property Cost<i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('BuildingCost')">Total Building Cost <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('PersonalPropertyCost')">Total Property Cost<i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
       <tr *ngFor="let dept of departments | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ dept.Code }}</td>
         <td>{{ dept.Name }}</td>
-        <td *ngIf="dept.BuildingCost">{{ dept?.BuildingCost | currency}}</td>
+        <td *ngIf="dept.BuildingCost">{{ dept.BuildingCost | currency }}</td>
         <td *ngIf="!dept.BuildingCost">N/A</td>
-        <td *ngIf="dept.PersonalPropertyCost">{{ dept?.PersonalPropertyCost | currency}} </td>
+        <td *ngIf="dept.PersonalPropertyCost">{{ dept.PersonalPropertyCost | currency }} </td>
         <td *ngIf="!dept.PersonalPropertyCost">N/A </td>
         <td>{{ dept.Active ? "Yes" : "No" }}</td>
         <td>
