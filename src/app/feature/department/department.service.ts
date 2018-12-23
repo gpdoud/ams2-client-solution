@@ -10,9 +10,14 @@ import { JsonResponse } from '@feat/utility/json-response';
 export class DepartmentService {
 
   url = this.syssvc.settings.baseurl + "api/Departments/";
+  propertyUrl = this.syssvc.settings.baseurl + "api/Properties/";
+
 
   list(): Observable<JsonResponse> {
     return this.http.get(this.url+"List") as Observable<JsonResponse>;
+  }
+  listProperty(): Observable<JsonResponse> {
+    return this.http.get(this.propertyUrl+"List") as Observable<JsonResponse>;
   }
   get(id: number): Observable<JsonResponse> {
     return this.http.get(this.url+"Get/"+id) as Observable<JsonResponse>;

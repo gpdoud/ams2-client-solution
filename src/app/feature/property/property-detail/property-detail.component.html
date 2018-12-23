@@ -10,6 +10,12 @@
       <tr>
         <th>Code:</th><td>{{ property.Code }}</td>
         <th>Description:</th><td>{{ property.Description }}</td>
+        <th>Building Cost</th>
+        <td *ngIf="property.BuildingCost">{{ property.BuildingCost | currency}}</td>
+        <td *ngIf="!property.BuildingCost">N/A</td>
+        <th>Personal Property Cost</th>
+        <td *ngIf="property.PersonalPropertyCost">{{ property.PersonalPropertyCost | currency }}</td>
+        <td *ngIf="!property.PersonalPropertyCost">N/A</td>
         <th>Address</th>
         <td>
           <span>{{ property.Address1 }}</span>

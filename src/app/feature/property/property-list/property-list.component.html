@@ -18,6 +18,8 @@
           <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Description')">Description <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('BuildingCost')">Building Cost <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('PersonalPropertyCost')">Personal Property Cost <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
@@ -29,6 +31,10 @@
           <span *ngIf="property.Address2">, {{ property.Address2 }}</span>
           <span *ngIf="property.Address3">, {{ property.Address3 }}</span>
         </td>
+        <td *ngIf="property.BuildingCost">{{ property.BuildingCost | currency}}</td>
+        <td *ngIf="!property.BuildingCost">N/A</td>
+        <td *ngIf="property.PersonalPropertyCost">{{ property.PersonalPropertyCost | currency }}</td>
+        <td *ngIf="!property.PersonalPropertyCost">N/A</td>
         <td>{{ property.Active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/properties/detail/{{  property.Id }}">Detail</a></span>

@@ -32,8 +32,8 @@ export class Property {
     AssetId: number,
     Asset: Asset,
     Active: boolean,
-    BuildingCost?: number,
-    PersonalPropertyCost?: number
+    BuildingCost: number,
+    PersonalPropertyCost: number
   ) {
     this.Id = Id;
     this.Code = Code;

@@ -17,7 +17,7 @@ export class PropertyCreateComponent implements OnInit {
   pagetitle: string = "Property Create";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
-  property: Property = new Property(0, '', '', '', '', '', '', '', '', 0, this.asset, true);
+  property: Property = new Property(0, '', '', '', '', '', '', '', '', 0,this.asset, true,0,0);
   assetType: AssetTypes = AssetTypes.Property;
 
   save(): void {

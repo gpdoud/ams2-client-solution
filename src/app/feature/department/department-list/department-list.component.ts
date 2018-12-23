@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { DepartmentService } from '@department/department.service';
 import { Department } from '@department/department';
-import { SystemService } from '@system/system.service'
+import { SystemService } from '@system/system.service';
+
+import { Property } from '@property/property';
 
 @Component({
   selector: 'app-department-list',
@@ -38,12 +40,20 @@ export class DepartmentListComponent implements OnInit {
 
   ngOnInit() {
     this.syssvc.checkLogin();
-    this.departmentsvc.list()
-      .subscribe(resp => {
-        this.departments = resp.Data;
-        console.log("DepartmentList:", this.departments);
-        this.errormessage = `${this.departments.length} departments`;
+    this.departmentsvc.list().subscribe(depart => {
+      this.departmentsvc.listProperty().subscribe( propty =>{
+           let departInfo: Department[] = depart.Data;
+           let propertyInfo: Property[] = propty.Data;
+          for( var i in departInfo) {
+            for (var j in propertyInfo) {
+              if(departInfo[i].Code == propertyInfo[j].Code) {
+                departInfo[i].BuildingCost += propertyInfo[j].BuildingCost;
+                departInfo[i].PersonalPropertyCost += propertyInfo[j].PersonalPropertyCost;
+              }
+            }
+          }
+          this.departments = departInfo;
       });
+    });
   }
-
 }

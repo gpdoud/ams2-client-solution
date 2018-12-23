@@ -64,6 +64,17 @@
         <input [(ngModel)]="property.Zipcode"  name="Zipcode" type="text" class="form-control" id="Zipcode">
 
       </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="BuildingCost">Building Cost</label>
+        </div>
+        <input [(ngModel)]="property.BuildingCost"  name="BuildingCost" type="number" class="form-control" id="BuildingCost">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="PersonalPropertyCost">Personal Property Cost</label>
+        </div>
+        <input [(ngModel)]="property.PersonalPropertyCost"  name="PersonalPropertyCost" type="number" class="form-control" id="PersonalPropertyCost">
     </div>
     <div>
       <app-asset-edit [asset]="property.Asset" [assetType]="assetType"></app-asset-edit>
