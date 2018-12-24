@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DepartmentService } from '@department/department.service';
 import { Department } from '@department/department';
 import { SystemService } from '@system/system.service';
+import { PropertyService } from '@property/property.service';
 
 import { Property } from '@property/property';
 
@@ -35,23 +36,26 @@ export class DepartmentListComponent implements OnInit {
 
   constructor(
     private departmentsvc: DepartmentService,
-    private syssvc: SystemService
+    private syssvc: SystemService,
+    private propertysvc: PropertyService
   ) { }
 
   ngOnInit() {
     this.syssvc.checkLogin();
-    this.departmentsvc.list().subscribe(depart => {
-      this.departmentsvc.listProperty().subscribe( propty =>{
+    this.propertysvc.list().subscribe(propty => {
+      this.departmentsvc.list().subscribe( depart =>{
            let departInfo: Department[] = depart.Data;
            let propertyInfo: Property[] = propty.Data;
-          for( var i in departInfo) {
-            for (var j in propertyInfo) {
-              if(departInfo[i].Code == propertyInfo[j].Code) {
-                departInfo[i].BuildingCost = 0;
-                departInfo[i].PersonalPropertyCost = 0;
-                departInfo[i].BuildingCost += propertyInfo[j].BuildingCost;
-                departInfo[i].PersonalPropertyCost += propertyInfo[j].PersonalPropertyCost;
-              }
+           for(var i in departInfo) {
+            departInfo[i].BuildingCost = 0;
+            departInfo[i].PersonalPropertyCost = 0;
+           }
+            for( var i in departInfo) {
+              for (var j in propertyInfo) {
+                if(departInfo[i].Code == propertyInfo[j].Code) {
+                  departInfo[i].BuildingCost += propertyInfo[j].BuildingCost;
+                  departInfo[i].PersonalPropertyCost += propertyInfo[j].PersonalPropertyCost;
+                }
             }
             this.departmentsvc.change(departInfo[i])
               .subscribe(resp =>{ console.log("Updated Department Building cost & Personal Property cost", resp)})
