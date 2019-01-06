@@ -5,6 +5,7 @@ import { CoreModule } from '@core/core.module';
 import * as core from './core';
 import { FeatureModule } from '@feat/feature.module';
 import * as feat from './feature';
+import { RetainScrollPolyfillModule } from './retainScrollModule/retain-scroll-polyfill.module';
 
 const approutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -56,7 +57,9 @@ const approutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(approutes, { enableTracing: false })
+    RetainScrollPolyfillModule.forRoot({pollDuration: 3000,
+      pollCadence: 50}),
+    RouterModule.forRoot(approutes, {useHash:true, enableTracing: false })
   ],
   exports: []
 })
