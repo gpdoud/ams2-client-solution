@@ -23,6 +23,7 @@ export * from './department/department-list/department-list.component';
 export * from './department/department-detail/department-detail.component';
 export * from './department/department-edit/department-edit.component';
 export * from './department/department-create/department-create.component';
+export * from './department/department-by-asset/department-by-asset.component';
 export * from './department/department.service';
 // Equipment
 export * from './equipment/equipment-list/equipment-list.component';

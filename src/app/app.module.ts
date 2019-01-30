@@ -24,7 +24,7 @@ export function startupServiceFactory(appinitsvc: feat.AppInitService): Function
     core.MenuComponent, core.MenuItemComponent,
     feat.AddressListComponent, feat.AddressDetailComponent, feat.AddressCreateComponent, feat.AddressEditComponent,
     feat.AssetPrintComponent,
-    feat.CategoryListComponent, feat.CategoryDetailComponent, feat.CategoryCreateComponent, feat.CategoryEditComponent,
+    feat.CategoryListComponent, feat.CategoryDetailComponent, feat.CategoryCreateComponent, feat.CategoryEditComponent, feat.DepartmentByAssetComponent,
     feat.DepartmentListComponent, feat.DepartmentDetailComponent, feat.DepartmentCreateComponent, feat.DepartmentEditComponent,
     feat.EquipmentListComponent, feat.EquipmentDetailComponent, feat.EquipmentCreateComponent, feat.EquipmentEditComponent,
     feat.PropertyListComponent, feat.PropertyDetailComponent, feat.PropertyCreateComponent, feat.PropertyEditComponent,
