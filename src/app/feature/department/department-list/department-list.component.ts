@@ -44,8 +44,8 @@ export class DepartmentListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.propertysvc.list().subscribe(propty => {
       this.departmentsvc.list().subscribe( depart =>{
-           let departInfo: Department[] = depart.Data;
-           let propertyInfo: Property[] = propty.Data;
+           let departInfo = depart.Data;
+           let propertyInfo = propty.Data;
            for(var i in departInfo) {
             departInfo[i].BuildingCost = 0;
             departInfo[i].PersonalPropertyCost = 0;
