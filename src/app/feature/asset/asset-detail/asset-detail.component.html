@@ -25,7 +25,7 @@
         </td>
       <th>PO Number:</th><td>{{ asset.PONumber }}</td>
     </tr>
-    <tr>
+    <tr *ngIf="assetType != assetTypes.Property">
       <th>Cost:</th><td>{{ asset.Cost | currency }}</td>
       <th>Residual Value:</th>
         <td *ngIf="asset.ResidualValue">{{ asset.ResidualValue | currency }}</td>
