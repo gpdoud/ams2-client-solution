@@ -23,7 +23,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
-        <select [(ngModel)]="property.Active"  name="Active" type="text" class="form-control" id="Active">
+        <select [(ngModel)]="property.Active" name="Active" type="text" class="form-control" id="Active">
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
         </select>
@@ -33,17 +33,17 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Address1">Address1</label>
         </div>
-        <input [(ngModel)]="property.Address1"  name="Address1" type="text" class="form-control" id="Address1">
+        <input [(ngModel)]="property.Address1" name="Address1" type="text" class="form-control" id="Address1">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Address2">Address2</label>
         </div>
-        <input [(ngModel)]="property.Address2"  name="Address2" type="text" class="form-control" id="Address2">
+        <input [(ngModel)]="property.Address2" name="Address2" type="text" class="form-control" id="Address2">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Address3">Address3</label>
         </div>
-        <input [(ngModel)]="property.Address3"  name="Address3" type="text" class="form-control" id="Address3">
+        <input [(ngModel)]="property.Address3" name="Address3" type="text" class="form-control" id="Address3">
 
       </div>
 
@@ -51,17 +51,17 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="City">City</label>
         </div>
-        <input [(ngModel)]="property.City"  name="City" type="text" class="form-control" id="City">
+        <input [(ngModel)]="property.City" name="City" type="text" class="form-control" id="City">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="State">State</label>
         </div>
-        <input [(ngModel)]="property.State"  name="State" type="text" class="form-control" id="State">
+        <input [(ngModel)]="property.State" name="State" type="text" class="form-control" id="State">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Zipcode">Zipcode</label>
         </div>
-        <input [(ngModel)]="property.Zipcode"  name="Zipcode" type="text" class="form-control" id="Zipcode">
+        <input [(ngModel)]="property.Zipcode" name="Zipcode" type="text" class="form-control" id="Zipcode">
 
       </div>
 
@@ -69,20 +69,24 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="BuildingCost">Building Cost</label>
         </div>
-        <input [(ngModel)]="property.BuildingCost"  name="BuildingCost" type="number" class="form-control" id="BuildingCost">
+        <input [(ngModel)]="property.BuildingCost" name="BuildingCost" type="number" class="form-control"
+               id="BuildingCost">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="PersonalPropertyCost">Personal Property Cost</label>
         </div>
-        <input [(ngModel)]="property.PersonalPropertyCost"  name="PersonalPropertyCost" type="number" class="form-control" id="PersonalPropertyCost">
-    </div>
-    <div>
-      <app-asset-edit [asset]="property.Asset" [assetType]="assetType"></app-asset-edit>
-    </div>
+        <input [(ngModel)]="property.PersonalPropertyCost" name="PersonalPropertyCost" type="number"
+               class="form-control" id="PersonalPropertyCost">
+      </div>
+      <div>
+        <app-asset-edit [asset]="property.Asset" [assetType]="assetType"></app-asset-edit>
+      </div>
 
-  <div class="container">
-    <div class="input-group input-group-sm mb-3">
-      <button (click)="save()" class="btn btn-primary">Save</button>
+      <div class="container">
+        <div class="input-group input-group-sm mb-3">
+          <button (click)="save()" class="btn btn-primary">Save</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

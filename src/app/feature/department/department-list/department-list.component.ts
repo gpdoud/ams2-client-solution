@@ -46,12 +46,12 @@ export class DepartmentListComponent implements OnInit {
       this.departmentsvc.list().subscribe( depart =>{
            let departInfo = depart.Data;
            let propertyInfo = propty.Data;
-           for(var i in departInfo) {
+           for(let i in departInfo) {
             departInfo[i].BuildingCost = 0;
             departInfo[i].PersonalPropertyCost = 0;
            }
-            for( var i in departInfo) {
-              for (var j in propertyInfo) {
+            for( let i in departInfo) {
+              for (let j in propertyInfo) {
                 if(departInfo[i].Code == propertyInfo[j].Code) {
                   departInfo[i].BuildingCost += propertyInfo[j].BuildingCost;
                   departInfo[i].PersonalPropertyCost += propertyInfo[j].PersonalPropertyCost;
