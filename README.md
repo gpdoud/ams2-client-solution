@@ -36,6 +36,16 @@ SQL Server defaults to using Windows Authentication only. This must be changed t
 6. Click Sql Server and Windows Authentication mode
 7. Click Ok.
 
+Restart the SQL Server Service
+
+1. Search for "cmd" (do not click yet!)
+2. Right-click on "cmd"
+3. Click "Run as administrator"
+4. Type `net stop mssql$sqlexpress` and press enter
+5. Wait for `The SQL Server (SQLEXPRESS) service was stopped successfully.` message
+6. Type `net start mssql$sqlexpress` and press enter
+7. Wait for `The SQL Server (SQLEXPRESS) service was started successfully.` message
+
 #### Add a SQL user and password
 
 Ams2 is configured to use a SQL user ams with a password of ams. Follow these steps.
