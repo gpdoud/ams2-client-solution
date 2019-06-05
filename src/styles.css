@@ -26,3 +26,13 @@ input[type='checkbox'] {
 a:hover {
   cursor: pointer;
 }
+/* to set bg of column headings to they're not transparent */
+.opaque {
+  background-color: white;
+}
+tr.stky-hdr:first-child th {
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}

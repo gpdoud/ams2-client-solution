@@ -1,10 +1,13 @@
 # Revision History
 
-## 2.x [Minor Update] Month Day, Year
+## 2.5 [Minor Update] Month Day, Year
 
 * #7 - Display error messages to user
+* #8 - Make the column headings sticky on list pages.
 * #32 - Highlight list item during mouse-over.
 * #35 - Duplicate VIN and LicensePlate in Vehicles
+* #53 - Attempt to delete equipment attached to a department fails to delete and no message.
+* 
 
 ## 2.0.1 [Bug fix] August 27, 2018
 

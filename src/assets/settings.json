@@ -4,5 +4,5 @@
   "baseurl": "http://localhost:44444/",
   "copyright": "Copyright (c) 2018-2019 MAX Technical Training All rights reserved",
   "loginrequired": false,
-  "version": "2.1.0"
+  "version": "2.5.0"
 }

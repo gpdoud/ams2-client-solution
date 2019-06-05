@@ -15,14 +15,14 @@
   <div class="content">
     <table class="table table-sm table-hover" *ngIf="addresses">
       <tr>
-          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('City')">City <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('State')">State <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Zipcode')">Zipcode <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Name')">Active <i class="fas fa-sort"></i></a></th>
-          <th>Action</th>
+          <th class="sticky-top opaque"><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('City')">City <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('State')">State <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('Zipcode')">Zipcode <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque"><a (click)="sort('Name')">Active <i class="fas fa-sort"></i></a></th>
+          <th class="sticky-top opaque">Action</th>
       </tr>
       <tr *ngFor="let address of addresses | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ address.Code }}</td>
