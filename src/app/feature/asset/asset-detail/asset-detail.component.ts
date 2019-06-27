@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Asset } from '@feat/asset/asset';
-import { AssetTypes } from '@feat/asset/asset-types.enum';
+import { Asset } from '../../asset/asset';
+import { AssetTypes } from '../../asset/asset-types.enum';
 
 @Component({
   selector: 'app-asset-detail',

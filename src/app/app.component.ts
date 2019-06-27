@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SystemService } from '@feat/system/system.service';
+import { SystemService } from './feature/system/system.service';
 
 @Component({
   selector: 'app-root',

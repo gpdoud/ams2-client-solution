@@ -1,4 +1,4 @@
-import { Asset } from '@feat/asset/asset';
+import { Asset } from '../asset/asset';
 
 export class Equipment {
   Id: number;

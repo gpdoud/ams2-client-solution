@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { SystemService } from '@feat/system/system.service';
-import { Equipment } from '@feat/equipment/equipment';
-import { JsonResponse } from '@feat/utility/json-response';
+import { SystemService } from '../system/system.service';
+import { Equipment } from '../equipment/equipment';
+import { JsonResponse } from '../utility/json-response';
 
 @Injectable()
 export class EquipmentService {

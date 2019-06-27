@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { SystemService } from '@feat/system/system.service';
-import { Asset } from '@feat/asset/asset';
-import { JsonResponse } from '@feat/utility/json-response';
+import { SystemService } from '../system/system.service';
+import { Asset } from '../asset/asset';
+import { JsonResponse } from '../utility/json-response';
 
 @Injectable()
 export class AssetService {

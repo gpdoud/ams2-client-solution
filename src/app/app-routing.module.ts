@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { CoreModule } from '@core/core.module';
+import { CoreModule } from './core/core.module';
 import * as core from './core';
-import { FeatureModule } from '@feat/feature.module';
+import { FeatureModule } from './feature/feature.module';
 import * as feat from './feature';
 
 const approutes: Routes = [

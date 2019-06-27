@@ -1,5 +1,5 @@
-import { Asset } from '@feat/asset/asset';
-import { Address } from '@feat/address/address';
+import { Asset } from '../asset/asset';
+import { Address } from '../address/address';
 
 export class Property {
   Id: number;

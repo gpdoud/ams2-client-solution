@@ -1,18 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { AssetService } from '@feat/asset/asset.service';
-import { Asset } from '@feat/asset/asset';
-import { AddressService } from '@feat/address/address.service';
-import { Address } from '@feat/address/address';
-import { DepartmentService } from '@feat/department/department.service';
-import { Department } from '@feat/department/department';
-import { CategoryService } from '@feat/category/category.service';
-import { Category } from '@feat/category/category';
-import { UserService } from '@feat/user/user.service';
-import { User } from '@feat/user/user'
-import { JsonResponse } from '@feat/utility/json-response';
-import { AssetTypes } from '@feat/asset/asset-types.enum';
+import { AssetService } from '../../asset/asset.service';
+import { Asset } from '../../asset/asset';
+import { AddressService } from '../../address/address.service';
+import { Address } from '../../address/address';
+import { DepartmentService } from '../../department/department.service';
+import { Department } from '../../department/department';
+import { CategoryService } from '../../category/category.service';
+import { Category } from '../../category/category';
+import { UserService } from '../../user/user.service';
+import { User } from '../../user/user'
+import { JsonResponse } from '../../utility/json-response';
+import { AssetTypes } from '../../asset/asset-types.enum';
 
 @Component({
   selector: 'app-asset-create',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { VehicleService } from '@feat/vehicle/vehicle.service';
-import { EquipmentService } from '@feat/equipment/equipment.service';
-import { Vehicle } from '@feat/vehicle/vehicle';
-import { Equipment } from '@feat/equipment/equipment';
+import { VehicleService } from '../../vehicle/vehicle.service';
+import { EquipmentService } from '../../equipment/equipment.service';
+import { Vehicle } from '../../vehicle/vehicle';
+import { Equipment } from '../../equipment/equipment';
 
 @Component({
   selector: 'app-asset-print',
@@ -21,7 +21,7 @@ export class AssetPrintComponent implements OnInit {
     private vehicleSvc: VehicleService,
     private equipmentSvc: EquipmentService
   ) { }
-
+    
   ngOnInit() {
     this.vehicleSvc.list()
       .subscribe(resp => {

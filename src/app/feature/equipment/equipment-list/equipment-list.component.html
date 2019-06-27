@@ -31,9 +31,9 @@
         <td>{{ equip.Make }}</td>
         <td>{{ equip.Model }}</td>
         <td>{{ equip.SerialNumber }}</td>
-        <td>{{ equip.Active ? "Yes" : "No" }}</td>
+        <td [ngClass]="{false: 'error'}[equip.Active]">{{ equip.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/equipment/detail/{{  equip.Id }}">Detail</a></span>
+          <span><a routerLink="/equipment/detail/{{ equip.Id }}">Detail</a></span>
           <span> | <a routerLink="/equipment/edit/{{ equip.Id }}">Edit</a></span>
         </td>
       </tr>

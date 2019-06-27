@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { SystemService } from '@feat/system/system.service';
-import { VehicleService } from '@feat/vehicle/vehicle.service';
-import { Vehicle } from '@feat/vehicle/vehicle';
-import { Asset } from '@feat/asset/asset';
-import { JsonResponse } from '@feat/utility/json-response';
-import { AssetTypes } from '@feat/asset/asset-types.enum';
+import { SystemService } from '../../system/system.service';
+import { VehicleService } from '../../vehicle/vehicle.service';
+import { Vehicle } from '../../vehicle/vehicle';
+import { Asset } from '../../asset/asset';
+import { JsonResponse } from '../../utility/json-response';
+import { AssetTypes } from '../../asset/asset-types.enum';
 
 @Component({
   selector: 'app-vehicle-create',
