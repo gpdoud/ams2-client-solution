@@ -8,7 +8,7 @@ export class Equipment {
   SerialNumber: string;
   Active: boolean;
   DateCreated: string;
-
+  
   constructor(
     Id: number, 
     AssetId: number, 

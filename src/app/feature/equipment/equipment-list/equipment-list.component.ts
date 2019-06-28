@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipmentService } from '@equipment/equipment.service';
-import { Equipment } from '@equipment/equipment';
-import { SystemService } from '@system/system.service';
-import { JsonResponse } from '@feat/utility/json-response';
+import { EquipmentService } from '../equipment.service';
+import { Equipment } from '../equipment';
+import { SystemService } from '../../system/system.service';
+import { JsonResponse } from '../../utility/json-response';
+import { e } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-equipment-list',
@@ -18,10 +19,9 @@ export class EquipmentListComponent implements OnInit {
 
   equipments: Equipment[];
 
-
   searchfor: string = "";
 
-  sortProperty: string = "SerialNumber";
+  sortProperty: string = "Code";
   sortOrder: string = "asc";
 
   sort(sortBy: string): void {
@@ -42,6 +42,12 @@ export class EquipmentListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.equipmentsvc.list()
       .subscribe(resp => {
+        resp.Data.sort((a, b) : number => {
+          if (a.Asset.Code > b.Asset.Code) {return 1}
+          else if (a.Asset.Code < b.Asset.Code) {return -1}
+          else if (a.SerialNumber > b.SerialNumber) {return 1}
+          return -1;
+        })
         this.equipments = resp.Data;
         console.log("EquipmentList:", this.equipments);
         this.errormessage = `${this.equipments.length} equipments`;
