@@ -21,6 +21,7 @@
           <th><a (click)="sort('Make')">Make <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Model')">Model <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('LicensePlate')">License Plate <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('TitleNo')">Title No. <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('VIN')">VIN <i class="fas fa-sort"></i></a></th>
           <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
@@ -32,6 +33,7 @@
         <td>{{ vehicle.Make }}</td>
         <td>{{ vehicle.Model }}</td>
         <td>{{ vehicle.LicensePlate }}</td>
+        <td>{{ vehicle.TitleNo }}</td>
         <td>{{ vehicle.VIN }}</td>
         <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
         <td>
