@@ -25,8 +25,12 @@ export class VehicleCreateComponent implements OnInit {
     console.log("VehicleCreate preupdate:", this.vehicle);
     this.vehiclesvc.create(this.vehicle)
       .subscribe(resp => {
-        console.log("VehicleCreate resp:", resp);
-        this.router.navigateByUrl("/vehicles/list");
+        if(resp.Code != 0) {
+          console.error("VehicleEdit resp:", resp);
+          this.errormessage = resp.Message;
+        } else {
+          this.router.navigateByUrl("/vehicles/list");
+        }
       });
   }
 
