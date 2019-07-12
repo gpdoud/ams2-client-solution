@@ -11,6 +11,7 @@ export class Vehicle {
   Year: number;
   LicensePlate: string;
   VIN: string;
+  TitleNo: string;
   Active: boolean;
   AssetName:string;
 
@@ -24,6 +25,7 @@ export class Vehicle {
     Year: number,
     LicensePlate: string,
     VIN: string,
+    TitleNo: string,
     Active: boolean = true
   ) {
     this.Id = Id;
@@ -35,6 +37,7 @@ export class Vehicle {
     this.Year = Year;
     this.LicensePlate = LicensePlate;
     this.VIN = VIN;
+    this.TitleNo = TitleNo;
     this.Active = Active;
   }
 }

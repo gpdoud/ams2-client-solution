@@ -18,15 +18,19 @@ export class VehicleCreateComponent implements OnInit {
   errormessage = "Ready";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
-  vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0, "", "");
+  vehicle: Vehicle = new Vehicle(0, "", 0, this.asset, "", "", 0, "", "", "");
   assetType: AssetTypes = AssetTypes.Vehicle;
 
   save(): void {
     console.log("VehicleCreate preupdate:", this.vehicle);
     this.vehiclesvc.create(this.vehicle)
       .subscribe(resp => {
-        console.log("VehicleCreate resp:", resp);
-        this.router.navigateByUrl("/vehicles/list");
+        if(resp.Code != 0) {
+          console.error("VehicleEdit resp:", resp);
+          this.errormessage = resp.Message;
+        } else {
+          this.router.navigateByUrl("/vehicles/list");
+        }
       });
   }
 
