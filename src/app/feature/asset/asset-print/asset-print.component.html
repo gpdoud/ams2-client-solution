@@ -5,10 +5,9 @@
 <!--   <div class="title">
     <span class="pagetitle">{{ pagetitle }}</span>
   </div>
- -->  <div class="content">
+ -->  <div class="content centered">
     <h1>Asset Listing</h1>
-    <h3>Vehicles</h3>
-    <table class="table table-sm" *ngIf="vehicles">
+    <table class="table table-sm table-bordered" *ngIf="vehicle">
       <tr>
           <th>Code</th>
           <th>Name</th>
@@ -27,7 +26,7 @@
         <td>{{ vehicle.Asset.Name }}</td>
         <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
         <td>{{ vehicle.LicensePlate }}</td>
-        <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+        <td [ngClass]="{false: 'error'}[equip.Active]">{{ vehicle.Active ? "Yes" : "No" }}</td>
         <td>{{ vehicle.Asset.Name }}</td>
         <td>{{ vehicle.Asset.Description }}</td>
         <td>{{ vehicle.Asset.Cost | currency }}</td>
@@ -36,9 +35,7 @@
         <td>{{ vehicle.Asset.DisposedDate | date }}</td>
       </tr>
     </table>
-    <hr />
-    <h3>Equipment</h3>
-    <table class="table table-sm" *ngIf="equipment">
+    <table class="table table-sm table-bordered" *ngIf="equipment">
       <tr>
           <th>Code</th>
           <th>Description</th>
@@ -57,7 +54,7 @@
         <td>{{ equip.Description }}</td>
         <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
         <td>{{ equip.SerialNumber }}</td>
-        <td>{{ equip.Active ? "Yes" : "No" }}</td>
+        <td [ngClass]="{false: 'error'}[equip.Active]">{{ equip.Active ? "Yes" : "No" }}</td>
         <td>{{ equip.Asset.Name }}</td>
         <td>{{ equip.Asset.Description }}</td>
         <td>{{ equip.Asset.Cost | currency }}</td>

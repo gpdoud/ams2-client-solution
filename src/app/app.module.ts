@@ -11,7 +11,6 @@ import { FeatureModule } from './feature/feature.module';
 import * as feat from './feature';
 
 import { AppComponent } from './app.component';
-import { InsurancePrintComponent } from './feature/insurance/insurance-print/insurance-print.component';
 
 export function startupServiceFactory(appinitsvc: feat.AppInitService): Function {
   return () => appinitsvc.getSettings();
@@ -33,7 +32,7 @@ export function startupServiceFactory(appinitsvc: feat.AppInitService): Function
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
     feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent,
     feat.ErrorDetailComponent,
-    feat.InsurancePrintComponent
+    feat.AssetSelectComponent
   ],
   imports: [
     BrowserModule,

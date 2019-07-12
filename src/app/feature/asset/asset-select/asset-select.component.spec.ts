@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InsurancePrintComponent } from './insurance-print.component';
+import { AssetSelectComponent } from './asset-select.component';
 
-describe('InsurancePrintComponent', () => {
-  let component: InsurancePrintComponent;
-  let fixture: ComponentFixture<InsurancePrintComponent>;
+describe('AssetSelectComponent', () => {
+  let component: AssetSelectComponent;
+  let fixture: ComponentFixture<AssetSelectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InsurancePrintComponent ]
+      declarations: [ AssetSelectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InsurancePrintComponent);
+    fixture = TestBed.createComponent(AssetSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

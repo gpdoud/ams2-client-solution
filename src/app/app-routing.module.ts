@@ -18,6 +18,7 @@ const approutes: Routes = [
   { path: 'addresses/create', component: feat.AddressCreateComponent },
   // Asset
   { path: 'assets/print', component: feat.AssetPrintComponent },
+  { path: 'assets/select', component: feat.AssetSelectComponent },
   // Categories
   { path: 'categories/list', component: feat.CategoryListComponent },
   { path: 'categories/detail/:id', component: feat.CategoryDetailComponent },
@@ -50,8 +51,6 @@ const approutes: Routes = [
   { path: 'vehicles/detail/:id', component: feat.VehicleDetailComponent },
   { path: 'vehicles/edit/:id', component: feat.VehicleEditComponent },
   { path: 'vehicles/create', component: feat.VehicleCreateComponent },
-  // Insurance 
-  { path: 'insurance/print', component: feat.InsurancePrintComponent },
   // Catch-all
   { path: '**', component: core.HomeComponent }
 ];
