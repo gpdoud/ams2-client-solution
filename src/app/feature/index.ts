@@ -52,5 +52,7 @@ export * from './vehicle/vehicle-detail/vehicle-detail.component';
 export * from './vehicle/vehicle-create/vehicle-create.component';
 export * from './vehicle/vehicle-edit/vehicle-edit.component';
 export * from './vehicle/vehicle.service';
+//Insurance 
+export * from './insurance/insurance-print/insurance-print.component';
 // Utility
 export * from './utility/error-detail/error-detail.component';

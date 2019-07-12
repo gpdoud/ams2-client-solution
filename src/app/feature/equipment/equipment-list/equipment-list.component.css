@@ -5,6 +5,14 @@
 a:hover	{
 	cursor: pointer;
 }
+.centered {
+  text-align: center;
+}
 .error {
   background-color: yellow;
+}
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 95%; 
 }

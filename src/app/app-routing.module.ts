@@ -50,6 +50,8 @@ const approutes: Routes = [
   { path: 'vehicles/detail/:id', component: feat.VehicleDetailComponent },
   { path: 'vehicles/edit/:id', component: feat.VehicleEditComponent },
   { path: 'vehicles/create', component: feat.VehicleCreateComponent },
+  // Insurance 
+  { path: 'insurance/print', component: feat.InsurancePrintComponent },
   // Catch-all
   { path: '**', component: core.HomeComponent }
 ];

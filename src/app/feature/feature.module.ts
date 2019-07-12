@@ -7,6 +7,5 @@ import { AssetPrintComponent } from './asset/asset-print/asset-print.component';
   imports: [
     CommonModule
   ],
-  declarations: []
 })
 export class FeatureModule { }
