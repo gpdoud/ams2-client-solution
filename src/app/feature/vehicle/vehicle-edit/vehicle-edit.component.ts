@@ -25,7 +25,7 @@ export class VehicleEditComponent implements OnInit {
       .subscribe(resp => {
         if(resp.Code != 0) {
           console.error("VehicleEdit resp:", resp);
-          this.errormessage = resp.Message;
+          this.errormessage = resp.FormattedMessage;
         } else {
           this.router.navigateByUrl("/vehicles/list");
         }

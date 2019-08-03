@@ -3,6 +3,7 @@ export class JsonResponse {
   Message: string;
   Data: any;
   Error: any;
+  FormattedMessage: string;
 
   constructor(code: number, message: string, data: any, error: any) {
     this.Code = code;
