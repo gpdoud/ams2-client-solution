@@ -14,6 +14,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class EquipmentEditComponent implements OnInit {
 
   pagetitle: string = "Equipment Edit";
+  errormessage = "Ready";
 
   equipment: Equipment;
   assetType: AssetTypes = AssetTypes.Equipment;
@@ -21,10 +22,13 @@ export class EquipmentEditComponent implements OnInit {
   save(): void {
     console.log("EquipmentEdit preupdate:", this.equipment);
     this.Equipmentsvc.change(this.equipment)
-      .subscribe(rc => {
-        console.log("EquipmentEdit rc:", rc);
-        this.router.navigateByUrl("/equipment/list");
-      });
+      .subscribe(resp => {
+        if(resp.Code != 0) {
+          console.log("EquipmentChange resp:", resp);
+          this.errormessage = resp.FormattedMessage;
+          } else {
+            this.router.navigateByUrl("/equipment/list");
+          }      });
   }
 
   constructor(

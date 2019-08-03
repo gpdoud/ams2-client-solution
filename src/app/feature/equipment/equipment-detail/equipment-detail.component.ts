@@ -14,6 +14,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class EquipmentDetailComponent implements OnInit {
 
   pagetitle: string = "Equipment Detail";
+  errormessage = "Ready";
 
   equipment: Equipment;
   assetType: AssetTypes = AssetTypes.Equipment;
@@ -29,8 +30,12 @@ export class EquipmentDetailComponent implements OnInit {
   verify(): void {
     this.equipmentsvc.remove(this.equipment)
       .subscribe(resp => {
-        console.log("UserRemove:", resp);
-        this.router.navigateByUrl("/equipment/list");
+        if(resp.Code != 0) {
+          console.log("EquipmentRemove resp:", resp);
+          this.errormessage = resp.FormattedMessage;
+          } else {
+            this.router.navigateByUrl("/equipment/list");
+          }
       });
   }
 
