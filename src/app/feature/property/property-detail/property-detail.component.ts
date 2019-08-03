@@ -14,6 +14,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class PropertyDetailComponent implements OnInit {
 
   pagetitle: string = "Property Detail";
+  errormessage = "Ready";
 
   property: Property;
 
@@ -30,9 +31,12 @@ export class PropertyDetailComponent implements OnInit {
   verify(): void {
     this.propertysvc.remove(this.property)
       .subscribe(resp => {
-        console.log("PropertyRemove:", resp);
-        this.router.navigateByUrl("/properties/list");
-      });
+        if(resp.Code != 0) {
+          console.log("PropertyRemove resp:", resp);
+          this.errormessage = resp.FormattedMessage;
+        } else {
+          this.router.navigateByUrl("/properties/list");
+        }      });
   }
 
 

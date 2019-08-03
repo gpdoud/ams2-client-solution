@@ -26,9 +26,10 @@ export class EquipmentEditComponent implements OnInit {
         if(resp.Code != 0) {
           console.log("EquipmentChange resp:", resp);
           this.errormessage = resp.FormattedMessage;
-          } else {
-            this.router.navigateByUrl("/equipment/list");
-          }      });
+        } else {
+          this.router.navigateByUrl("/equipment/list");
+        }      
+      });
   }
 
   constructor(

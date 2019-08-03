@@ -15,6 +15,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class PropertyCreateComponent implements OnInit {
 
   pagetitle: string = "Property Create";
+  errormessage = "Ready";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
   property: Property = new Property(0, '', '', '', '', '', '', '', '', 0, this.asset, true);
@@ -24,8 +25,12 @@ export class PropertyCreateComponent implements OnInit {
     console.log("PropertyCreate preupdate:", this.property);
     this.propertysvc.create(this.property)
       .subscribe(resp => {
-        console.log("PropertyCreate resp:", resp);
-        this.router.navigateByUrl("/properties/list");
+        if(resp.Code != 0) {
+          console.log("PropertyCreate resp:", resp);
+          this.errormessage = resp.FormattedMessage;
+        } else {
+          this.router.navigateByUrl("/properties/list");
+        }
       });
   }
 
