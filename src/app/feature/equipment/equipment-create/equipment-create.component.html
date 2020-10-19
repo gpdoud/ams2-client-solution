@@ -2,9 +2,15 @@
   <div class="menu">
     <app-menu></app-menu>
   </div>
-  <div class="title">
-    <span class="pagetitle">{{ pagetitle }}</span>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
+    </div>
   </div>
+  
   <div class="content" *ngIf="equipment">
 
     <div class="container">

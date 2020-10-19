@@ -14,6 +14,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class PropertyEditComponent implements OnInit {
 
   pagetitle: string = "Property Edit";
+  errormessage = "Ready";
 
   property: Property;
   assetType: AssetTypes = AssetTypes.Property;
@@ -21,9 +22,13 @@ export class PropertyEditComponent implements OnInit {
   save(): void {
     console.log("Property Edit:", this.property);
     this.propertysvc.change(this.property)
-      .subscribe(rc => {
-        console.log("PropertyEdit rc:", rc);
-        this.router.navigateByUrl("/properties/list");
+      .subscribe(resp => {
+        if(resp.Code != 0) {
+          console.log("PropertyChange resp:", resp);
+          this.errormessage = resp.FormattedMessage;
+        } else {
+          this.router.navigateByUrl("/properties/list");
+        }
       });
   }
 

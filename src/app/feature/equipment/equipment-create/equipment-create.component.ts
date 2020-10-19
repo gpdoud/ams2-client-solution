@@ -15,6 +15,7 @@ import { AssetTypes } from '@feat/asset/asset-types.enum';
 export class EquipmentCreateComponent implements OnInit {
 
   pagetitle: string = "Equipment Create";
+  errormessage = "Ready";
 
   asset: Asset = new Asset(0, "", "", "", null, null, null, 0, null, null, null, null, 0);
   equipment: Equipment = new Equipment(0, 0, this.asset, "", "", true);
@@ -24,8 +25,12 @@ export class EquipmentCreateComponent implements OnInit {
     console.log("EquipmentCreate preupdate:", this.equipment);
     this.equipmentsvc.create(this.equipment)
       .subscribe(resp => {
+        if(resp.Code != 0) {
         console.log("EquipmentCreate resp:", resp);
-        this.router.navigateByUrl("/equipment/list");
+        this.errormessage = resp.FormattedMessage;
+        } else {
+          this.router.navigateByUrl("/equipment/list");
+        }
       });
   }
 

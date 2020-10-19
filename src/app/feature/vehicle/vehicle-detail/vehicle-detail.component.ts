@@ -30,8 +30,12 @@ export class VehicleDetailComponent implements OnInit {
   verify(): void {
     this.vehiclesvc.remove(this.vehicle)
       .subscribe(resp => {
-        console.log("UserRemove:", resp);
-        this.router.navigateByUrl("/vehicles/list");
+        if(resp.Code != 0) {
+          console.log("UserRemove:", resp);
+          this.errormessage = resp.FormattedMessage;
+        } else {
+          this.router.navigateByUrl("/vehicles/list");
+        }
       });
   }
 
