@@ -1,67 +1,67 @@
 <div class="component">
-    <div class="menu">
-      <app-menu></app-menu>
-    </div>
-     <div class="content">
-      <h1>{{pagetitle || "List of Department's Assets"}}</h1>
-      <h5 style="color: red; text-align:right" >Total Number of Vehicles:  {{vehicles?.length}}</h5>
-      <table class="table table-sm" *ngIf="vehicles">
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Year/Make/Model</th>
-            <th>License Plate</th>
-            <th>Active</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Cost</th>
-            <th>Residual</th>
-            <th>Acquired</th>
-            <th>Disposed</th>
-        </tr>
-        <tr *ngFor="let vehicle of vehicles">
-          <td>{{ vehicle.Code }}</td>
-          <td>{{ vehicle.Asset.Name }}</td>
-          <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
-          <td>{{ vehicle.LicensePlate }}</td>
-          <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
-          <td>{{ vehicle.Asset.Name }}</td>
-          <td>{{ vehicle.Asset.Description }}</td>
-          <td>{{ vehicle.Asset.Cost | currency }}</td>
-          <td>{{ vehicle.Asset.ResidualValue | currency }}</td>
-          <td>{{ vehicle.Asset.AcquiredDate | date }}</td>
-          <td>{{ vehicle.Asset.DisposedDate | date }}</td>
-        </tr>
-      </table>
-      <hr />
-      <h5 style="color: red; text-align:right">Total Number of Equipments: {{equipments?.length}} </h5>
-      <table class="table table-sm" *ngIf="equipments">
-        <tr>
-            <th>Code</th>
-            <th>Description</th>
-            <th>Year/Make/Model</th>
-            <th>Serial Number</th>
-            <th>Active</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Cost</th>
-            <th>Residual</th>
-            <th>Acquired</th>
-            <th>Disposed</th>
-        </tr>
-        <tr *ngFor="let equip of equipments">
-          <td>{{ equip.Code }}</td>
-          <td>{{ equip.Description }}</td>
-          <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
-          <td>{{ equip.SerialNumber }}</td>
-          <td>{{ equip.Active ? "Yes" : "No" }}</td>
-          <td>{{ equip.Asset.Name }}</td>
-          <td>{{ equip.Asset.Description }}</td>
-          <td>{{ equip.Asset.Cost | currency }}</td>
-          <td>{{ equip.Asset.ResidualValue | currency }}</td>
-          <td>{{ equip.Asset.AcquiredDate | date }}</td>
-          <td>{{ equip.Asset.DisposedDate | date }}</td>
-        </tr>
-      </table>
-    </div>
+  <div class="menu">
+    <app-menu></app-menu>
   </div>
+  <div class="content">
+    <h1>{{pagetitle || "List of Department's Assets"}}</h1>
+    <h5 style="color: red; text-align:right">Total Number of Vehicles: {{vehicles?.length}}</h5>
+    <table class="table table-sm" *ngIf="vehicles">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Year/Make/Model</th>
+        <th>License Plate</th>
+        <th>VIN</th>
+        <th>Active</th>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Residual</th>
+        <th>Acquired</th>
+        <th>Disposed</th>
+      </tr>
+      <tr *ngFor="let vehicle of vehicles">
+        <td>{{ vehicle.Code }}</td>
+        <td>{{ vehicle.Asset.Name }}</td>
+        <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
+        <td>{{ vehicle.LicensePlate }}</td>
+        <td>{{ vehicle.VIN }}</td>
+        <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+        <td>{{ vehicle.Asset.Description }}</td>
+        <td>{{ vehicle.Asset.Cost | currency }}</td>
+        <td>{{ vehicle.Asset.ResidualValue | currency }}</td>
+        <td>{{ vehicle.Asset.AcquiredDate | date }}</td>
+        <td>{{ vehicle.Asset.DisposedDate | date }}</td>
+      </tr>
+    </table>
+    <hr />
+    <h5 style="color: red; text-align:right">Total Number of Equipments: {{equipments?.length}} </h5>
+    <table class="table table-sm" *ngIf="equipments">
+      <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Year/Make/Model</th>
+        <th>Serial Number</th>
+        <th>Active</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Residual</th>
+        <th>Acquired</th>
+        <th>Disposed</th>
+      </tr>
+      <tr *ngFor="let equip of equipments">
+        <td>{{ equip.Code }}</td>
+        <td>{{ equip.Description }}</td>
+        <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
+        <td>{{ equip.SerialNumber }}</td>
+        <td>{{ equip.Active ? "Yes" : "No" }}</td>
+        <td>{{ equip.Asset.Name }}</td>
+        <td>{{ equip.Asset.Description }}</td>
+        <td>{{ equip.Asset.Cost | currency }}</td>
+        <td>{{ equip.Asset.ResidualValue | currency }}</td>
+        <td>{{ equip.Asset.AcquiredDate | date }}</td>
+        <td>{{ equip.Asset.DisposedDate | date }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
