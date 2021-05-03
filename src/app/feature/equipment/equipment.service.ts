@@ -11,6 +11,10 @@ export class EquipmentService {
 
   url = this.syssvc.settings.baseurl + "api/Equipments/";
 
+  listByDept(id: number): Observable<JsonResponse> {
+    return this.http.get(this.url+"ListByDepartment/"+id) as Observable<JsonResponse>;
+  }
+
   list(): Observable<JsonResponse> {
     return this.http.get(this.url+"List") as Observable<JsonResponse>;
   }

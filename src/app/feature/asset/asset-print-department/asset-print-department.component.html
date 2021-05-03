@@ -1,0 +1,55 @@
+<h3 id="top">{{dept.Name}} - Vehicles</h3>
+<table class="table table-sm table-bordered" *ngIf="vps">
+  <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Year/Make/Model</th>
+      <th>License Plate</th>
+      <th>VIN</th>
+      <th>Description</th>
+      <th>Cost</th>
+      <th>Residual</th>
+      <th>Acquired</th>
+      <th>Disposed</th>
+  </tr>
+  <tr *ngFor="let vp of vps">
+    <td>{{ vp.Code }}</td>
+    <td>{{ vp.Name }}</td>
+    <td>{{ vp.YearMakeModel }}</td>
+    <td>{{ vp.LicensePlate }}</td>
+    <td>{{ vp.VIN }}</td>
+    <td>{{ vp.Description }}</td>
+    <td>{{ vp.Cost | currency }}</td>
+    <td>{{ vp.ResidualValue | currency }}</td>
+    <td>{{ vp.AcquiredDate | date }}</td>
+    <td>{{ vp.DisposedDate | date }}</td>
+  </tr>
+</table>
+<h3>{{dept.Name}} - Equipment</h3>
+<table class="table table-sm table-bordered" *ngIf="eps">
+  <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Year/Make/Model</th>
+      <th>Serial Number</th>
+      <th>Name</th>
+      <th>Cost</th>
+      <th>Residual</th>
+      <th>Acquired</th>
+      <th>Disposed</th>
+  </tr>
+  <tr *ngFor="let ep of eps">
+    <td>{{ ep.Code }}</td>
+    <td>{{ ep.Description }}</td>
+    <td>{{ ep.YearMakeModel }}</td>
+    <td>{{ ep.SerialNumber }}</td>
+    <td>{{ ep.Name }}</td>
+    <td>{{ ep.Description }}</td>
+    <td>{{ ep.Cost | currency }}</td>
+    <td>{{ ep.ResidualValue | currency }}</td>
+    <td>{{ ep.AcquiredDate | date }}</td>
+    <td>{{ ep.DisposedDate | date }}</td>
+  </tr>
+</table>
+<h6></h6>
+<app-heading></app-heading>

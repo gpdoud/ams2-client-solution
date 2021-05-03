@@ -32,7 +32,7 @@ export function startupServiceFactory(appinitsvc: feat.AppInitService): Function
     feat.VehicleListComponent, feat.VehicleDetailComponent, feat.VehicleCreateComponent, feat.VehicleEditComponent,
     feat.AssetDetailComponent, feat.AssetEditComponent, feat.AssetCreateComponent,
     feat.ErrorDetailComponent,
-    feat.AssetSelectComponent
+    feat.AssetSelectComponent, feat.AssetPrintDepartmentComponent
   ],
   imports: [
     BrowserModule,

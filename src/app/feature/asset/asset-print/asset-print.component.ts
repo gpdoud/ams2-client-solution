@@ -4,6 +4,8 @@ import { VehicleService } from '../../vehicle/vehicle.service';
 import { EquipmentService } from '../../equipment/equipment.service';
 import { Vehicle } from '../../vehicle/vehicle';
 import { Equipment } from '../../equipment/equipment';
+import { DepartmentService } from '@feat/department/department.service';
+import { Department } from '@feat/department/department';
 
 @Component({
   selector: 'app-asset-print',
@@ -14,25 +16,17 @@ export class AssetPrintComponent implements OnInit {
 
   pagetitle: string = "Asset Print";
 
-  vehicles: Vehicle[];
-  equipment: Equipment[];
+  depts: Department[] = [];
 
   constructor(
-    private vehicleSvc: VehicleService,
-    private equipmentSvc: EquipmentService
+    private deptSvc: DepartmentService
   ) { }
     
   ngOnInit() {
-    this.vehicleSvc.list()
-      .subscribe(resp => {
-        console.log("Resp:", resp);
-        this.vehicles = resp.Data;
-      });
-    this.equipmentSvc.list()
-      .subscribe(resp => {
-        console.log("Resp:", resp);
-        this.equipment = resp.Data;
-      });
+    this.deptSvc.list().subscribe(
+      res => { this.depts = res.Data; console.debug("Depts:", this.depts); },
+      err => { console.error(err); }
+    );
   }
 
 }
