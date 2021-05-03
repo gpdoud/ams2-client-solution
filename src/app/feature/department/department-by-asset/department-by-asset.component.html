@@ -11,8 +11,8 @@
             <th>Name</th>
             <th>Year/Make/Model</th>
             <th>License Plate</th>
+            <th>VIN</th>
             <th>Active</th>
-            <th>Name</th>
             <th>Description</th>
             <th>Cost</th>
             <th>Residual</th>
@@ -24,8 +24,8 @@
           <td>{{ vehicle.Asset.Name }}</td>
           <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
           <td>{{ vehicle.LicensePlate }}</td>
+          <td>{{ vehicle.VIN }}</td>
           <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
-          <td>{{ vehicle.Asset.Name }}</td>
           <td>{{ vehicle.Asset.Description }}</td>
           <td>{{ vehicle.Asset.Cost | currency }}</td>
           <td>{{ vehicle.Asset.ResidualValue | currency }}</td>
