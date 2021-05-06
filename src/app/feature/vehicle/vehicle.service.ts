@@ -4,11 +4,16 @@ import { Observable } from 'rxjs/Observable';
 import { SystemService } from '@feat/system/system.service';
 import { Vehicle } from '@feat/vehicle/vehicle';
 import { JsonResponse } from '@feat/utility/json-response';
+import { VehiclePrint } from './vehicle-print';
 
 @Injectable()
 export class VehicleService {
 
   url = this.syssvc.settings.baseurl + "api/Vehicles/";
+
+  listByDept(id: number): Observable<JsonResponse> {
+    return this.http.get(this.url+"ListByDepartment/"+id) as Observable<JsonResponse>
+  }
 
   list(): Observable<JsonResponse> {
     console.log("URL:", this.url);

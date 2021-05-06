@@ -11,6 +11,8 @@ export * from './asset/asset-detail/asset-detail.component';
 export * from './asset/asset-edit/asset-edit.component';
 export * from './asset/asset-create/asset-create.component';
 export * from './asset/asset-print/asset-print.component';
+export * from './asset/asset-print-department/asset-print-department.component';
+
 export * from './asset/asset-select/asset-select.component';
 export * from './asset/asset.service';
 // Category

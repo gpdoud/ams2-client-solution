@@ -36,3 +36,7 @@ tr.stky-hdr:first-child th {
   position: -webkit-sticky;
   top: 0;
 }
+@media print {
+  @page { size: landscape; }
+  body { font-size: 0.8rem; }
+}
