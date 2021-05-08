@@ -23,12 +23,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Name">Name</label>
         </div>
-        <input [(ngModel)]="department.Name" name="Name" type="text" class="form-control" id="Name">
+        <input [(ngModel)]="department.name" name="Name" type="text" class="form-control" id="Name">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
-        <select [(ngModel)]="department.Active" name="Active" class="form-control" id="Active">
+        <select [(ngModel)]="department.active" name="Active" class="form-control" id="Active">
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
         </select>      </div>

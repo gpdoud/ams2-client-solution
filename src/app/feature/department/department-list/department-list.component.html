@@ -15,19 +15,19 @@
   <div class="content">
     <table class="table table-sm table-hover" *ngIf="departments">
       <tr class="stky-hdr">
-          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('name')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
       <tr *ngFor="let dept of departments | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ dept.code }}</td>
-        <td>{{ dept.Name }}</td>
-        <td>{{ dept.Active ? "Yes" : "No" }}</td>
+        <td>{{ dept.name }}</td>
+        <td>{{ dept.active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/departments/detail/{{  dept.id }}">Detail</a></span>
           <span> | <a routerLink="/departments/edit/{{ dept.id }}">Edit</a></span>
-          <span> | <a routerLink="/departments/assets/{{ dept.id }}/{{dept.Name}}">Assets</a></span>
+          <span> | <a routerLink="/departments/assets/{{ dept.id }}/{{dept.name}}">Assets</a></span>
         </td>
       </tr>
     </table>

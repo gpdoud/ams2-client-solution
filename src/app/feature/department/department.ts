@@ -5,10 +5,10 @@ export class Department {
   name: string;
   active: boolean;
 
-  constructor(code: string, name: string, Active: boolean) {
+  constructor(code: string, name: string, active: boolean) {
     this.code = code;
     this.name = name;
-    this.active = Active;
+    this.active = active;
   }
 
 }
