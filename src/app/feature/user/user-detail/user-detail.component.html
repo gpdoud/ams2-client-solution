@@ -8,12 +8,12 @@
   <!-- <app-error-detail [resp]="resp"></app-error-detail> -->
   <div class="content">
     <table class="table table-sm" *ngIf="user">
-      <tr><th>Name</th><td>{{ user.Firstname + " " + user.Lastname }}</td></tr>
-      <tr><th>User name</th><td>{{ user.Username }}</td></tr>
-      <tr><th>Phone</th><td>{{ user.Phone }}</td></tr>
-      <tr><th>Email</th><td>{{ user.Email }}</td></tr>
+      <tr><th>Name</th><td>{{ user.firstname + " " + user.lastname }}</td></tr>
+      <tr><th>User name</th><td>{{ user.username }}</td></tr>
+      <tr><th>Phone</th><td>{{ user.phone }}</td></tr>
+      <tr><th>Email</th><td>{{ user.email }}</td></tr>
       <tr><th>Department</th><td>{{ user.department == null ? "Unassigned" : user.department.Name }}</td></tr>
-      <tr><th>Active</th><td>{{ user.Active ? "Yes" : "No" }}</td></tr>
+      <tr><th>Active</th><td>{{ user.active ? "Yes" : "No" }}</td></tr>
       <tr>
         <td colspan="2">
           <button (click)="edit()" class="btn btn-warning">Edit</button>
