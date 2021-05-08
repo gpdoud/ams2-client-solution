@@ -25,9 +25,9 @@ export class PropertyCreateComponent implements OnInit {
     console.log("PropertyCreate preupdate:", this.property);
     this.propertysvc.create(this.property)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("PropertyCreate resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/properties/list");
         }

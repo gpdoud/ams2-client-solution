@@ -38,7 +38,7 @@ export class CategoryEditComponent implements OnInit {
     console.log("CategoryGet id:", id);
     this.categorysvc.get(+id)
       .subscribe(resp => {
-        this.category = resp.Data;
+        this.category = resp.data;
         console.log("CategoryGet:", this.category);
       });
   }

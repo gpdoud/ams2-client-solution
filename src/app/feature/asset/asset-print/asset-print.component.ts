@@ -24,7 +24,7 @@ export class AssetPrintComponent implements OnInit {
     
   ngOnInit() {
     this.deptSvc.list().subscribe(
-      res => { this.depts = res.Data; console.debug("Depts:", this.depts); },
+      res => { this.depts = res.data; console.debug("Depts:", this.depts); },
       err => { console.error(err); }
     );
   }

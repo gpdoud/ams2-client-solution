@@ -22,7 +22,7 @@ export class EquipmentDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/equipment/edit/"+this.equipment.Id);
+    this.router.navigateByUrl("/equipment/edit/"+this.equipment.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -30,9 +30,9 @@ export class EquipmentDetailComponent implements OnInit {
   verify(): void {
     this.equipmentsvc.remove(this.equipment)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("EquipmentRemove resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
           } else {
             this.router.navigateByUrl("/equipment/list");
           }
@@ -52,7 +52,7 @@ export class EquipmentDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.equipmentsvc.get(+id)
       .subscribe(resp => {
-        this.equipment = resp.Data;
+        this.equipment = resp.data;
         console.log("EquipmentGet:", this.equipment);
       });
   }

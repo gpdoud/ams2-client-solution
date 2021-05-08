@@ -25,9 +25,9 @@ export class EquipmentCreateComponent implements OnInit {
     console.log("EquipmentCreate preupdate:", this.equipment);
     this.equipmentsvc.create(this.equipment)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
         console.log("EquipmentCreate resp:", resp);
-        this.errormessage = resp.FormattedMessage;
+        this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/equipment/list");
         }

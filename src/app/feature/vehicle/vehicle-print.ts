@@ -1,10 +1,10 @@
 export class VehiclePrint {
-    Code: string;
-    Name: string;
+    code: string;
+    name: string;
     YearMakeModel: string;
     LicensePlate: string;
     VIN: string;
-    Description: string;
+    description: string;
     Cost: number;
     ResidualValue: number; 
     AcquiredDate: string;

@@ -22,16 +22,16 @@ export class AssetPrintDepartmentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.vehSvc.listByDept(this.dept.Id).subscribe(
+    this.vehSvc.listByDept(this.dept.id).subscribe(
       res => {
-        this.vps = res.Data;
+        this.vps = res.data;
         console.debug(this.vps);
       }, 
       err => console.error(err)
     );
-    this.equipSvc.listByDept(this.dept.Id).subscribe(
+    this.equipSvc.listByDept(this.dept.id).subscribe(
       res => {
-        this.eps = res.Data;
+        this.eps = res.data;
         console.debug(this.eps);
       }, 
       err => console.error(err)

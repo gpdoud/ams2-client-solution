@@ -21,8 +21,8 @@ export class UserEditComponent implements OnInit {
 
   save(): void {
     // if the department is changed; nullify the department instance
-    if(this.user.Department == null || this.user.DepartmentId != this.user.Department.Id)
-      this.user.Department = null;
+    if(this.user.department == null || this.user.departmentId != this.user.department.id)
+      this.user.department = null;
     console.log("UserEdit preupdate:", this.user);
     this.usersvc.change(this.user)
       .subscribe(rc => {
@@ -44,13 +44,13 @@ export class UserEditComponent implements OnInit {
     this.deptsvc.list()
       .subscribe(resp => {
         console.log("Dept resp:", resp);
-        this.departments = resp.Data;
+        this.departments = resp.data;
       });
     let id = this.route.snapshot.params.id;
     console.log("UserGet id:", id);
     this.usersvc.get(+id)
       .subscribe(resp => {
-        this.user = resp.Data;
+        this.user = resp.data;
         console.log("UserGet:", this.user);
       });
   }

@@ -40,7 +40,7 @@ export class DepartmentListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.departmentsvc.list()
       .subscribe(resp => {
-        this.departments = resp.Data;
+        this.departments = resp.data;
         console.log("DepartmentList:", this.departments);
         this.errormessage = `${this.departments.length} departments`;
       });

@@ -24,7 +24,7 @@
           <label class="input-group-text" for="Department">Department</label>
         </div>
         <select [(ngModel)]="asset.DepartmentId" name="Department" type="text" class="form-control" id="Department">
-          <option *ngFor="let department of departments" [ngValue]="department.Id">{{ department.Name }}</option>
+          <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.Name }}</option>
           <option value="">***Clear Department***</option>
         </select>
 
@@ -32,7 +32,7 @@
           <label class="input-group-text" for="Category">Category</label>
         </div>
         <select [(ngModel)]="asset.CategoryId" name="Category" type="text" class="form-control" id="Category">
-          <option *ngFor="let category of categories" [ngValue]="category.Id">{{ category.Name }}</option>
+          <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.Name }}</option>
           <option value="">***Clear Category***</option>
         </select>
 
@@ -40,7 +40,7 @@
           <label class="input-group-text" for="User">User</label>
         </div>
         <select [(ngModel)]="asset.UserId" name="User" type="text" class="form-control" id="User">
-          <option *ngFor="let user of users" [ngValue]="user.Id">{{ user.Firstname }} {{ user.Lastname }}</option>
+          <option *ngFor="let user of users" [ngValue]="user.id">{{ user.Firstname }} {{ user.Lastname }}</option>
           <option value="">***Clear User***</option>
         </select>
 
@@ -52,7 +52,7 @@
           <label class="input-group-text" for="Address">Address</label>
         </div>
         <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">
-          <option *ngFor="let addr of addresses" [ngValue]="addr.Id">{{ addr.Name }}</option>
+          <option *ngFor="let addr of addresses" [ngValue]="addr.id">{{ addr.Name }}</option>
           <option value="">***Clear Address***</option>
         </select>
 

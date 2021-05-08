@@ -1,9 +1,9 @@
 export class EquipmentPrint {
-    Code: string;
-    Description: string;
+    code: string;
+    description: string;
     YearMakeModel: string;
     SerialNumber: string;
-    Name: string;
+    name: string;
     Cost: number;
     ResidualValue: number;
     AcquiredDate: string;

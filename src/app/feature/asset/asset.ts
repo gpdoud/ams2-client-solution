@@ -1,46 +1,46 @@
 export class Asset {
 
-  Id: number;
-  Code: string;
-  Name: string;
-  Description: string;
-  AcquiredDate: Date;
-  DisposedDate: Date;
+  id: number;
+  code: string;
+  name: string;
+  description: string;
+  acquiredDate: Date;
+  disposedDate: Date;
   PONumber: string;
-  Cost: number;
-  OutForRepairDate: Date;
-  ReturnFromRepairDate: Date;
-  RetiredDate: Date;
-  SurplusDate: Date;
-  ResidualValue: number;
+  cost: number;
+  outForRepairDate: Date;
+  returnFromRepairDate: Date;
+  retiredDate: Date;
+  surplusDate: Date;
+  residualValue: number;
 
   constructor(
-    Id: number,
-    Code: string,
-    Name: string,
-    Description: string,
-    AcquiredDate: Date,
-    DisposedDate: Date,
+    id: number,
+    code: string,
+    name: string,
+    description: string,
+    acquiredDate: Date,
+    disposedDate: Date,
     PONumber: string,
-    Cost: number,
-    OutForRepairDate: Date,
-    ReturnFromRepairDate: Date,
-    RetiredDate: Date,
-    SurplusDate: Date,
-    ResidualValue: number
+    cost: number,
+    outForRepairDate: Date,
+    returnFromRepairDate: Date,
+    retiredDate: Date,
+    surplusDate: Date,
+    residualValue: number
   ) {
-    this.Id = Id;
-    this.Code = Code;
-    this.Name = Name;
-    this.Description = Description;
-    this.AcquiredDate = AcquiredDate;
-    this.DisposedDate = DisposedDate;
+    this.id = id;
+    this.code = code;
+    this.name = name;
+    this.description = description;
+    this.acquiredDate = acquiredDate;
+    this.disposedDate = disposedDate;
     this.PONumber = PONumber;
-    this.Cost = Cost;
-    this.OutForRepairDate = OutForRepairDate;
-    this.ReturnFromRepairDate = ReturnFromRepairDate;
-    this.RetiredDate = RetiredDate;
-    this.SurplusDate = SurplusDate;
-    this.ResidualValue = ResidualValue;
+    this.cost = cost;
+    this.outForRepairDate = outForRepairDate;
+    this.returnFromRepairDate = returnFromRepairDate;
+    this.retiredDate = retiredDate;
+    this.surplusDate = surplusDate;
+    this.residualValue = residualValue;
   }
 }

@@ -40,7 +40,7 @@ export class UserCreateComponent implements OnInit {
     this.deptsvc.list()
       .subscribe(resp => {
         console.log("Dept resp:", resp);
-        this.departments = resp.Data;
+        this.departments = resp.data;
       });
   }
 

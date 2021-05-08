@@ -2,13 +2,13 @@ enum ForAsset { All, Vehicle, Equipment, Property }
 
 export class Category {
 
-	Id: number;
-	Name: string;
-	AssetType: ForAsset;
+	id: number;
+	name: string;
+	assetType: ForAsset;
 
-	constructor(Name: string, AssetType: ForAsset = ForAsset.All) {
-		this.Id = 0;
-		this.Name = Name;
-		this.AssetType = AssetType;
+	constructor(name: string, AssetType: ForAsset = ForAsset.All) {
+		this.id = 0;
+		this.name = name;
+		this.assetType = AssetType;
 	}
 }

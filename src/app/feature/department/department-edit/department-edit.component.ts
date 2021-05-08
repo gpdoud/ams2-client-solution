@@ -38,7 +38,7 @@ export class DepartmentEditComponent implements OnInit {
     console.log("DepartmentGet id:", id);
     this.departmentsvc.get(+id)
       .subscribe(resp => {
-        this.department = resp.Data;
+        this.department = resp.data;
         console.log("DepartmentGet:", this.department);
       });
   }

@@ -1,29 +1,29 @@
 import { Asset } from '../asset/asset';
 
 export class Equipment {
-  Id: number;
-  AssetId: number;
-  Asset: Asset;
-  Description: string;
-  SerialNumber: string;
-  Active: boolean;
-  DateCreated: string;
+  id: number;
+  assetId: number;
+  asset: Asset;
+  description: string;
+  serialNumber: string;
+  active: boolean;
+  dateCreated: string;
   
   constructor(
-    Id: number, 
-    AssetId: number, 
-    Asset: Asset, 
-    Description: string, 
-    SerialNumber: string, 
-    Active: boolean, 
-    DateCreated: string = new Date().toISOString()
+    id: number, 
+    assetId: number, 
+    asset: Asset, 
+    description: string, 
+    serialNumber: string, 
+    active: boolean, 
+    dateCreated: string = new Date().toISOString()
   ) {
-    this.Id = Id;
-    this.AssetId = AssetId;
-    this.Asset = Asset;
-    this.Description = Description;
-    this.SerialNumber = SerialNumber;
-    this.Active = Active;
-    this.DateCreated = DateCreated;
+    this.id = id;
+    this.assetId = assetId;
+    this.asset = asset;
+    this.description = description;
+    this.serialNumber = serialNumber;
+    this.active = active;
+    this.dateCreated = dateCreated;
   }
 }

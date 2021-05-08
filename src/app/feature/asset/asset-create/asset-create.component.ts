@@ -53,22 +53,22 @@ export class AssetCreateComponent implements OnInit {
   ngOnInit() {
     this.addresssvc.list()
       .subscribe(resp => {
-        this.addresses = resp.Data;
+        this.addresses = resp.data;
         console.log("AddressList:", this.addresses);
       })
     this.Departmentsvc.list()
       .subscribe(resp => {
-        this.departments = resp.Data;
+        this.departments = resp.data;
         console.log("AssetEdit Departments:", this.departments);
       });
     this.Categorysvc.list()
       .subscribe(resp => {
-        this.categories = resp.Data;
+        this.categories = resp.data;
         console.log("AssetEdit Categories:", this.categories);
       });
     this.Usersvc.list()
       .subscribe(resp => {
-        this.users = resp.Data;
+        this.users = resp.data;
         console.log("AssetEdit Addrs:", this.users);
       });
   }

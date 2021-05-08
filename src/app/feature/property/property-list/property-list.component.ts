@@ -42,7 +42,7 @@ export class PropertyListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.propertysvc.list()
       .subscribe(resp => {
-        this.properties = resp.Data;
+        this.properties = resp.data;
         console.log("PropertyList:", this.properties);
         this.errormessage = `${this.properties.length} properties`;
       });

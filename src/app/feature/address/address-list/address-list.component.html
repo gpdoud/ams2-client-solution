@@ -25,7 +25,7 @@
           <th class="sticky-top opaque">Action</th>
       </tr>
       <tr *ngFor="let address of addresses | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ address.Code }}</td>
+        <td>{{ address.code }}</td>
         <td>{{ address.Name }}</td>
         <td>
           {{ address.Address1 }}
@@ -37,8 +37,8 @@
         <td>{{ address.Zipcode }}</td>
         <td>{{ address.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/addresses/detail/{{  address.Id }}">Detail</a></span>
-          <span> | <a routerLink="/addresses/edit/{{ address.Id }}">Edit</a></span>
+          <span><a routerLink="/addresses/detail/{{  address.id }}">Detail</a></span>
+          <span> | <a routerLink="/addresses/edit/{{ address.id }}">Edit</a></span>
         </td>
       </tr>
     </table>

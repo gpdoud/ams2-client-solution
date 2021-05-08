@@ -22,7 +22,7 @@ export class CategoryDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/categories/edit/"+this.category.Id);
+    this.router.navigateByUrl("/categories/edit/"+this.category.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -47,7 +47,7 @@ export class CategoryDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.categorysvc.get(+id)
       .subscribe(resp => {
-        this.category = resp.Data;
+        this.category = resp.data;
         console.log("CategoryGet:", this.category);
       });
   }

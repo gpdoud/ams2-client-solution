@@ -22,7 +22,7 @@ export class DepartmentDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/departments/edit/"+this.department.Id);
+    this.router.navigateByUrl("/departments/edit/"+this.department.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -47,7 +47,7 @@ export class DepartmentDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.departmentsvc.get(+id)
       .subscribe(resp => {
-        this.department = resp.Data;
+        this.department = resp.data;
         console.log("DepartmentGet:", this.department);
       });
   }

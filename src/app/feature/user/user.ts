@@ -1,21 +1,21 @@
 import { Department } from '@department/department';
 
 export class User {
-  Id: number;
-  Username: string;
-  Password: string;
-  Firstname: string;
-  Lastname: string;
-  Phone: string;
-  Email: string;
-  DepartmentId: number;
-  Department: Department;
-  Active: boolean;
-  DepartmentName:string;
+  id: number;
+  username: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  phone: string;
+  email: string;
+  departmentId: number;
+  department: Department;
+  active: boolean;
+  departmentName:string;
 
   constructor() {
-    this.Id = 0;
-    this.DepartmentId = null;
-    this.Active = true;
+    this.id = 0;
+    this.departmentId = null;
+    this.active = true;
   }
 }

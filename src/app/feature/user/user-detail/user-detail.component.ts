@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/users/edit/"+this.user.Id);
+    this.router.navigateByUrl("/users/edit/"+this.user.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -47,7 +47,7 @@ export class UserDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.usersvc.get(+id)
       .subscribe(resp => {
-        this.user = resp.Data;
+        this.user = resp.data;
         console.log("UserGet:", this.user);
       });
   }

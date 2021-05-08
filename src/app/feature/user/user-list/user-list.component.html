@@ -15,24 +15,24 @@
   <div class="content">
     <table class="table table-sm table-hover" *ngIf="users">
       <tr class="stky-hdr">
-          <th><a (click)="sort('Firstname')">Name <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Username')">Username <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Phone')">Phone <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Email')">Email <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('DepartmentName')">Department <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('firstname')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('username')">Username <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('phone')">Phone <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('email')">Email <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('departmentName')">Department <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
       <tr *ngFor="let user of users | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ user.Firstname + " " + user.Lastname }}</td>
-        <td>{{ user.Username }}</td>
-        <td>{{ user.Phone }}</td>
-        <td>{{ user.Email }}</td>
-        <td>{{ user.Department == null ? "Unassigned" : user.Department.Name }}
-        <td>{{ user.Active ? "Yes" : "No" }}</td>
+        <td>{{ user.firstname + " " + user.lastname }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.department == null ? "Unassigned" : user.department.Name }}
+        <td>{{ user.active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/users/detail/{{  user.Id }}">Detail</a></span>
-          <span> | <a routerLink="/users/edit/{{ user.Id }}">Edit</a></span>
+          <span><a routerLink="/users/detail/{{  user.id }}">Detail</a></span>
+          <span> | <a routerLink="/users/edit/{{ user.id }}">Edit</a></span>
         </td>
       </tr>
     </table>

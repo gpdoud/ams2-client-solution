@@ -19,7 +19,7 @@ export class AddressDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/addresses/edit/"+this.address.Id);
+    this.router.navigateByUrl("/addresses/edit/"+this.address.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -44,7 +44,7 @@ export class AddressDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.addresssvc.get(+id)
       .subscribe(resp => {
-        this.address = resp.Data;
+        this.address = resp.data;
         console.log("AddressGet:", this.address);
       });
   }

@@ -2,46 +2,46 @@ import { Asset } from '../asset/asset';
 import { Address } from '../address/address';
 
 export class Property {
-  Id: number;
-  Code: string;
-  Description: string;
-  Address1: string;
-  Address2: string;
-  Address3: string;
-  City: string;
-  State: string;
-  ZipCode: string;
-  AssetId: number;
-  Asset: Asset;
-  Active: boolean;
-  DateCreated: string;
-  DateUpdated: string;
+  id: number;
+  code: string;
+  description: string;
+  address1: string;
+  address2: string;
+  address3: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  assetId: number;
+  asset: Asset;
+  active: boolean;
+  dateCreated: string;
+  dateUpdated: string;
 
   constructor(
-    Id: number,
-    Code: string,
-    Description: string,
-    Address1: string,
-    Address2: string,
-    Address3: string,
-    City: string,
-    State: string,
-    ZipCode: string,
-    AssetId: number,
-    Asset: Asset,
-    Active: boolean
+    id: number,
+    code: string,
+    description: string,
+    address1: string,
+    address2: string,
+    address3: string,
+    city: string,
+    state: string,
+    zipCode: string,
+    assetId: number,
+    asset: Asset,
+    active: boolean
   ) {
-    this.Id = Id;
-    this.Code = Code;
-    this.Description = Description;
-    this.Address1 = Address1;
-    this.Address2 = Address2;
-    this.Address3 = Address3;
-    this.City = City;
-    this.State = State;
-    this.ZipCode = ZipCode;
-    this.AssetId = AssetId;
-    this.Asset = Asset;
-    this.Active = Active;
+    this.id = id;
+    this.code = code;
+    this.description = description;
+    this.address1 = address1;
+    this.address2 = address2;
+    this.address3 = address3;
+    this.city = city;
+    this.state = state;
+    this.zipCode = zipCode;
+    this.assetId = assetId;
+    this.asset = asset;
+    this.active = active;
   }
 }

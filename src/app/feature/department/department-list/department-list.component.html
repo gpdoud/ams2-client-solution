@@ -21,13 +21,13 @@
           <th>Action</th>
       </tr>
       <tr *ngFor="let dept of departments | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ dept.Code }}</td>
+        <td>{{ dept.code }}</td>
         <td>{{ dept.Name }}</td>
         <td>{{ dept.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/departments/detail/{{  dept.Id }}">Detail</a></span>
-          <span> | <a routerLink="/departments/edit/{{ dept.Id }}">Edit</a></span>
-          <span> | <a routerLink="/departments/assets/{{ dept.Id }}/{{dept.Name}}">Assets</a></span>
+          <span><a routerLink="/departments/detail/{{  dept.id }}">Detail</a></span>
+          <span> | <a routerLink="/departments/edit/{{ dept.id }}">Edit</a></span>
+          <span> | <a routerLink="/departments/assets/{{ dept.id }}/{{dept.Name}}">Assets</a></span>
         </td>
       </tr>
     </table>

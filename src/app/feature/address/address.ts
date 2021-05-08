@@ -1,15 +1,15 @@
 export class Address {
-  Id: number;
-  Code: string;
-  Name: string;
-  Address1: string;
-  Address2: string;
-  Address3: string;
-  City: string;
-  State: string;
-  ZipCode: string;
-  Active: boolean;
-  DateCreated: string;
+  id: number;
+  code: string;
+  name: string;
+  address1: string;
+  address2: string;
+  address3: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  active: boolean;
+  dateCreated: string;
 
   constructor(
     Id: number,
@@ -24,16 +24,16 @@ export class Address {
     Active: boolean = true,
     DateCreated: string = new Date().toISOString()
   ) {
-    this.Id = Id;
-    this.Code = Code;
-    this.Name = Name;
-    this.Address1 = Address1;
-    this.Address2 = Address2;
-    this.Address3 = Address3;
-    this.City = City;
-    this.State = State;
-    this.ZipCode = ZipCode;
-    this.Active = Active;
-    this.DateCreated = DateCreated;
+    this.id = Id;
+    this.code = Code;
+    this.name = Name;
+    this.address1 = Address1;
+    this.address2 = Address2;
+    this.address3 = Address3;
+    this.city = City;
+    this.state = State;
+    this.zipCode = ZipCode;
+    this.active = Active;
+    this.dateCreated = DateCreated;
   }
 }

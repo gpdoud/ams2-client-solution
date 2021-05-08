@@ -37,14 +37,14 @@ export class VehicleListComponent implements OnInit {
   ngOnInit() {
     this.vehiclesvc.list()
       .subscribe(resp => {
-        this.vehicles = resp.Data;
+        this.vehicles = resp.data;
         console.log("VehicleList:", this.vehicles);
         this.errormessage = `${this.vehicles.length} vehicles`;
         for(let v of this.vehicles) {
-          if (v.Asset.Name == null) {
-            v.AssetName = "";
+          if (v.asset.name == null) {
+            v.assetName = "";
           }
-          v.AssetName=v.Asset.Name;
+          v.assetName=v.asset.name;
         }
       });
   }

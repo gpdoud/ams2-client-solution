@@ -23,9 +23,9 @@ export class VehicleEditComponent implements OnInit {
     console.log("VehicleEdit preupdate:", this.vehicle);
     this.Vehiclesvc.change(this.vehicle)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.error("VehicleEdit resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/vehicles/list");
         }
@@ -44,7 +44,7 @@ export class VehicleEditComponent implements OnInit {
     console.log("VehicleGet id:", id);
     this.Vehiclesvc.get(+id)
       .subscribe(resp => {
-        this.vehicle = resp.Data;
+        this.vehicle = resp.data;
         console.log("VehicleGet:", this.vehicle);
       });
   }

@@ -55,7 +55,7 @@
           <label class="input-group-text" for="Department">Department</label>
         </div>
         <select [(ngModel)]="user.DepartmentId" name="Department" class="form-control" id="Department">
-          <option *ngFor="let dept of departments" [ngValue]="dept.Id">{{ dept.Name }}</option>
+          <option *ngFor="let dept of departments" [ngValue]="dept.id">{{ dept.Name }}</option>
         </select>      
 
         <div class="input-group-prepend">

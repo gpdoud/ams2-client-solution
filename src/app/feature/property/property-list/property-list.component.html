@@ -22,7 +22,7 @@
           <th>Action</th>
       </tr>
       <tr *ngFor="let property of properties | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ property.Code }}</td>
+        <td>{{ property.code }}</td>
         <td>{{ property.Description }}</td>
         <td>
           {{ property.Address1 }}
@@ -31,8 +31,8 @@
         </td>
         <td>{{ property.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/properties/detail/{{  property.Id }}">Detail</a></span>
-          <span> | <a routerLink="/properties/edit/{{ property.Id }}">Edit</a></span>
+          <span><a routerLink="/properties/detail/{{  property.id }}">Detail</a></span>
+          <span> | <a routerLink="/properties/edit/{{ property.id }}">Edit</a></span>
         </td>
       </tr>
     </table>

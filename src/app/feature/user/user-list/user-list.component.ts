@@ -41,14 +41,14 @@ export class UserListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.usersvc.list()
       .subscribe(resp => {
-        this.users = resp.Data;
+        this.users = resp.data;
         console.log("UserList:", this.users);
         this.errormessage = `${this.users.length} users`;
         for(let u of this.users) {
-          if(u.DepartmentId == null) {
-            u.DepartmentName = "Unassigned";
+          if(u.departmentId == null) {
+            u.departmentName = "Unassigned";
           } else {
-          u.DepartmentName = u.Department.Name;
+          u.departmentName = u.department.name;
         }}
       });
   }

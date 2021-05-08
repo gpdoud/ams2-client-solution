@@ -2,42 +2,42 @@ import { Asset } from '../asset/asset';
 
 export class Vehicle {
 
-  Id: number;
-  Code: string;
-  AssetId: number;
-  Asset: Asset;
-  Make: string;
-  Model: string;
-  Year: number;
-  LicensePlate: string;
+  id: number;
+  code: string;
+  assetId: number;
+  asset: Asset;
+  make: string;
+  model: string;
+  year: number;
+  licensePlate: string;
   VIN: string;
-  TitleNo: string;
-  Active: boolean;
-  AssetName:string;
+  titleNo: string;
+  active: boolean;
+  assetName:string;
 
   constructor(
-    Id: number,
-    Code: string,
-    AssetId: number,
-    Asset: Asset,
-    Make: string,
-    Model: string,
-    Year: number,
-    LicensePlate: string,
+    id: number,
+    code: string,
+    assetId: number,
+    asset: Asset,
+    make: string,
+    model: string,
+    year: number,
+    licensePlate: string,
     VIN: string,
-    TitleNo: string,
-    Active: boolean = true
+    titleNo: string,
+    active: boolean = true
   ) {
-    this.Id = Id;
-    this.Code = Code,
-    this.AssetId = AssetId;
-    this.Asset = Asset;
-    this.Make = Make;
-    this.Model = Model;
-    this.Year = Year;
-    this.LicensePlate = LicensePlate;
+    this.id = id;
+    this.code = code,
+    this.assetId = assetId;
+    this.asset = asset;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.licensePlate = licensePlate;
     this.VIN = VIN;
-    this.TitleNo = TitleNo;
-    this.Active = Active;
+    this.titleNo = titleNo;
+    this.active = active;
   }
 }

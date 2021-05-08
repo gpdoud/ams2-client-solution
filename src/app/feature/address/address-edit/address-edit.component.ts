@@ -38,7 +38,7 @@ export class AddressEditComponent implements OnInit {
     console.log("AddressGet id:", id);
     this.addresssvc.get(+id)
       .subscribe(resp => {
-        this.address = resp.Data;
+        this.address = resp.data;
         console.log("AddressGet:", this.address);
       });
   }

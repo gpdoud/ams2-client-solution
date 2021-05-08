@@ -1,7 +1,7 @@
 {
   "ams2": "AMS v2",
   "appname": "Ams2",
-  "baseurl": "http://localhost:44444/",
+  "baseurl": "http://localhost:3333/", 
   "copyright": "Copyright (c) 2018-2019 MAX Technical Training All rights reserved",
   "loginrequired": false,
   "version": "2.5.0"

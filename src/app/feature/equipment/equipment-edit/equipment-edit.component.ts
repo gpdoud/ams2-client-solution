@@ -23,9 +23,9 @@ export class EquipmentEditComponent implements OnInit {
     console.log("EquipmentEdit preupdate:", this.equipment);
     this.Equipmentsvc.change(this.equipment)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("EquipmentChange resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/equipment/list");
         }      
@@ -45,7 +45,7 @@ export class EquipmentEditComponent implements OnInit {
     console.log("EquipmentGet id:", id);
     this.Equipmentsvc.get(+id)
       .subscribe(resp => {
-        this.equipment = resp.Data;
+        this.equipment = resp.data;
         console.log("EquipmentGet:", this.equipment);
       });
   }

@@ -20,7 +20,7 @@
             <th>Disposed</th>
         </tr>
         <tr *ngFor="let vehicle of vehicles">
-          <td>{{ vehicle.Code }}</td>
+          <td>{{ vehicle.code }}</td>
           <td>{{ vehicle.Asset.Name }}</td>
           <td>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }}</td>
           <td>{{ vehicle.LicensePlate }}</td>
@@ -50,7 +50,7 @@
             <th>Disposed</th>
         </tr>
         <tr *ngFor="let equip of equipments">
-          <td>{{ equip.Code }}</td>
+          <td>{{ equip.code }}</td>
           <td>{{ equip.Description }}</td>
           <td>{{ equip.Year }} {{ equip.Make }} {{ equip.Model }}</td>
           <td>{{ equip.SerialNumber }}</td>

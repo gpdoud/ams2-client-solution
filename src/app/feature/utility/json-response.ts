@@ -1,14 +1,14 @@
 export class JsonResponse {
-  Code: number;
-  Message: string;
-  Data: any;
-  Error: any;
-  FormattedMessage: string;
+  code: number;
+  message: string;
+  data: any;
+  error: any;
+  formattedMessage: string;
 
   constructor(code: number, message: string, data: any, error: any) {
-    this.Code = code;
-    this.Message = message;
-    this.Data = data;
-    this.Error = error;
+    this.code = code;
+    this.message = message;
+    this.data = data;
+    this.error = error;
   }
 }

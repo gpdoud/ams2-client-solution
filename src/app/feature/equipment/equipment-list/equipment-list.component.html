@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tr *ngFor="let equip of equipments | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ equip.Code }}</td>
+        <td>{{ equip.code }}</td>
         <td>{{ equip.Description }}</td>
         <td>{{ equip.Year }}</td>
         <td>{{ equip.Make }}</td>
@@ -36,8 +36,8 @@
         <td>{{ equip.SerialNumber }}</td>
         <td [ngClass]="{false: 'error'}[equip.Active]">{{ equip.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/equipment/detail/{{ equip.Id }}">Detail</a></span>
-          <span> | <a routerLink="/equipment/edit/{{ equip.Id }}">Edit</a></span>
+          <span><a routerLink="/equipment/detail/{{ equip.id }}">Detail</a></span>
+          <span> | <a routerLink="/equipment/edit/{{ equip.id }}">Edit</a></span>
         </td>
       </tr>
     </table>

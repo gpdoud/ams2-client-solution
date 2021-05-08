@@ -41,7 +41,7 @@ export class AddressListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.addresssvc.list()
       .subscribe(resp => {
-        this.addresses = resp.Data;
+        this.addresses = resp.data;
         console.log("AddressList:", this.addresses);
         this.errormessage = `${this.addresses.length} addresses`;
       });

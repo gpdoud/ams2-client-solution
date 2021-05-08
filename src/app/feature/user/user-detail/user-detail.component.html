@@ -12,7 +12,7 @@
       <tr><th>User name</th><td>{{ user.Username }}</td></tr>
       <tr><th>Phone</th><td>{{ user.Phone }}</td></tr>
       <tr><th>Email</th><td>{{ user.Email }}</td></tr>
-      <tr><th>Department</th><td>{{ user.Department == null ? "Unassigned" : user.Department.Name }}</td></tr>
+      <tr><th>Department</th><td>{{ user.department == null ? "Unassigned" : user.department.Name }}</td></tr>
       <tr><th>Active</th><td>{{ user.Active ? "Yes" : "No" }}</td></tr>
       <tr>
         <td colspan="2">

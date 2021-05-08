@@ -23,7 +23,7 @@ export class PropertyDetailComponent implements OnInit {
   assetType: AssetTypes = AssetTypes.Property;
 
   edit(): void {
-    this.router.navigateByUrl("/properties/edit/"+this.property.Id);
+    this.router.navigateByUrl("/properties/edit/"+this.property.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -31,9 +31,9 @@ export class PropertyDetailComponent implements OnInit {
   verify(): void {
     this.propertysvc.remove(this.property)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("PropertyRemove resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/properties/list");
         }      });
@@ -52,7 +52,7 @@ export class PropertyDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.propertysvc.get(+id)
       .subscribe(resp => {
-        this.property = resp.Data;
+        this.property = resp.data;
         console.log("PropertyGet:", this.property);
       });
   }

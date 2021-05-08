@@ -27,7 +27,7 @@
           <th>Action</th>
       </tr>
       <tr *ngFor="let vehicle of vehicles | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ vehicle.Code }}</td>
+        <td>{{ vehicle.code }}</td>
         <td>{{ vehicle.Asset.Name }}</td>
         <td>{{ vehicle.Year }}</td>
         <td>{{ vehicle.Make }}</td>
@@ -37,8 +37,8 @@
         <td>{{ vehicle.VIN }}</td>
         <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
         <td>
-          <span><a routerLink="/vehicles/detail/{{  vehicle.Id }}">Detail</a></span>
-          <span> | <a routerLink="/vehicles/edit/{{ vehicle.Id }}">Edit</a></span>
+          <span><a routerLink="/vehicles/detail/{{  vehicle.id }}">Detail</a></span>
+          <span> | <a routerLink="/vehicles/edit/{{ vehicle.id }}">Edit</a></span>
         </td>
       </tr>
     </table>

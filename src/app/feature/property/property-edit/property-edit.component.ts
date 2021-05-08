@@ -23,9 +23,9 @@ export class PropertyEditComponent implements OnInit {
     console.log("Property Edit:", this.property);
     this.propertysvc.change(this.property)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("PropertyChange resp:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/properties/list");
         }
@@ -45,7 +45,7 @@ export class PropertyEditComponent implements OnInit {
     console.log("PropertyGet id:", id);
     this.propertysvc.get(+id)
       .subscribe(resp => {
-        this.property = resp.Data;
+        this.property = resp.data;
         console.log("PropertyGet:", this.property);
       });
   }

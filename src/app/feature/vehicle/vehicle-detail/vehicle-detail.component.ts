@@ -22,7 +22,7 @@ export class VehicleDetailComponent implements OnInit {
   showVerifyDelete: boolean = false;
 
   edit(): void {
-    this.router.navigateByUrl("/vehicles/edit/"+this.vehicle.Id);
+    this.router.navigateByUrl("/vehicles/edit/"+this.vehicle.id);
   }
   remove(): void {
     this.showVerifyDelete = !this.showVerifyDelete;
@@ -30,9 +30,9 @@ export class VehicleDetailComponent implements OnInit {
   verify(): void {
     this.vehiclesvc.remove(this.vehicle)
       .subscribe(resp => {
-        if(resp.Code != 0) {
+        if(resp.code != 0) {
           console.log("UserRemove:", resp);
-          this.errormessage = resp.FormattedMessage;
+          this.errormessage = resp.formattedMessage;
         } else {
           this.router.navigateByUrl("/vehicles/list");
         }
@@ -51,7 +51,7 @@ export class VehicleDetailComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.vehiclesvc.get(+id)
       .subscribe(resp => {
-        this.vehicle = resp.Data;
+        this.vehicle = resp.data;
         console.log("VehicleGet:", this.vehicle);
       });
   }

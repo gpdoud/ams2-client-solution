@@ -42,13 +42,13 @@ export class EquipmentListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.equipmentsvc.list()
       .subscribe(resp => {
-        resp.Data.sort((a, b) : number => {
-          if (a.Asset.Code > b.Asset.Code) {return 1}
-          else if (a.Asset.Code < b.Asset.Code) {return -1}
+        resp.data.sort((a, b) : number => {
+          if (a.Asset.code > b.Asset.code) {return 1}
+          else if (a.Asset.code < b.Asset.code) {return -1}
           else if (a.SerialNumber > b.SerialNumber) {return 1}
           return -1;
         })
-        this.equipments = resp.Data;
+        this.equipments = resp.data;
         console.log("EquipmentList:", this.equipments);
         this.errormessage = `${this.equipments.length} equipments`;
       });

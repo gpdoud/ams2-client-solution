@@ -33,7 +33,7 @@ export class DepartmentByAssetComponent implements OnInit {
   this.pagetitle = this.route.snapshot.params.name;
   this.vs.list()
   .subscribe(resp => {
-    let data = resp.Data;
+    let data = resp.data;
       for(let x in data){
         if(data[x] != null && data[x].Asset.DepartmentId == id) {
         this.vehicles.push(data[x])
@@ -42,7 +42,7 @@ export class DepartmentByAssetComponent implements OnInit {
     });
   this.es.list()
   .subscribe(resp => {
-    let info = resp.Data;
+    let info = resp.data;
       for (let y in info){
         if(info[y] != null && info[y].Asset.DepartmentId == id){
           this.equipments.push(info[y])

@@ -1,14 +1,14 @@
 export class Department {
 
-  Id: number;
-  Code: string;
-  Name: string;
-  Active: boolean;
+  id: number;
+  code: string;
+  name: string;
+  active: boolean;
 
-  constructor(Code: string, Name: string, Active: boolean) {
-    this.Code = Code;
-    this.Name = Name;
-    this.Active = Active;
+  constructor(code: string, name: string, Active: boolean) {
+    this.code = code;
+    this.name = name;
+    this.active = Active;
   }
 
 }

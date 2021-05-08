@@ -41,7 +41,7 @@ export class CategoryListComponent implements OnInit {
     this.syssvc.checkLogin();
     this.categorysvc.list()
       .subscribe(resp => {
-        this.categories = resp.Data;
+        this.categories = resp.data;
         console.log("CategoryList:", this.categories);
         this.errormessage = `${this.categories.length} categories`;
       });
